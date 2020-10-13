@@ -12,7 +12,7 @@ body {
  
 }
 
-.cat__head {
+.cat.head {
     position: relative;
     width: 230px;
     height: 200px;
@@ -22,7 +22,7 @@ body {
     background: #ffcc80;
     z-index: 20;
 }
-.cat__head-dots {
+.cat.head-dots {
     position: absolute;
     left: 101px;
     height: 48px;
@@ -33,7 +33,7 @@ body {
     border-radius: 0 0 50% 50%;
 }
 
- .cat__head-dots_first {
+ .cat.head-dots_first {
     position: absolute;
     content: '';
     top: 1px;
@@ -43,7 +43,7 @@ body {
     left: -20px;
     border-radius: 50% 0 50% 50%;
 }
-.cat__head-dots_second {
+.cat.head-dots_second {
     position: absolute;
     content: '';
     top: 1px;
@@ -54,10 +54,10 @@ body {
     border-radius: 0 50% 50% 50%;
 }
 
-.cat__ear {
+.cat.ear {
     position: relative;
 }
-.cat__ear--left, .cat__ear--right {
+.cat.ear--left, .cat.ear--right {
     position: absolute;
     top: -8px;
     width: 150px;
@@ -69,27 +69,27 @@ body {
     justify-content: center;
     align-items: center;
 }
-.cat__ear--left {
+.cat.ear--left {
     transform: scale(-1, 1) rotate(170deg);
     left: -14px;
 }
-.cat__ear--right {
+.cat.ear--right {
     transform: rotate(170deg);
     left: 94px;
 }
-.cat__ear--left-inside, .cat__ear--right-inside {
+.cat.ear--left-inside, .cat.ear--right-inside {
     width: 108px;
     height: 108px;
     border-radius: 90% 0 90% 0;
     background: #e57373;
 }
-.cat__eye {
+.cat.eye {
     position: absolute;
     top: 35px;
     left: -16px;
     display: flex;
 }
-.cat__eye--left, .cat__eye--right {
+.cat.eye--left, .cat.eye--right {
     width: 49px;
     height: 49px;
     background: #fff;
@@ -97,7 +97,7 @@ body {
     margin: 38px;
     z-index: 100;
 }
-.cat__eye span {
+.cat.eye span {
     position: absolute;
     top: 41px;
     width: 42px;
@@ -106,7 +106,7 @@ body {
     border-radius: 50%;
     z-index: 200;
 }
-.cat__eye span::after {
+.cat.eye span::after {
     content: '';
     top: 8px;
     left: 8px;
@@ -116,7 +116,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
-.cat__eye span::before {
+.cat.eye span::before {
     content: '';
     top: 20px;
     left: 8px;
@@ -126,13 +126,13 @@ body {
     border-radius: 50%;
     background: #fff;
 }
-.cat__eye span.cat__pupil-left {
+.cat.eye span.cat.pupil-left {
     left: 42px;
 }
-.cat__eye span.cat__pupil-right {
+.cat.eye span.cat.pupil-right {
     left: 166px;
 }
-.cat__nose {
+.cat.nose {
     position: absolute;
     top: 115px;
     left: 95px;
@@ -144,7 +144,7 @@ body {
     border-radius: 40%;
     z-index: 100;
 }
-.cat__mouth-contour {
+.cat.mouth-contour {
     position: absolute;
     top: 97px;
     left: 19px;
@@ -154,7 +154,7 @@ body {
     -webkit-border-radius: 55% 55% 60% 60%;
     border-radius: 55% 55% 60% 60%;
 }
-.cat__mouth-left, .cat__mouth-right {
+.cat.mouth-left, .cat.mouth-right {
     position: absolute;
     top: 120px;
     width: 23px;
@@ -166,53 +166,53 @@ body {
     border-top: 3px solid rgba(255, 255, 255, 0);
     transform: rotate(-45deg);
 }
-.cat__mouth-left {
+.cat.mouth-left {
     left: 88px;
 }
-.cat__mouth-right {
+.cat.mouth-right {
     left: 108px;
 }
-.cat__whiskers-left, .cat__whiskers-right {
+.cat.whiskers-left, .cat.whiskers-right {
     position: relative;
 }
-.cat__whiskers-left, .cat__whiskers-right, .cat__whiskers-left::after, .cat__whiskers-right::after, .cat__whiskers-left::before, .cat__whiskers-right::before {
+.cat.whiskers-left, .cat.whiskers-right, .cat.whiskers-left::after, .cat.whiskers-right::after, .cat.whiskers-left::before, .cat.whiskers-right::before {
     width: 32px;
     height: 5px;
     background: #373737;
 }
-.cat__whiskers-left::before, .cat__whiskers-right::before, .cat__whiskers-left::after, .cat__whiskers-right::after {
+.cat.whiskers-left::before, .cat.whiskers-right::before, .cat.whiskers-left::after, .cat.whiskers-right::after {
     content: '';
     position: absolute;
     left: 0;
 }
-.cat__whiskers-left {
+.cat.whiskers-left {
     top: 112px;
     left: -18px;
 }
-.cat__whiskers-left::before {
+.cat.whiskers-left::before {
     top: -16px;
     transform: rotate(15deg);
 }
-.cat__whiskers-left::after {
+.cat.whiskers-left::after {
     top: 16px;
     transform: rotate(-15deg);
 }
-.cat__whiskers-right {
+.cat.whiskers-right {
     top: 108px;
     left: 205px;
 }
-.cat__whiskers-right::before {
+.cat.whiskers-right::before {
     top: -16px;
     transform: rotate(-15deg);
 }
-.cat__whiskers-right::after {
+.cat.whiskers-right::after {
     top: 16px;
     transform: rotate(15deg);
 }
-.cat__body {
+.cat.body {
     position: relative;
 }
-.cat__chest {
+.cat.chest {
     position: absolute;
     left: 54px;
     top: -48px;
@@ -223,7 +223,7 @@ body {
     border-radius: 50% 50% 40% 40%;
     z-index: 3;
 }
-.cat__chest_inner {
+.cat.chest_inner {
     content: '';
     position: absolute;
     top: 30px;
@@ -234,7 +234,7 @@ body {
     background: #fff3e0;
     z-index: 4;
 }
-.cat__paw-left, .cat__paw-right {
+.cat.paw-left, .cat.paw-right {
     position: absolute;
     top: 24px;
     width: 28px;
@@ -247,7 +247,7 @@ body {
     z-index: 5;
 }
 
-.cat__paw-right_inner {
+.cat.paw-right_inner {
     content: '';
     position: absolute;
     top: 40px;
@@ -260,7 +260,7 @@ body {
     z-index: 2;
 }
 
-.cat__paw-left_inner {
+.cat.paw-left_inner {
     content: '';
     position: absolute;
     top: 40px;
@@ -272,21 +272,21 @@ body {
     border: 5px solid transparent;
     z-index: 2;
 }
-.cat__paw-left {
+.cat.paw-left {
     left: 78px;
     border-radius: 0 0 45% 35%;
 }
-.cat__paw-left::after {
+.cat.paw-left::after {
     left: -32px;
 }
-.cat__paw-right {
+.cat.paw-right {
     left: 122px;
     border-radius: 0 0 35% 45%;
 }
-.cat__paw-right::after {
+.cat.paw-right::after {
     left: 16px;
 }
-.cat__tail {
+.cat.tail {
     position: absolute;
     top: 20px;
     left: 130px;

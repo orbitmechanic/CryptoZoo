@@ -18,10 +18,10 @@ var defaultDNA = {
 
 // when page load
 $( document ).ready(function() {
-  $('#dnabody').html(defaultDNA.headColor);
-  $('#dnamouth').html(defaultDNA.mouthColor);
-  $('#dnaeyes').html(defaultDNA.eyesColor);
-  $('#dnaears').html(defaultDNA.earsColor);
+  $('.dnabody').html(defaultDNA.headColor);
+  $('.dnamouth').html(defaultDNA.mouthColor);
+  $('.dnaeyes').html(defaultDNA.eyesColor);
+  $('.dnaears').html(defaultDNA.earsColor);
     
 //   $('#dnashape').html(defaultDNA.eyesShape)
 //   $('#dnadecoration').html(defaultDNA.decorationPattern)
@@ -35,16 +35,16 @@ $( document ).ready(function() {
 
 function getDna(){
     var dna = ''
-    dna += $('#dnabody').html()
-    dna += $('#dnamouth').html()
-    dna += $('#dnaeyes').html()
-    dna += $('#dnaears').html()
-    dna += $('#dnashape').html()
-    dna += $('#dnadecoration').html()
-    dna += $('#dnadecorationMid').html()
-    dna += $('#dnadecorationSides').html()
-    dna += $('#dnaanimation').html()
-    dna += $('#dnaspecial').html()
+    dna += $('.dnabody').html()
+    dna += $('.dnamouth').html()
+    dna += $('.dnaeyes').html()
+    dna += $('.dnaears').html()
+    dna += $('.dnashape').html()
+    dna += $('.dnadecoration').html()
+    dna += $('.dnadecorationMid').html()
+    dna += $('.dnadecorationSides').html()
+    dna += $('.dnaanimation').html()
+    dna += $('.dnaspecial').html()
 
     return parseInt(dna)
 }

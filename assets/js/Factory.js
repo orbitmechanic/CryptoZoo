@@ -17,11 +17,11 @@ function genColors(){
 //This function code needs to modified so that it works with Your cat code.
 function headColor(color,code) {
     //This changes the color of the cat
-    $('.bun__head, .bun__chest').css('background', '#' + color)  
+    $('.head, .chest').css('background', '#' + color)  
     //This updates text of the badge next to the slider
     $('#headcode').html('code: ' + code) 
     //This updates the body color part of the DNA that is displayed below the cat
-    $('#dnabody').html(code) 
+    $('.dnabody').html(code) 
 }
 
 
@@ -30,7 +30,7 @@ function headColor(color,code) {
 //###################################################
 function eyeVariation(num) {
 
-    $('#dnashape').html(num)
+    $('.dnashape').html(num)
     switch (num) {
         case 1:
             normalEyes()
@@ -40,7 +40,7 @@ function eyeVariation(num) {
 }
 
 function decorationVariation(num) {
-    $('#dnadecoration').html(num)
+    $('.dnadecoration').html(num)
     switch (num) {
         case 1:
             $('#decorationName').html('Basic')
@@ -50,27 +50,27 @@ function decorationVariation(num) {
 }
 
 async function normalEyes() {
-    await $('.bun__eye').find('span').css('border', 'none')
+    await $('.eye').find('span').css('border', 'none')
 }
 
 async function normaldecoration() {
     //Remove all style from other decorations
     //In this way we can also use normalDecoration() to reset the decoration style
-    $('.bun__head-dots').css({ 
+    $('.head-dots').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "48px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "0 0 50% 50%" })
-    $('.bun__head-dots_first').css({ 
+    $('.head-dots_first').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "35px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "50% 0 50% 50%" })
-    $('.bun__head-dots_second').css({ 
+    $('.head-dots_second').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "35px", 
