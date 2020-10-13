@@ -17,7 +17,7 @@ function genColors(){
 //This function code needs to modified so that it works with Your cat code.
 function headColor(color,code) {
     //This changes the color of the cat
-    $('.cat__head, .cat__chest').css('background', '#' + color)  
+    $('.bun__head, .bun__chest').css('background', '#' + color)  
     //This updates text of the badge next to the slider
     $('#headcode').html('code: ' + code) 
     //This updates the body color part of the DNA that is displayed below the cat
@@ -50,27 +50,27 @@ function decorationVariation(num) {
 }
 
 async function normalEyes() {
-    await $('.cat__eye').find('span').css('border', 'none')
+    await $('.bun__eye').find('span').css('border', 'none')
 }
 
 async function normaldecoration() {
     //Remove all style from other decorations
     //In this way we can also use normalDecoration() to reset the decoration style
-    $('.cat__head-dots').css({ 
+    $('.bun__head-dots').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "48px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "0 0 50% 50%" })
-    $('.cat__head-dots_first').css({ 
+    $('.bun__head-dots_first').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "35px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "50% 0 50% 50%" })
-    $('.cat__head-dots_second').css({ 
+    $('.bun__head-dots_second').css({ 
         "transform": 
             "rotate(0deg)", 
             "height": "35px", 

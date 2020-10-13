@@ -1,12 +1,30 @@
+
+
 .catBox {
     background-color: #e2efff;
     border-radius: 10px;
     padding-top: 50px;
     padding-left: 65px;
     padding-bottom: 100px;
+    position: relative;
+}
+
+.bunBox {
+    background-color: #e2efff;
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-left: 65px;
+    padding-bottom: 100px;
+    position: relative;
 }
 
 .cattributes {
+    padding: 25px;
+    background-color: #ededed;
+    border-radius: 10px;
+}
+
+.bunttributes {
     padding: 25px;
     background-color: #ededed;
     border-radius: 10px;
@@ -16,5 +34,4 @@
     position: absolute;
     left:20px;
     bottom: 5px;
-
 }
