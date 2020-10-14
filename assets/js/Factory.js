@@ -52,13 +52,7 @@ function UpdateEarColor(color,code) {
     $('.dnaEarColor').html(code) 
 }
 
-
-//###################################################
-//Functions below will be used later on in the project
-//###################################################
 function SetEyeVariation(num) {
-
-    const jQSearchStr = '.pupil-left, pupil-right';
 
     // Set DNA code dispay
     $('.dnaEyeShape').html(num)
@@ -78,11 +72,37 @@ function SetEyeVariation(num) {
             $('.eye').find('span').css('border-bottom','15px solid');
             $('#EyeShapeName').html('Sleepy'); 
             break
+        case 4:
+            resetEyes();
+            $('.eye').find('span').css('border-left','15px solid');
+            $('#EyeShapeName').html('Right'); 
+            break
+        case 5:
+            resetEyes();
+            $('.eye').find('span').css('border-right','15px solid');
+            $('#EyeShapeName').html('Left'); 
+            break
+        case 6:
+            resetEyes();
+            $('.eye').find('span').css('border-top','15px solid');
+            $('.pupil-right').css('transform','rotateZ(-15deg)');
+            $('.pupil-left').css('transform','rotateZ(15deg)');
+            $('#EyeShapeName').html('Evil'); 
+            break
+        case 7:
+            resetEyes();
+            $('.eye').find('span').css('border-top','15px solid');
+            $('.pupil-right').css('transform','rotateZ(15deg)');
+            $('.pupil-left').css('transform','rotateZ(-15deg)');
+            $('#EyeShapeName').html('Happy'); 
+            break
         default:
             console.log('Recieved unhandled eye variation code:' + num);
     }
     function resetEyes() {
         $('.eye').find('span').css('border', 'none');
+        $('.pupil-right').css('transform','rotateZ(0deg)');
+        $('.pupil-left').css('transform','rotateZ(0deg)');
     }
 }
 

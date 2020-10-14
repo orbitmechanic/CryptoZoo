@@ -51,17 +51,20 @@ function getDna(){
 }
 
 function renderAnimal(dna){
-  UpdateFurColor(colors[dna.furColor],dna.furColor)
-  $('#furColorControl').val(dna.furColor)
+  UpdateFurColor(colors[dna.furColor],dna.furColor);
+  $('#furColorControl').val(dna.furColor);
 
-  UpdateUnderFurColor(colors[dna.underFurColor],dna.underFurColor)
-  $('#UnderfurColorControl').val(dna.underFurColor)
+  UpdateUnderFurColor(colors[dna.underFurColor],dna.underFurColor);
+  $('#UnderfurColorControl').val(dna.underFurColor);
 
-  UpdateEyeColor(colors[dna.eyesColor],dna.eyesColor)
-  $('#EyeColorControl').val(dna.eyesColor)
+  UpdateEyeColor(colors[dna.eyesColor],dna.eyesColor);
+  $('#EyeColorControl').val(dna.eyesColor);
 
-  UpdateEarColor(colors[dna.earsColor],dna.earsColor)
-  $('#EarColorControl').val(dna.earsColor)
+  UpdateEarColor(colors[dna.earsColor],dna.earsColor);
+  $('#EarColorControl').val(dna.earsColor);
+
+  SetEyeVariation(dna.eyesShape);
+  $('#EyeShapeControl').val(dna.eyesShape);
 }
 
 // Changing animal colors
