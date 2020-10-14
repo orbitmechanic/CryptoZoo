@@ -58,7 +58,7 @@ function UpdateEarColor(color,code) {
 //###################################################
 function eyeVariation(num) {
 
-    $('.dnashape').html(num)
+    $('.dnaEyeShape').html(num)
     switch (num) {
         case 1:
             normalEyes()
