@@ -56,6 +56,7 @@ function renderAnimal(dna){
 
 // Changing animal colors
 $('#bodycolor').change(()=>{
+    console.log($('#bodycolor').val());
     var colorVal = $('#bodycolor').val()
     headColor(colors[colorVal],colorVal)
 })

@@ -16,6 +16,7 @@ function genColors(){
 
 //This function code needs to modified so that it works with Your cat code.
 function headColor(color,code) {
+    console.log('Hello from headColor()');
     //This changes the color of the cat
     $('.head, .chest').css('background', '#' + color)  
     //This updates text of the badge next to the slider
