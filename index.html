@@ -15,185 +15,202 @@
   <link rel="stylesheet" href="assets/css/factory.css">
   <link rel="stylesheet" href="assets/css/frontend.css">
 </head>
-    <body>
-      
-        <div class="jumbotron fluid" style="margin-top: 0vh; margin-bottom: 1vh; text-align:center;">
-            <h1 class="c-black">CryptoZoo-Factory</h1>
-            <p class="c-black">Create your custom cryptanimal.</p>
+<body>
+    
+    <div class="jumbotron fluid" id='factory-header'>
+        <h1 class="c-black">CryptoZoo-Factory</h1>
+        <p class="c-black">Create your custom cryptanimal.</p>
+    </div>
+
+    <div class="row" style='margin-left:5vh;'>
+
+        <div id="demo" class="col-lg-4 carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+            </ul>
+            
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Bunny ------------------------------------------------>
+                    <div class='bunbox m-2 light-b-shadow'>
+                        <div class='bun'>
+                            <div class='bun ear'>
+                                <div class="bun ear--left">
+                                    <div class="bun ear--left-inside"></div>
+                                </div>
+                                <div class="bun ear--right">
+                                    <div class="bun ear--right-inside"></div>
+                                </div>
+                            </div>
+                            <div class='bun head'>
+                                <div class="bun head-dots">
+                                    <div class="bun head-dots_first"></div>
+                                    <div class="bun head-dots_second"></div>
+                                </div>
+                                <div class="bun eye">
+                                    <div class="bun eye--left">
+                                        <span class="bun pupil-left"></span>
+                                    </div>
+                                    <div class="bun eye--right">
+                                        <span class="bun pupil-right"></span>
+                                    </div>
+                                </div>
+
+                                <div class="bun nose"></div>
+                                <div class="bun mouth-contour"></div>
+                                <div class="bun mouth-left"></div>
+                                <div class="bun mouth-right"></div>
+                                <div class="bun whiskers-left"></div>
+                                <div class="bun whiskers-right"></div>
+                            </div>
+
+                            <div class='bun body'>
+                                
+                                <div class="bun chest"></div>
+                                <div class="bun chest_inner"></div>
+
+                                <div class="bun paw-left"></div>
+                                <div class="bun paw-left_rear"></div>
+
+                                <div class="bun paw-right"></div>
+                                <div class="bun paw-right_rear"></div>
+
+
+                                <div class="bun tail"></div>
+                            </div>
+                        </div>
+
+                        <div class="dnaDiv">
+                            <b>Bunny DNA:
+                                <!-- Colors Codes -->
+                                <span class="dnabody"></span>
+                                <span class="dnamouth"></span>
+                                <span class="dnaeyes"></span>
+                                <span class="dnaears"></span>
+                            
+                                <!-- Attribute Codes -->
+                                <span class="dnashape"></span>
+                                <span class="dnadecoration"></span>
+                                <span class="dnadecorationMid"></span>
+                                <span class="dnadecorationSides"></span>
+                                <span class="dnadanimation"></span>
+                                <span class="dnaspecial"></span>
+                            </b>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Kitty ------------------------------------------------->
+                    <div class="catBox m-2 light-b-shadow">
+                        <div class="cat">
+                            <div class="cat ear">
+                                <div class="cat ear--left">
+                                    <div class="cat ear--left-inside"></div>
+                                </div>
+                                <div class="cat ear--right">
+                                    <div class="cat ear--right-inside"></div>
+                                </div>
+                            </div>
+
+                            <div class="cat head">
+                                <div class="cat head-dots">
+                                    <div class="cat head-dots_first"></div>
+                                    <div class="cat head-dots_second"></div>
+                                </div>
+                                <div class="cat eye">
+                                    <div class="cat eye--left">
+                                        <span class="cat pupil-left"></span>
+                                    </div>
+                                    <div class="cat eye--right">
+                                        <span class="cat pupil-right"></span>
+                                    </div>
+                                </div>
+                                <div class="cat nose"></div>
+
+                                <div class="cat mouth-contour"></div>
+                                <div class="cat mouth-left"></div>
+                                <div class="cat mouth-right"></div>
+
+                                <div class="cat whiskers-left"></div>
+                                <div class="cat whiskers-right"></div>
+                            </div>
+
+                            <div class="cat body">
+
+                                <div class="cat chest"></div>
+                                <div class="cat chest_inner"></div>
+
+
+                                <div class="cat paw-left"></div>
+                                <div class="cat paw-left_rear"></div>
+
+
+                                <div class="cat paw-right"></div>
+                                <div class="cat paw-right_rear"></div>
+
+
+                                <div class="cat tail"></div>
+                            </div>
+                        </div>
+
+                        <div class="dnaDiv" id="bunDNA">
+                            <b>Kitty DNA:
+                                <!-- Colors -->
+                                    <span class="dnabody"></span>
+                                    <span class="dnamouth"></span>
+                                    <span class="dnaeyes"></span>
+                                    <span class="dnaears"></span>
+                                
+                                    <!-- Cattributes -->
+                                    <span class="dnashape"></span>
+                                    <span class="dnadecoration"></span>
+                                    <span class="dnadecorationMid"></span>
+                                    <span class="dnadecorationSides"></span>
+                                    <span class="dnadanimation"></span>
+                                    <span class="dnaspecial"></span>
+                            </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+            
         </div>
 
-        <div class="row" style='margin-left:5vh;'>
-
-            <!-- Bunny -------------------------------------------------------------------------->
-            <div class='col-lg-3 bunbox m-2 light-b-shadow'>
-                <div class='bun'>
-                    <div class='bun ear'>
-                        <div class="bun ear--left">
-                            <div class="bun ear--left-inside"></div>
-                        </div>
-                        <div class="bun ear--right">
-                            <div class="bun ear--right-inside"></div>
-                        </div>
-                    </div>
-                    <div class='bun head'>
-                        <div class="bun head-dots">
-                            <div class="bun head-dots_first"></div>
-                            <div class="bun head-dots_second"></div>
-                        </div>
-                        <div class="bun eye">
-                            <div class="bun eye--left">
-                                <span class="bun pupil-left"></span>
-                            </div>
-                            <div class="bun eye--right">
-                                <span class="bun pupil-right"></span>
-                            </div>
-                        </div>
-                        <div class="bun nose"></div>
-
-                        <div class="bun mouth-contour"></div>
-                        <div class="bun mouth-left"></div>
-                        <div class="bun mouth-right"></div>
-
-                        <div class="bun whiskers-left"></div>
-                        <div class="bun whiskers-right"></div>
-                    </div>
-
-                    <div class='bun body'>
-                        
-                        <div class="bun chest"></div>
-                        <div class="bun chest_inner"></div>
-
-
-                        <div class="bun paw-left"></div>
-                        <div class="bun paw-left_inner"></div>
-
-
-                        <div class="bun paw-right"></div>
-                        <div class="bun paw-right_inner"></div>
-
-
-                        <div class="bun tail"></div>
-                    </div>
-                </div>
-
-                <div class="dnaDiv" id="bunDNA">
-                    <b>
-                        DNA:
-                        <!-- Colors -->
-                            <span class="dnabody"></span>
-                            <span class="dnamouth"></span>
-                            <span class="dnaeyes"></span>
-                            <span class="dnaears"></span>
-                        
-                            <!-- Cattributes -->
-                            <span class="dnashape"></span>
-                            <span class="dnadecoration"></span>
-                            <span class="dnadecorationMid"></span>
-                            <span class="dnadecorationSides"></span>
-                            <span class="dnadanimation"></span>
-                            <span class="dnaspecial"></span>
-                    </b>
+        <div class="col-lg-5 cattributes m-2 light-b-shadow">
+            <!-- Cat colors -->
+            <div id="catColors">
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Head and body</b>
+                        <span class="badge badge-dark ml-2" id="headcode"></span>
+                    </label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
                 </div>
             </div>
-
-            <!-- Kitty -------------------------------------------------------------------------->
-            <div class="col-lg-3 catBox m-2 light-b-shadow">
-                <div class="cat">
-                    <div class="cat ear">
-                        <div class="cat ear--left">
-                            <div class="cat ear--left-inside"></div>
-                        </div>
-                        <div class="cat ear--right">
-                            <div class="cat ear--right-inside"></div>
-                        </div>
-                    </div>
-
-                    <div class="cat head">
-                        <div class="cat head-dots">
-                            <div class="cat head-dots_first"></div>
-                            <div class="cat head-dots_second"></div>
-                        </div>
-                        <div class="cat eye">
-                            <div class="cat eye--left">
-                                <span class="cat pupil-left"></span>
-                            </div>
-                            <div class="cat eye--right">
-                                <span class="cat pupil-right"></span>
-                            </div>
-                        </div>
-                        <div class="cat nose"></div>
-
-                        <div class="cat mouth-contour"></div>
-                        <div class="cat mouth-left"></div>
-                        <div class="cat mouth-right"></div>
-
-                        <div class="cat whiskers-left"></div>
-                        <div class="cat whiskers-right"></div>
-                    </div>
-
-                    <div class="cat body">
-
-                        <div class="cat chest"></div>
-                        <div class="cat chest_inner"></div>
-
-
-                        <div class="cat paw-left"></div>
-                        <div class="cat paw-left_inner"></div>
-
-
-                        <div class="cat paw-right"></div>
-                        <div class="cat paw-right_inner"></div>
-
-
-                        <div class="cat tail"></div>
-                    </div>
-                </div>
-
-                <div class="dnaDiv" id="bunDNA">
-                    <b>
-                        DNA:
-                        <!-- Colors -->
-                            <span class="dnabody"></span>
-                            <span class="dnamouth"></span>
-                            <span class="dnaeyes"></span>
-                            <span class="dnaears"></span>
-                        
-                            <!-- Cattributes -->
-                            <span class="dnashape"></span>
-                            <span class="dnadecoration"></span>
-                            <span class="dnadecorationMid"></span>
-                            <span class="dnadecorationSides"></span>
-                            <span class="dnadanimation"></span>
-                            <span class="dnaspecial"></span>
-                    </b>
-                </div>
-                
-            </div>
-
-            <div class="col-lg-5 cattributes m-2 light-b-shadow">
-                <!-- Cat colors -->
-                <div id="catColors">
-                    <div class="form-group">
-                        <label for="formControlRange">
-                            <b>Head and body</b>
-                            <span class="badge badge-dark ml-2" id="headcode"></span>
-                        </label>
-                        <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <br>
 
-    </body>
+    </div>
+    <br>
+</body>
 
-    <footer align="center">
-        <p>Ivan on Tech Academy Bootcamp July 2020, Orbital edition.</p>
-    </footer>
+<footer align="center">
+    <p>Ivan on Tech Academy Bootcamp July 2020, Orbital edition.</p>
+</footer>
 
-    <script src="assets/js/colors.js"></script>
-    <script src="assets/js/dna.js"></script>
-    <script src="assets/js/Factory.js"></script>
+<script src="assets/js/colors.js"></script>
+<script src="assets/js/dna.js"></script>
+<script src="assets/js/Factory.js"></script>
 
 </html>

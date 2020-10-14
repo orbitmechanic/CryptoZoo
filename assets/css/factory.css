@@ -1,4 +1,13 @@
-
+#factory-header {
+    margin-top: 0vh; 
+    margin-bottom: 1vh; 
+    text-align:center;
+    background-image: url('../images/biology.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+}
 
 .catBox {
     background-color: #e2efff;
@@ -6,6 +15,7 @@
     padding-top: 50px;
     padding-left: 65px;
     padding-bottom: 100px;
+    height: 380px;
     position: relative;
 }
 
@@ -15,6 +25,7 @@
     padding-top: 50px;
     padding-left: 65px;
     padding-bottom: 100px;
+    height: 380px;
     position: relative;
 }
 

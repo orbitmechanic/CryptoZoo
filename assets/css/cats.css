@@ -57,7 +57,8 @@ body {
 .cat.ear {
     position: relative;
 }
-.cat.ear--left, .cat.ear--right {
+.cat.ear--left, 
+.cat.ear--right {
     position: absolute;
     top: -8px;
     width: 150px;
@@ -77,7 +78,8 @@ body {
     transform: rotate(170deg);
     left: 94px;
 }
-.cat.ear--left-inside, .cat.ear--right-inside {
+.cat.ear--left-inside, 
+.cat.ear--right-inside {
     width: 108px;
     height: 108px;
     border-radius: 90% 0 90% 0;
@@ -89,7 +91,8 @@ body {
     left: -16px;
     display: flex;
 }
-.cat.eye--left, .cat.eye--right {
+.cat.eye--left, 
+.cat.eye--right {
     width: 49px;
     height: 49px;
     background: #fff;
@@ -172,15 +175,24 @@ body {
 .cat.mouth-right {
     left: 108px;
 }
-.cat.whiskers-left, .cat.whiskers-right {
+.cat.whiskers-left, 
+.cat.whiskers-right {
     position: relative;
 }
-.cat.whiskers-left, .cat.whiskers-right, .cat.whiskers-left::after, .cat.whiskers-right::after, .cat.whiskers-left::before, .cat.whiskers-right::before {
+.cat.whiskers-left, 
+.cat.whiskers-right, 
+.cat.whiskers-left::after, 
+.cat.whiskers-right::after, 
+.cat.whiskers-left::before, 
+.cat.whiskers-right::before {
     width: 32px;
     height: 5px;
     background: #373737;
 }
-.cat.whiskers-left::before, .cat.whiskers-right::before, .cat.whiskers-left::after, .cat.whiskers-right::after {
+.cat.whiskers-left::before, 
+.cat.whiskers-right::before,
+.cat.whiskers-left::after, 
+.cat.whiskers-right::after {
     content: '';
     position: absolute;
     left: 0;
@@ -234,7 +246,8 @@ body {
     background: #fff3e0;
     z-index: 4;
 }
-.cat.paw-left, .cat.paw-right {
+.cat.paw-left, 
+.cat.paw-right {
     position: absolute;
     top: 24px;
     width: 28px;
@@ -247,7 +260,7 @@ body {
     z-index: 5;
 }
 
-.cat.paw-right_inner {
+.cat.paw-right_rear {
     content: '';
     position: absolute;
     top: 40px;
@@ -260,7 +273,7 @@ body {
     z-index: 2;
 }
 
-.cat.paw-left_inner {
+.cat.paw-left_rear {
     content: '';
     position: absolute;
     top: 40px;
