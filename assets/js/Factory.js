@@ -20,7 +20,7 @@ function headColor(color,code) {
     //This changes the color of the cat
     $('.head, .chest').css('background', '#' + color)  
     //This updates text of the badge next to the slider
-    $('#headcode').html('code: ' + code) 
+    $('#furColorCode').html('code: ' + code) 
     //This updates the body color part of the DNA that is displayed below the cat
     $('.dnabody').html(code) 
 }

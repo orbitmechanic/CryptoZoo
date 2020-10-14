@@ -51,12 +51,12 @@ function getDna(){
 
 function renderAnimal(dna){
     headColor(colors[dna.headcolor],dna.headcolor)
-    $('#bodycolor').val(dna.headcolor)
+    $('#furColorControl').val(dna.headcolor)
 }
 
 // Changing animal colors
-$('#bodycolor').change(()=>{
-    console.log($('#bodycolor').val());
-    var colorVal = $('#bodycolor').val()
+$('#furColorControl').change(()=>{
+    console.log($('#furColorControl').val());
+    var colorVal = $('#furColorControl').val()
     headColor(colors[colorVal],colorVal)
 })
