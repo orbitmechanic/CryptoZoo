@@ -87,10 +87,10 @@
                         <div class="dnaDiv">
                             <b>Bunny DNA:
                                 <!-- Colors Codes -->
-                                <span class="dnabody"></span>
-                                <span class="dnamouth"></span>
-                                <span class="dnaeyes"></span>
-                                <span class="dnaears"></span>
+                                <span class="dnaFurColor"></span>
+                                <span class="dnaUnderFurColor"></span>
+                                <span class="dnaEyeColor"></span>
+                                <span class="dnaEarColor"></span>
                             
                                 <!-- Attribute Codes -->
                                 <span class="dnashape"></span>
@@ -160,18 +160,18 @@
                         <div class="dnaDiv" id="bunDNA">
                             <b>Kitty DNA:
                                 <!-- Colors -->
-                                    <span class="dnabody"></span>
-                                    <span class="dnamouth"></span>
-                                    <span class="dnaeyes"></span>
-                                    <span class="dnaears"></span>
-                                
-                                    <!-- Cattributes -->
-                                    <span class="dnashape"></span>
-                                    <span class="dnadecoration"></span>
-                                    <span class="dnadecorationMid"></span>
-                                    <span class="dnadecorationSides"></span>
-                                    <span class="dnadanimation"></span>
-                                    <span class="dnaspecial"></span>
+                                <span class="dnaFurColor"></span>
+                                <span class="dnaUnderFurColor"></span>
+                                <span class="dnaEyeColor"></span>
+                                <span class="dnaEarColor"></span>
+                            
+                                <!-- Cattributes -->
+                                <span class="dnashape"></span>
+                                <span class="dnadecoration"></span>
+                                <span class="dnadecorationMid"></span>
+                                <span class="dnadecorationSides"></span>
+                                <span class="dnadanimation"></span>
+                                <span class="dnaspecial"></span>
                             </b>
                         </div>
                     </div>
@@ -190,13 +190,38 @@
 
         <div class="col-lg-5 cattributes m-2 light-b-shadow">
             <!-- Cat colors -->
-            <div id="catColors">
+            <div>
                 <div class="form-group">
                     <label for="formControlRange">
-                        <b>Head and body</b>
-                        <span class="badge badge-dark ml-2" id="headcode"></span>
+                        <b>Fur Color</b>
+                        <span class="badge badge-dark ml-2" id="furColorCode"></span>
                     </label>
-                    <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
+                    <input class="form-control-range" id="furColorControl" 
+                        type="range" min="10" max="98" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Under Fur Color</b>
+                        <span class="badge badge-dark ml-2" id="UnderfurColorCode"></span>
+                    </label>
+                    <input class="form-control-range" id="UnderfurColorControl" 
+                        type="range" min="10" max="98" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Eye and Tail Color</b>
+                        <span class="badge badge-dark ml-2" id="EyeColorCode"></span>
+                    </label>
+                    <input class="form-control-range" id="EyeColorControl" 
+                        type="range" min="10" max="98" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Ear and Paw Color</b>
+                        <span class="badge badge-dark ml-2" id="EarColorCode"></span>
+                    </label>
+                    <input class="form-control-range" id="EarColorControl" 
+                        type="range" min="10" max="98" >
                 </div>
             </div>
         </div>

@@ -3,8 +3,8 @@ var colors = Object.values(allColors())
 
 var defaultDNA = {
     // Colors
-    "headcolor" : 10,
-    "mouthColor" : 13,
+    "furColor" : 10,
+    "underFurColor" : 13,
     "eyesColor" : 96,
     "earsColor" : 10,
     // Attributes
@@ -18,10 +18,10 @@ var defaultDNA = {
 
 // when page load
 $( document ).ready(function() {
-  $('.dnabody').html(defaultDNA.headColor);
-  $('.dnamouth').html(defaultDNA.mouthColor);
-  $('.dnaeyes').html(defaultDNA.eyesColor);
-  $('.dnaears').html(defaultDNA.earsColor);
+  $('.dnaFurColor').html(defaultDNA.furColor);
+  $('.dnaUnderFurColor').html(defaultDNA.underFurColor);
+  $('.dnaEyeColor').html(defaultDNA.eyesColor);
+  $('.dnaEarColor').html(defaultDNA.earsColor);
     
 //   $('#dnashape').html(defaultDNA.eyesShape)
 //   $('#dnadecoration').html(defaultDNA.decorationPattern)
@@ -35,10 +35,10 @@ $( document ).ready(function() {
 
 function getDna(){
     var dna = ''
-    dna += $('.dnabody').html()
-    dna += $('.dnamouth').html()
-    dna += $('.dnaeyes').html()
-    dna += $('.dnaears').html()
+    dna += $('.dnaFurColor').html()
+    dna += $('.dnaUnderFurColor').html()
+    dna += $('.dnaEyeColor').html()
+    dna += $('.dnaEarColor').html()
     dna += $('.dnashape').html()
     dna += $('.dnadecoration').html()
     dna += $('.dnadecorationMid').html()
@@ -50,12 +50,37 @@ function getDna(){
 }
 
 function renderAnimal(dna){
-    headColor(colors[dna.headcolor],dna.headcolor)
-    $('#bodycolor').val(dna.headcolor)
+    UpdateFurColor(colors[dna.furColor],dna.furColor)
+    $('#furColorControl').val(dna.furColor)
+
+    UpdateUnderFurColor(colors[dna.underFurColor],dna.underFurColor)
+    $('#UnderfurColorControl').val(dna.underFurColor)
+
+    UpdateEyeColor(colors[dna.eyesColor],dna.eyesColor)
+    $('#EyeColorControl').val(dna.eyesColor)
+
+    UpdateEarColor(colors[dna.earsColor],dna.earsColor)
+    $('#EarColorControl').val(dna.earsColor)
 }
 
 // Changing animal colors
-$('#bodycolor').change(()=>{
-    var colorVal = $('#bodycolor').val()
-    headColor(colors[colorVal],colorVal)
+$('#furColorControl').change(()=>{
+    console.log($('#furColorControl').val());
+    var colorVal = $('#furColorControl').val()
+    UpdateFurColor(colors[colorVal],colorVal)
+})
+$('#UnderfurColorControl').change(()=>{
+  console.log($('#UnderfurColorControl').val());
+  var colorVal = $('#UnderfurColorControl').val()
+  UpdateUnderFurColor(colors[colorVal],colorVal)
+})
+$('#EyeColorControl').change(()=>{
+  console.log($('#EyeColorControl').val());
+  var colorVal = $('#EyeColorControl').val()
+  UpdateEyeColor(colors[colorVal],colorVal)
+})
+$('#EarColorControl').change(()=>{
+  console.log($('#EarColorControl').val());
+  var colorVal = $('#EarColorControl').val()
+  UpdateEarColor(colors[colorVal],colorVal)
 })
