@@ -14,15 +14,42 @@ function genColors(){
     return colors
 }
 
-//This function code needs to modified so that it works with Your cat code.
-function headColor(color,code) {
-    console.log('Hello from headColor()');
-    //This changes the color of the cat
-    $('.head, .chest').css('background', '#' + color)  
+function UpdateFurColor(color,code) {
+    console.log('Hello from UpdateFurColor()');
+    //This changes the fur color of the animal
+    $('.head, .chest, .ear--left, .ear--right').css('background', '#' + color)  
     //This updates text of the badge next to the slider
     $('#furColorCode').html('code: ' + code) 
-    //This updates the body color part of the DNA that is displayed below the cat
-    $('.dnabody').html(code) 
+    //This updates the fur color part of the DNA that is displayed below the animal
+    $('.dnaFurColor').html(code) 
+}
+function UpdateUnderFurColor(color,code) {
+    console.log('Hello from UpdateUnderFurColor()');
+    //This changes the under-fur color of the animal
+    $('.mouth-contour, .chest_inner').css('background', '#' + color)  
+    //This updates text of the badge next to the slider
+    $('#UnderfurColorCode').html('code: ' + code) 
+    //This updates the under-fur color part of the DNA that is displayed below the animal
+    $('.dnaUnderFurColor').html(code) 
+}
+function UpdateEyeColor(color,code) {
+    console.log('Hello from UpdateEyeColor()');
+    //This changes the eye color of the animal
+    $('.pupil-left, .pupil-right, .tail').css('background', '#' + color)  
+    //This updates text of the badge next to the slider
+    $('#EyeColorCode').html('code: ' + code) 
+    //This updates the eye color part of the DNA that is displayed below the animal
+    $('.dnaEyeColor').html(code) 
+}
+function UpdateEarColor(color,code) {
+    console.log('Hello from UpdateEarColor()');
+    //This changes the inner-ear color of the animal
+    $('.ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
+        .css('background', '#' + color)  
+    //This updates text of the badge next to the slider
+    $('#EarColorCode').html('code: ' + code) 
+    //This updates the inner-ear color part of the DNA that is displayed below the animal
+    $('.dnaEarColor').html(code) 
 }
 
 
