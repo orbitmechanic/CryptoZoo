@@ -2,11 +2,12 @@
 var colors = Object.values(allColors())
 
 var defaultDNA = {
+    // Colors
     "headcolor" : 10,
     "mouthColor" : 13,
     "eyesColor" : 96,
     "earsColor" : 10,
-    //Cattributes
+    // Attributes
     "eyesShape" : 1,
     "decorationPattern" : 1,
     "decorationMidcolor" : 13,
@@ -17,10 +18,10 @@ var defaultDNA = {
 
 // when page load
 $( document ).ready(function() {
-  $('#dnabody').html(defaultDNA.headColor);
-  $('#dnamouth').html(defaultDNA.mouthColor);
-  $('#dnaeyes').html(defaultDNA.eyesColor);
-  $('#dnaears').html(defaultDNA.earsColor);
+  $('.dnabody').html(defaultDNA.headColor);
+  $('.dnamouth').html(defaultDNA.mouthColor);
+  $('.dnaeyes').html(defaultDNA.eyesColor);
+  $('.dnaears').html(defaultDNA.earsColor);
     
 //   $('#dnashape').html(defaultDNA.eyesShape)
 //   $('#dnadecoration').html(defaultDNA.decorationPattern)
@@ -29,31 +30,31 @@ $( document ).ready(function() {
 //   $('#dnaanimation').html(defaultDNA.animation)
 //   $('#dnaspecial').html(defaultDNA.lastNum)
 
-  renderCat(defaultDNA)
+  renderAnimal(defaultDNA)
 });
 
 function getDna(){
     var dna = ''
-    dna += $('#dnabody').html()
-    dna += $('#dnamouth').html()
-    dna += $('#dnaeyes').html()
-    dna += $('#dnaears').html()
-    dna += $('#dnashape').html()
-    dna += $('#dnadecoration').html()
-    dna += $('#dnadecorationMid').html()
-    dna += $('#dnadecorationSides').html()
-    dna += $('#dnaanimation').html()
-    dna += $('#dnaspecial').html()
+    dna += $('.dnabody').html()
+    dna += $('.dnamouth').html()
+    dna += $('.dnaeyes').html()
+    dna += $('.dnaears').html()
+    dna += $('.dnashape').html()
+    dna += $('.dnadecoration').html()
+    dna += $('.dnadecorationMid').html()
+    dna += $('.dnadecorationSides').html()
+    dna += $('.dnaanimation').html()
+    dna += $('.dnaspecial').html()
 
     return parseInt(dna)
 }
 
-function renderCat(dna){
+function renderAnimal(dna){
     headColor(colors[dna.headcolor],dna.headcolor)
     $('#bodycolor').val(dna.headcolor)
 }
 
-// Changing cat colors
+// Changing animal colors
 $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
     headColor(colors[colorVal],colorVal)

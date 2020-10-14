@@ -1,11 +1,10 @@
-
 @font-face {
-  font-family: "Poppins";
-  src        : url("Poppins-Light.ttf");
+  font-family: "Typewriter";
+  src        : url("typewriterA602.ttf");
 }
 
 body {
-  font-family: Poppins;
+  font-family: Typewriter;
   font-weight: 500;
   letter-spacing: 1px; 
 }
