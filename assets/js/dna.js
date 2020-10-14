@@ -67,21 +67,28 @@ function renderAnimal(dna){
 // Changing animal colors
 $('#furColorControl').change(()=>{
     console.log($('#furColorControl').val());
-    var colorVal = $('#furColorControl').val()
-    UpdateFurColor(colors[colorVal],colorVal)
+    var colorVal = $('#furColorControl').val();
+    UpdateFurColor(colors[colorVal],colorVal);
 })
 $('#UnderfurColorControl').change(()=>{
   console.log($('#UnderfurColorControl').val());
-  var colorVal = $('#UnderfurColorControl').val()
-  UpdateUnderFurColor(colors[colorVal],colorVal)
+  var colorVal = $('#UnderfurColorControl').val();
+  UpdateUnderFurColor(colors[colorVal],colorVal);
 })
 $('#EyeColorControl').change(()=>{
   console.log($('#EyeColorControl').val());
-  var colorVal = $('#EyeColorControl').val()
-  UpdateEyeColor(colors[colorVal],colorVal)
+  var colorVal = $('#EyeColorControl').val();
+  UpdateEyeColor(colors[colorVal],colorVal);
 })
 $('#EarColorControl').change(()=>{
   console.log($('#EarColorControl').val());
-  var colorVal = $('#EarColorControl').val()
-  UpdateEarColor(colors[colorVal],colorVal)
+  var colorVal = $('#EarColorControl').val();
+  UpdateEarColor(colors[colorVal],colorVal);
+})
+
+// Changing animal attributes
+$('#EyeShapeControl').change(()=>{
+  console.log($('#EyeShapeControl').val());
+  var shapeCode = parseInt($('#EyeShapeControl').val()); // [1...7]
+  SetEyeVariation(shapeCode);
 })

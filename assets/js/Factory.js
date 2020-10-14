@@ -56,14 +56,33 @@ function UpdateEarColor(color,code) {
 //###################################################
 //Functions below will be used later on in the project
 //###################################################
-function eyeVariation(num) {
+function SetEyeVariation(num) {
 
+    const jQSearchStr = '.pupil-left, pupil-right';
+
+    // Set DNA code dispay
     $('.dnaEyeShape').html(num)
+
     switch (num) {
         case 1:
-            normalEyes()
-            $('#eyeName').html('Basic')
+            resetEyes();
+            $('#EyeShapeName').html('Basic'); 
             break
+        case 2:
+            resetEyes();
+            $('.eye').find('span').css('border-top','15px solid');
+            $('#EyeShapeName').html('Chill'); 
+            break
+        case 3:
+            resetEyes();
+            $('.eye').find('span').css('border-bottom','15px solid');
+            $('#EyeShapeName').html('Sleepy'); 
+            break
+        default:
+            console.log('Recieved unhandled eye variation code:' + num);
+    }
+    function resetEyes() {
+        $('.eye').find('span').css('border', 'none');
     }
 }
 
@@ -75,10 +94,6 @@ function decorationVariation(num) {
             normaldecoration()
             break
     }
-}
-
-async function normalEyes() {
-    await $('.eye').find('span').css('border', 'none')
 }
 
 async function normaldecoration() {
