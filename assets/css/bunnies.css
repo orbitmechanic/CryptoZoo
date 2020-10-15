@@ -25,7 +25,7 @@ body {
         translateY(25px);
     z-index: 60;
 }
-.bun.head-dots {
+.bun.marking {
     position: absolute;
     left: 47px;
     height: 48px;
@@ -36,7 +36,7 @@ body {
     border-radius: 0 0 50% 50%;
     z-index:70
 }
- .bun.head-dots_first {
+ .bun.marking-left {
     position: absolute;
     content: '';
     top: 1px;
@@ -46,7 +46,7 @@ body {
     left: -20px;
     border-radius: 50% 0 50% 50%;
 }
-.bun.head-dots_second {
+.bun.marking-right {
     position: absolute;
     content: '';
     top: 1px;

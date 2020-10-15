@@ -1,20 +1,22 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academy kitties </title>
-  <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <script src="assets/bootstrap/js/popper.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="assets/css/mystyle.css">
-  <link rel="stylesheet" href="assets/css/cats.css">
-  <link rel='stylesheet' href='assets/css/bunnies.css'>
-  <link rel="stylesheet" href="assets/css/colors.css">
-  <link rel="stylesheet" href="assets/css/factory.css">
-  <link rel="stylesheet" href="assets/css/frontend.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy kitties </title>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="assets/css/cats.css">
+    <link rel='stylesheet' href='assets/css/bunnies.css'>
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/factory.css">
+    <link rel="stylesheet" href="assets/css/frontend.css">
 </head>
+
 <body>
     
     <div class="jumbotron fluid" id='factory-header'>
@@ -47,9 +49,9 @@
                                 </div>
                             </div>
                             <div class='bun head'>
-                                <div class="bun head-dots">
-                                    <div class="bun head-dots_first"></div>
-                                    <div class="bun head-dots_second"></div>
+                                <div class="bun marking">
+                                    <div class="bun marking-left"></div>
+                                    <div class="bun marking-right"></div>
                                 </div>
                                 <div class="bun eye">
                                     <div class="bun eye--left">
@@ -93,12 +95,12 @@
                                 <span class="dnaEarColor"></span>
                             
                                 <!-- Attribute Codes -->
-                                <span class="dnashape"></span>
-                                <span class="dnadecoration"></span>
-                                <span class="dnadecorationMid"></span>
-                                <span class="dnadecorationSides"></span>
-                                <span class="dnadanimation"></span>
-                                <span class="dnaspecial"></span>
+                                <span class="dnaEyeShape"></span>
+                                <span class="dnaMarkingShape"></span>
+                                <span class="dnaMarkingMidColor"></span>
+                                <span class="dnaMarkingSidesColor"></span>
+                                <span class="dnaAnimation"></span>
+                                <span class="dnaSpecial"></span>
                             </b>
                         </div>
                     </div>
@@ -117,9 +119,9 @@
                             </div>
 
                             <div class="cat head">
-                                <div class="cat head-dots">
-                                    <div class="cat head-dots_first"></div>
-                                    <div class="cat head-dots_second"></div>
+                                <div class="cat marking">
+                                    <div class="cat marking-left"></div>
+                                    <div class="cat marking-right"></div>
                                 </div>
                                 <div class="cat eye">
                                     <div class="cat eye--left">
@@ -166,12 +168,12 @@
                                 <span class="dnaEarColor"></span>
                             
                                 <!-- Cattributes -->
-                                <span class="dnashape"></span>
-                                <span class="dnadecoration"></span>
-                                <span class="dnadecorationMid"></span>
-                                <span class="dnadecorationSides"></span>
-                                <span class="dnadanimation"></span>
-                                <span class="dnaspecial"></span>
+                                <span class="dnaEyeShape"></span>
+                                <span class="dnaMarkingShape"></span>
+                                <span class="dnaMarkingMidColor"></span>
+                                <span class="dnaMarkingSidesColor"></span>
+                                <span class="dnaAnimation"></span>
+                                <span class="dnaSpecial"></span>
                             </b>
                         </div>
                     </div>
@@ -189,8 +191,10 @@
         </div>
 
         <div class="col-lg-5 cattributes m-2 light-b-shadow">
-            <!-- Cat colors -->
+            
             <div>
+                <!-- Color Controls -------------------------------------------->
+
                 <div class="form-group">
                     <label for="formControlRange">
                         <b>Fur Color</b>
@@ -223,6 +227,41 @@
                     <input class="form-control-range" id="EarColorControl" 
                         type="range" min="10" max="98" >
                 </div>
+
+                <!-- Attribute Controls -------------------------------------------->
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Eye Shape</b>
+                        <span class="badge badge-dark ml-2" id="EyeShapeName"></span>
+                    </label>
+                    <input class="form-control-range" id="EyeShapeControl" 
+                        type="range" min="1" max="7" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Marking Shape</b>
+                        <span class="badge badge-dark ml-2" id="MarkingShapeName"></span>
+                    </label>
+                    <input class="form-control-range" id="MarkingShapeControl" 
+                        type="range" min="1" max="5" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Center Marking Color</b>
+                        <span class="badge badge-dark ml-2" id="MarkingMidColorCode"></span>
+                    </label>
+                    <input class="form-control-range" id="MarkingMidColorControl" 
+                        type="range" min="10" max="98" >
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange">
+                        <b>Outer Marking Color</b>
+                        <span class="badge badge-dark ml-2" id="MarkingSideColorCode"></span>
+                    </label>
+                    <input class="form-control-range" id="MarkingSideColorControl" 
+                        type="range" min="10" max="98" >
+                </div>
+
             </div>
         </div>
 
