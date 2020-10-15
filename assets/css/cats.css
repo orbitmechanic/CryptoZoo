@@ -22,7 +22,7 @@ body {
     background: #ffcc80;
     z-index: 20;
 }
-.cat.head-dots {
+.cat.marking {
     position: absolute;
     left: 101px;
     height: 48px;
@@ -33,7 +33,7 @@ body {
     border-radius: 0 0 50% 50%;
 }
 
- .cat.head-dots_first {
+ .cat.marking-left {
     position: absolute;
     content: '';
     top: 1px;
@@ -43,7 +43,7 @@ body {
     left: -20px;
     border-radius: 50% 0 50% 50%;
 }
-.cat.head-dots_second {
+.cat.marking-right {
     position: absolute;
     content: '';
     top: 1px;
