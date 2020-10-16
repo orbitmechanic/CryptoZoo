@@ -20,9 +20,9 @@ body {
     -webkit-border-radius: 55% 55% 45% 45%;
     border-radius: 50% 50% 45% 45%;
     background: #ffcc80;
-    transform: 
-        translateX(60px)
-        translateY(25px);
+    margin-left: 60px;
+    margin-top: 35px;
+    margin-bottom: -35px;
     z-index: 60;
 }
 .bun.marking {

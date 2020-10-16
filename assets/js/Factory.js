@@ -140,7 +140,8 @@ function SetEyeVariation(num) {
     }
     function resetEyes() {;
         // reset all used eye shape CSS parameters
-        console.log('Calling resetEyes() ...');
+        console.log('Calling SetEyeVariation(' + num + ')::resetEyes() ...');
+
         $('.eye').find('span').css('border', 'none');
         $('.pupil-right').css('transform','rotateZ(0deg)');
         $('.pupil-left').css('transform','rotateZ(0deg)');
@@ -148,7 +149,11 @@ function SetEyeVariation(num) {
 }
 
 function SetMarkingVariation(num) {
+    // Render marking shape CSS from given number
+    console.log('Calling SetMarkingVariation(' + num + ') ...');
+
     $('.dnaMarkingShape').html(num)
+
     switch (num) {
         case 1:
             $('#MarkingShapeName').html('Stripe');
@@ -217,6 +222,8 @@ function SetMarkingVariation(num) {
     }
     function resetDecoration() {
         // Reset all used marking CSS parameters 
+        console.log('Calling SetMarkingVariation(' + num + ')::resetDecoration() ...');
+
         $('.marking').css({ 
             "transform": "rotate(0deg)", 
             "height": "48px", 
@@ -238,4 +245,30 @@ function SetMarkingVariation(num) {
     }
 }
 
+function SetAnimation(num) {
+    // set the animal's CSS animation from code 
+    console.log('Calling SetAnimation(' + num + ') ...');
 
+    $('.dnaAnimation').html(num);
+
+    switch (num) {
+        case 1:
+            clearAnimation();
+            $('#AnimationCode').html('None');
+            break
+        case 2:
+            clearAnimation();
+            $('#AnimationCode').html('Rocking Head');
+            $('.head').addClass('rocking');
+            break
+        default:
+            console.log('Recieved unhandled animation code:' + num);
+    };
+    function clearAnimation(){
+        // clear animation setting from display
+        console.log('Calling SetAnimation(' + num + ')::clearAnimation()');
+
+        $('.head').removeClass('rocking'); // type 2
+        
+    }  
+}

@@ -1,0 +1,21 @@
+.rocking{
+    animation: rock 5s infinite;
+}
+@keyframes rock {
+      0% {transform: rotate( 0deg);}
+     25% {transform: rotate( 5deg);}
+     50% {transform: rotate( 0deg);}
+     75% {transform: rotate(-5deg);}
+    100% {transform: rotate( 0deg);}
+}
+
+.back_rocking{
+    animation: back_rock 5s infinite;
+}
+@keyframes rock {
+      0% {transform: rotate( 0deg);}
+     25% {transform: rotate(-5deg);}
+     50% {transform: rotate( 0deg);}
+     75% {transform: rotate( 5deg);}
+    100% {transform: rotate( 0deg);}
+}
