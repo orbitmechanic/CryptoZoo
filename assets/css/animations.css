@@ -1,0 +1,50 @@
+.rocking{
+    animation: rockHead 5s infinite;
+}
+@keyframes rockHead {
+      0%, 50%, 100% {transform: rotate( 0deg);}
+     25% {transform: rotate( 5deg);}
+     75% {transform: rotate(-5deg);}
+}
+
+.rockingLeftEar{
+    animation: rockLeftEar 2s infinite;
+}
+@keyframes rockLeftEar {
+    0%, 50%, 100% {transform: rotate( 95deg);}
+   25% {transform: rotate( 90deg);}
+   75% {transform: rotate(100deg);}
+}
+
+.rockingRightEar{
+    animation: rockRightEar 2s infinite;
+}
+@keyframes rockRightEar {
+    0%, 50%, 100% {transform: rotate( 170deg);}
+   25% {transform: rotate( 175deg);}
+   75% {transform: rotate( 165deg);}
+}
+
+.winkingEye{
+    animation: winking 3s infinite;
+}
+@keyframes winking {
+    0%, 49%, 51%, 100% {transform: rotateX(0deg);}
+    50%{transform:rotateX(45deg);}
+}
+
+.wiggleLeftWisker {
+    animation: wiggleLeft 2s infinite;
+}
+@keyframes wiggleLeft {
+    0%, 20%, 40%, 100% {transform: rotate(0deg);}
+    10%, 30% {transform: rotate(20deg);}
+}
+
+.wiggleRightWisker {
+    animation: wiggleRight 2s infinite;
+}
+@keyframes wiggleRight {
+    0%, 20%, 40%, 100% {transform: rotate(0deg);}
+    10%, 30% {transform: rotate(-20deg);}
+}

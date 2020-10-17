@@ -8,11 +8,11 @@ var defaultDNA = {
   "underFurColor" : 13,
   "eyesColor" : 96,
   "earsColor" : 10,
+  "markingMidColor" : 13,
+  "markingSidesColor" : 13,
   // Attributes
   "eyesShape" : 1,
   "markingShape" : 1,
-  "markingMidColor" : 13,
-  "markingSidesColor" : 13,
   "animation" :  1,
   "special" :  1,
 };
@@ -27,16 +27,41 @@ $( document ).ready(function() {
   $('.dnaUnderFurColor').html(defaultDNA.underFurColor);
   $('.dnaEyeColor').html(defaultDNA.eyesColor);
   $('.dnaEarColor').html(defaultDNA.earsColor);
+  $('.dnaMarkingMidColor').html(defaultDNA.markingMidColor);
+  $('.dnaMarkingSidesColor').html(defaultDNA.markingSidesColor);
 
   // Attribute codes
   $('.dnaEyeShape').html(defaultDNA.eyesShape);
   $('.dnaMarkingShape').html(defaultDNA.dnaMarkingShape);
-  $('.dnaMarkingMidColor').html(defaultDNA.markingMidColor);
-  $('.dnaMarkingSidesColor').html(defaultDNA.markingSidesColor);
   $('.dnaAnimation').html(defaultDNA.animation);
   $('.dnaSpecial').html(defaultDNA.special);
 
   renderAnimal(defaultDNA);
+
+    // Button actions
+    document.getElementById("dfltButton").onclick = function() {
+      console.log('Default button hit.')
+      renderAnimal(defaultDNA);
+    };
+  
+    document.getElementById("rndButton").onclick= function() {
+      console.log('Randomize button hit.')
+      var randomDNA = {
+        // Colors
+        "furColor" : Math.floor(Math.random()*89) + 10,
+        "underFurColor" : Math.floor(Math.random()*89) + 10,
+        "eyesColor" : Math.floor(Math.random()*89) + 10,
+        "earsColor" : Math.floor(Math.random()*89) + 10,
+        "markingMidColor" : Math.floor(Math.random()*89) + 10,
+        "markingSidesColor" : Math.floor(Math.random()*89) + 10,
+        // Attributes
+        "eyesShape" : Math.floor(Math.random()*8) + 1,
+        "markingShape" : Math.floor(Math.random()*4) + 1,
+        "animation" :  Math.floor(Math.random()*4) + 1,
+        "special" :  Math.floor(Math.random()*4) + 1,
+      };
+      renderAnimal(randomDNA);
+    }
 });
 
 function getDna(){
@@ -85,6 +110,9 @@ function renderAnimal(dna){
 
   UpdateMarkingSidesColor(colors[dna.markingSidesColor],dna.markingSidesColor);
   $('#MarkingSideColorControl').val(dna.markingSidesColor);
+
+  SetAnimation(dna.animation);
+  $('#AnimationControl').val(dna.animation);
 }
 
 // Control listeners ------------------------------------------------------------
@@ -96,41 +124,47 @@ $('#furColorControl').change(()=>{
     console.log('Changing fur color to ' + $('#furColorControl').val());
     var colorVal = $('#furColorControl').val();
     UpdateFurColor(colors[colorVal],colorVal);
-})
+});
 $('#UnderfurColorControl').change(()=>{
   console.log('Changing under fur color to ' + $('#UnderfurColorControl').val());
   var colorVal = $('#UnderfurColorControl').val();
   UpdateUnderFurColor(colors[colorVal],colorVal);
-})
+});
 $('#EyeColorControl').change(()=>{
   console.log('Changing eye color to ' + $('#EyeColorControl').val());
   var colorVal = $('#EyeColorControl').val();
   UpdateEyeColor(colors[colorVal],colorVal);
-})
+});
 $('#EarColorControl').change(()=>{
   console.log('Changing inner ear color to ' + $('#EarColorControl').val());
   var colorVal = $('#EarColorControl').val();
   UpdateEarColor(colors[colorVal],colorVal);
-})
+});
 $('#MarkingMidColorControl').change(()=>{
   console.log('Changing mid-marking color to ' + $('#MarkingMidColorControl').val());
   var colorVal = $('#MarkingMidColorControl').val();
   UpdateMarkingMidColor(colors[colorVal],colorVal);
-})
+});
 $('#MarkingSideColorControl').change(()=>{
   console.log('Changing outer marking color to ' + $('#MarkingSideColorControl').val());
   var colorVal = $('#MarkingSideColorControl').val();
   UpdateMarkingSidesColor(colors[colorVal],colorVal);
-})
+});
 
 // Changing animal attributes, sliders ranged [1...7]
 $('#EyeShapeControl').change(()=>{
   console.log('Changing eye shape to ' + $('#EyeShapeControl').val());
   var shapeCode = parseInt($('#EyeShapeControl').val()); 
   SetEyeVariation(shapeCode);
-})
+});
 $('#MarkingShapeControl').change(()=>{
   console.log('Changing marking shape to ' + $('#MarkingShapeControl').val());
   var shapeCode = parseInt($('#MarkingShapeControl').val()); 
   SetMarkingVariation(shapeCode);
-})
+});
+$('#AnimationControl').change(()=>{
+  console.log('Changing animation to ' + $('#AnimationControl').val());
+  var animationCode = parseInt($('#AnimationControl').val()); 
+  SetAnimation(animationCode);
+});
+

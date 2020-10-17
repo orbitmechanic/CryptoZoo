@@ -135,12 +135,25 @@ function SetEyeVariation(num) {
             $('.pupil-left').css('transform','rotateZ(-15deg)');
             $('#EyeShapeName').html('Happy'); 
             break
+        case 8:
+            resetEyes();
+            $('.eye').find('span').css('border-top','15px solid');
+            $('.eye').find('span').css('border-bottom','15px solid');
+            $('#EyeShapeName').html('Squint'); 
+            break
+        case 9:
+            resetEyes();
+            $('.eye').find('span').css('border-left','15px solid');
+            $('.eye').find('span').css('border-right','15px solid');
+            $('#EyeShapeName').html('Cat'); 
+            break
         default:
             console.log('Recieved unhandled eye variation code:' + num);
     }
     function resetEyes() {;
         // reset all used eye shape CSS parameters
-        console.log('Calling resetEyes() ...');
+        console.log('Calling SetEyeVariation(' + num + ')::resetEyes() ...');
+
         $('.eye').find('span').css('border', 'none');
         $('.pupil-right').css('transform','rotateZ(0deg)');
         $('.pupil-left').css('transform','rotateZ(0deg)');
@@ -148,7 +161,11 @@ function SetEyeVariation(num) {
 }
 
 function SetMarkingVariation(num) {
+    // Render marking shape CSS from given number
+    console.log('Calling SetMarkingVariation(' + num + ') ...');
+
     $('.dnaMarkingShape').html(num)
+
     switch (num) {
         case 1:
             $('#MarkingShapeName').html('Stripe');
@@ -217,6 +234,8 @@ function SetMarkingVariation(num) {
     }
     function resetDecoration() {
         // Reset all used marking CSS parameters 
+        console.log('Calling SetMarkingVariation(' + num + ')::resetDecoration() ...');
+
         $('.marking').css({ 
             "transform": "rotate(0deg)", 
             "height": "48px", 
@@ -238,4 +257,51 @@ function SetMarkingVariation(num) {
     }
 }
 
+function SetAnimation(num) {
+    // set the animal's CSS animation from code 
+    console.log('Calling SetAnimation(' + num + ') ...');
 
+    $('.dnaAnimation').html(num);
+
+    switch (num) {
+        case 1:
+            clearAnimation();
+            $('#AnimationCode').html('None');
+            break
+        case 2:
+            clearAnimation();
+            $('#AnimationCode').html('Rocking Head');
+            $('.head').addClass('rocking');
+            break
+        case 3:
+            clearAnimation();
+            $('#AnimationCode').html('Lazy Ears');
+            $('.ear--left').addClass('rockingLeftEar');
+            $('.ear--right').addClass('rockingRightEar');
+            break
+        case 4:
+            clearAnimation();
+            $('#AnimationCode').html('Winking');
+            $('.eye').addClass('winkingEye');
+            break
+        case 5:
+            clearAnimation();
+            $('#AnimationCode').html('Sniffle');
+            $('.whiskers-left').addClass('wiggleLeftWisker');
+            $('.whiskers-right').addClass('wiggleRightWisker');
+            break
+        default:
+            console.log('Recieved unhandled animation code:' + num);
+    };
+    function clearAnimation(){
+        // clear animation setting from display
+        console.log('Calling SetAnimation(' + num + ')::clearAnimation()');
+
+        $('.head').removeClass('rocking');                  // type 2
+        $('.ear--left').removeClass('rockingLeftEar');      // type 3
+        $('.ear--right').removeClass('rockingRightEar');    // type 3
+        $('.eye').removeClass('winkingEye');                // type 4
+        $('.whiskers-left').removeClass('wiggleLeftWisker');   // type 5
+        $('.whiskers-right').removeClass('wiggleRightWisker'); // type 5
+    }  
+}

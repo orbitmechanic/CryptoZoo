@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/cats.css">
     <link rel='stylesheet' href='assets/css/bunnies.css'>
     <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/factory.css">
     <link rel="stylesheet" href="assets/css/frontend.css">
 </head>
@@ -24,9 +25,13 @@
         <p class="c-black">Create your custom cryptanimal.</p>
     </div>
 
-    <div class="row" style='margin-left:35vh;'>
+    <div class="row fluid center-block">
 
-        <div id="demo" class="col-lg-4 carousel slide" data-ride="carousel">
+        <div class="col-lg-1">
+            <!--left gutter-->
+        </div>
+
+        <div id="demo" class="col-lg-3 carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
@@ -48,7 +53,7 @@
                                     <div class="bun ear--right-inside"></div>
                                 </div>
                             </div>
-                            <div class='bun head'>
+                            <div class='bun head movingHead'>
                                 <div class="bun marking">
                                     <div class="bun marking-left"></div>
                                     <div class="bun marking-right"></div>
@@ -190,83 +195,133 @@
             
         </div>
 
-        <div class="col-lg-5 cattributes m-2 light-b-shadow">
-            
-            <div>
-                <!-- Color Controls -------------------------------------------->
 
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Fur Color</b>
-                        <span class="badge badge-dark ml-2" id="furColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="furColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Under Fur Color</b>
-                        <span class="badge badge-dark ml-2" id="UnderfurColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="UnderfurColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Eye and Tail Color</b>
-                        <span class="badge badge-dark ml-2" id="EyeColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="EyeColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Ear and Paw Color</b>
-                        <span class="badge badge-dark ml-2" id="EarColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="EarColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
+        <div class="col-lg-7 cattributes m-2 light-b-shadow">
 
-                <!-- Attribute Controls -------------------------------------------->
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Eye Shape</b>
-                        <span class="badge badge-dark ml-2" id="EyeShapeName"></span>
-                    </label>
-                    <input class="form-control-range" id="EyeShapeControl" 
-                        type="range" min="1" max="7" >
+            <ul class="nav nav-tabs justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#attributeControls"><h3>Attribute Controls</h3></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#colorControls"><h3>Color Controls</h3></a>
+                </li>
+            </ul>
+                
+            <div class="tab-content">
+                <div id="attributeControls" class="container tab-pane active">
+                    <br>
+                    <div class="row fluid">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Eye Shape</b>
+                                    <span class="badge badge-dark ml-2" id="EyeShapeName"></span>
+                                </label>
+                                <input class="form-control-range" id="EyeShapeControl" 
+                                    type="range" min="1" max="9" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Marking Shape</b>
+                                    <span class="badge badge-dark ml-2" id="MarkingShapeName"></span>
+                                </label>
+                                <input class="form-control-range" id="MarkingShapeControl" 
+                                    type="range" min="1" max="5" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Animation</b>
+                                    <span class="badge badge-dark ml-2" id="AnimationCode"></span>
+                                </label>
+                                <input class="form-control-range" id="AnimationControl" 
+                                    type="range" min="1" max="6" >
+                            </div>    
+                        </div>
+                    </div>    
                 </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Marking Shape</b>
-                        <span class="badge badge-dark ml-2" id="MarkingShapeName"></span>
-                    </label>
-                    <input class="form-control-range" id="MarkingShapeControl" 
-                        type="range" min="1" max="5" >
+                <div id="colorControls" class="container tab-pane fade">
+                    <br>
+                    <div class="row fluid">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Fur Color</b>
+                                    <span class="badge badge-dark ml-2" id="furColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="furColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Under Fur Color</b>
+                                    <span class="badge badge-dark ml-2" id="UnderfurColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="UnderfurColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Eye and Tail Color</b>
+                                    <span class="badge badge-dark ml-2" id="EyeColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="EyeColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Ear and Paw Color</b>
+                                    <span class="badge badge-dark ml-2" id="EarColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="EarColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Center Marking Color</b>
+                                    <span class="badge badge-dark ml-2" id="MarkingMidColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="MarkingMidColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                            <div class="form-group">
+                                <label for="formControlRange">
+                                    <b>Outer Marking Color</b>
+                                    <span class="badge badge-dark ml-2" id="MarkingSideColorCode"></span>
+                                </label>
+                                <input class="form-control-range" id="MarkingSideColorControl" 
+                                    type="range" min="10" max="98" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Center Marking Color</b>
-                        <span class="badge badge-dark ml-2" id="MarkingMidColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="MarkingMidColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
-                <div class="form-group">
-                    <label for="formControlRange">
-                        <b>Outer Marking Color</b>
-                        <span class="badge badge-dark ml-2" id="MarkingSideColorCode"></span>
-                    </label>
-                    <input class="form-control-range" id="MarkingSideColorControl" 
-                        type="range" min="10" max="98" >
-                </div>
-
             </div>
         </div>
 
+        <div class="col-lg-1">
+            <!--right gutter-->
+        </div>
+
     </div>
+
+    <div class="row fluid center-block">
+        <div class="col-lg-4">
+            <!--left gutter-->
+        </div>
+        <div class="col-lg-7 justify-content-end">
+            <!--Under Controls-->
+            <button type="button" class="btn btn-info m-3" id="rndButton"><h3>Randomize</h3></button>
+            <button type="button" class="btn btn-secondary m-3" id='dfltButton'><h3>Defaults</h3></button>
+            <button type="button" class="btn btn-success m-3" id='mintButton'><h3>Mint</h3></button>
+        </div>
+        <div class="col-lg-1">
+            <!--right gutter-->
+        </div>
+    </div>
+
     <br>
+
 </body>
 
 <footer align="center">
