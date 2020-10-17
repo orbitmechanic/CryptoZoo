@@ -8,11 +8,11 @@ var defaultDNA = {
   "underFurColor" : 13,
   "eyesColor" : 96,
   "earsColor" : 10,
+  "markingMidColor" : 13,
+  "markingSidesColor" : 13,
   // Attributes
   "eyesShape" : 1,
   "markingShape" : 1,
-  "markingMidColor" : 13,
-  "markingSidesColor" : 13,
   "animation" :  1,
   "special" :  1,
 };
@@ -27,16 +27,41 @@ $( document ).ready(function() {
   $('.dnaUnderFurColor').html(defaultDNA.underFurColor);
   $('.dnaEyeColor').html(defaultDNA.eyesColor);
   $('.dnaEarColor').html(defaultDNA.earsColor);
+  $('.dnaMarkingMidColor').html(defaultDNA.markingMidColor);
+  $('.dnaMarkingSidesColor').html(defaultDNA.markingSidesColor);
 
   // Attribute codes
   $('.dnaEyeShape').html(defaultDNA.eyesShape);
   $('.dnaMarkingShape').html(defaultDNA.dnaMarkingShape);
-  $('.dnaMarkingMidColor').html(defaultDNA.markingMidColor);
-  $('.dnaMarkingSidesColor').html(defaultDNA.markingSidesColor);
   $('.dnaAnimation').html(defaultDNA.animation);
   $('.dnaSpecial').html(defaultDNA.special);
 
   renderAnimal(defaultDNA);
+
+    // Button actions
+    document.getElementById("dfltButton").onclick = function() {
+      console.log('Default button hit.')
+      renderAnimal(defaultDNA);
+    };
+  
+    document.getElementById("rndButton").onclick= function() {
+      console.log('Randomize button hit.')
+      var randomDNA = {
+        // Colors
+        "furColor" : Math.floor(Math.random()*89) + 10,
+        "underFurColor" : Math.floor(Math.random()*89) + 10,
+        "eyesColor" : Math.floor(Math.random()*89) + 10,
+        "earsColor" : Math.floor(Math.random()*89) + 10,
+        "markingMidColor" : Math.floor(Math.random()*89) + 10,
+        "markingSidesColor" : Math.floor(Math.random()*89) + 10,
+        // Attributes
+        "eyesShape" : Math.floor(Math.random()*8) + 1,
+        "markingShape" : Math.floor(Math.random()*4) + 1,
+        "animation" :  Math.floor(Math.random()*4) + 1,
+        "special" :  Math.floor(Math.random()*4) + 1,
+      };
+      renderAnimal(randomDNA);
+    }
 });
 
 function getDna(){
@@ -142,3 +167,4 @@ $('#AnimationControl').change(()=>{
   var animationCode = parseInt($('#AnimationControl').val()); 
   SetAnimation(animationCode);
 });
+
