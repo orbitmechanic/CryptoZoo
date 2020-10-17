@@ -135,6 +135,18 @@ function SetEyeVariation(num) {
             $('.pupil-left').css('transform','rotateZ(-15deg)');
             $('#EyeShapeName').html('Happy'); 
             break
+        case 8:
+            resetEyes();
+            $('.eye').find('span').css('border-top','15px solid');
+            $('.eye').find('span').css('border-bottom','15px solid');
+            $('#EyeShapeName').html('Squint'); 
+            break
+        case 9:
+            resetEyes();
+            $('.eye').find('span').css('border-left','15px solid');
+            $('.eye').find('span').css('border-right','15px solid');
+            $('#EyeShapeName').html('Cat'); 
+            break
         default:
             console.log('Recieved unhandled eye variation code:' + num);
     }
@@ -261,6 +273,23 @@ function SetAnimation(num) {
             $('#AnimationCode').html('Rocking Head');
             $('.head').addClass('rocking');
             break
+        case 3:
+            clearAnimation();
+            $('#AnimationCode').html('Lazy Ears');
+            $('.ear--left').addClass('rockingLeftEar');
+            $('.ear--right').addClass('rockingRightEar');
+            break
+        case 4:
+            clearAnimation();
+            $('#AnimationCode').html('Winking');
+            $('.eye').addClass('winkingEye');
+            break
+        case 5:
+            clearAnimation();
+            $('#AnimationCode').html('Sniffle');
+            $('.whiskers-left').addClass('wiggleLeftWisker');
+            $('.whiskers-right').addClass('wiggleRightWisker');
+            break
         default:
             console.log('Recieved unhandled animation code:' + num);
     };
@@ -268,7 +297,11 @@ function SetAnimation(num) {
         // clear animation setting from display
         console.log('Calling SetAnimation(' + num + ')::clearAnimation()');
 
-        $('.head').removeClass('rocking'); // type 2
-        
+        $('.head').removeClass('rocking');                  // type 2
+        $('.ear--left').removeClass('rockingLeftEar');      // type 3
+        $('.ear--right').removeClass('rockingRightEar');    // type 3
+        $('.eye').removeClass('winkingEye');                // type 4
+        $('.whiskers-left').removeClass('wiggleLeftWisker');   // type 5
+        $('.whiskers-right').removeClass('wiggleRightWisker'); // type 5
     }  
 }
