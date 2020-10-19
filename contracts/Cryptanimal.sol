@@ -21,46 +21,46 @@ contract CryptAnimal is IERC721 {
     mapping( uint256 => address) public animal2Owner;
     mapping (address => uint256) owner2TokenCount;
 
+    // @returns the number of tokens in ``owner``'s account.
     function balanceOf(address _owner) external view returns (uint256 balance){
-        //Returns the number of tokens in ``owner``'s account.
         return owner2TokenCount[_owner];
     }
 
+    // @returns the total number of tokens in circulation.
     function totalSupply() public view returns (uint256 total){
-        // Returns the total number of tokens in circulation.
         return animals.length;
     }
 
+    // @returns the name of the token.
     function name() public view returns (string memory tokenName){
-        // Returns the name of the token.
         return tokenname;
     }
 
-    function symbol() public pure returns (string memory tokenSymbol){
-        // Returns the symbol of the token.
+    // @returns the symbol of the token.
+    function symbol() public view returns (string memory tokenSymbol){
         return tokensymbol;
     }
 
+    // @returns the owner of the `tokenId` token.
+    // @notice Requirement: 'tokenId' must exist.
     function ownerOf(uint256 _tokenId) external view returns (address owner){
-        // Returns the owner of the `tokenId` token.
-        // Requirement: 'tokenId' must exist.
         return animal2Owner[_tokenId];
     }
 
+    // @dev Transfers `tokenId` token from `msg.sender` to `to`.
+    // @notice Requirement: `to` cannot be the zero address.
+    // @notice Requirement: `to` can not be the contract address.
+    // @notice Requirement: `tokenId` token must be owned by `msg.sender`.
+    // @dev Emits a {Transfer} event. 
     function transfer(address _to, uint256 _tokenId) external {
-        // Transfers `tokenId` token from `msg.sender` to `to`.
-        // Requirement: `to` cannot be the zero address.
-        // Requirement: `to` can not be the contract address.
-        // Requirement: `tokenId` token must be owned by `msg.sender`.
-        // Emits a {Transfer} event. 
         require(_to != address(0));
         require(_to != address(this));
         require(animal2Owner[_tokenId] == msg.sender);
         move(msg.sender, _to, _tokenId);
         emit Transfer(msg.sender, _to, _tokenId);
     }
+    // @dev Prevent re-entry attack during processing.
     function move(address _from, address _to, uint256 _tokenId) internal {
-        // Prevent re-entry attack during processing.
         animal2Owner[_tokenId] = _to;
         if(_from != address(0)){  
             owner2TokenCount[_from]--;
