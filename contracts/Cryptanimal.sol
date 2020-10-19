@@ -5,23 +5,39 @@ import "./IERC721.sol";
 
 contract CryptAnimal is IERC721 {
 
-    mapping(address => uint256) ownershipTokenCount;
+    string public constant tokenname = "CryptAnimals";
+    string public constant tokensymbol = "CA";
+
+    struct Animal {
+        uint256 genes;
+        uint64 birthTime;
+        uint32 momId;
+        uint32 dadId;
+        uint16 generation;
+    }
+
+    Animal[] animals;
+
+    mapping( uint256 => address) public animal2Owner;
+    mapping (address => uint256) owner2TokenCount;
 
     function balanceOf(address owner) public override view returns (uint256 balance){
         //Returns the number of tokens in ``owner``'s account.
-        return ownershipTokenCount[owner];
+        return owner2TokenCount[owner];
     }
 
     function totalSupply() public override view returns (uint256 total){
         // Returns the total number of tokens in circulation.
     }
 
-    function name() public override view returns (string memory tokenName){
+    function name() public override pure returns (string memory tokenName){
         // Returns the name of the token.
+        return tokenname;
     }
 
-    function symbol() public override view returns (string memory tokenSymbol){
+    function symbol() public override pure returns (string memory tokenSymbol){
         // Returns the symbol of the token.
+        return tokensymbol;
     }
 
     function ownerOf(uint256 tokenId) public override view returns (address owner){
