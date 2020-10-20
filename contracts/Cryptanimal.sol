@@ -65,6 +65,41 @@ contract CryptAnimal is IERC721, Accountable {
         return newAnimalId;
     }
 
+    // @returns genes given Id
+    // @require animal with given _Id exists
+    function getAnimal(uint256 _Id) public view returns (uint256){
+        require (_Id < animals.length);
+        return animals[_Id].genes;
+    }
+
+    // @returns mother's Id given child Id
+    // @require animal with given _Id exists
+    function getMother(uint256 _Id) public view returns (uint256){
+        require (_Id < animals.length);
+        return uint256(animals[_Id].momId);
+    }
+
+    // @returns father's Id given child Id
+    // @require animal with given _Id exists
+    function getFather(uint256 _Id) public view returns (uint256){
+        require (_Id < animals.length);
+        return uint256(animals[_Id].dadId);
+    }
+
+    // @returns generation given animal's Id
+    // @require animal with given _Id exists
+    function getGeneration(uint256 _Id) public view returns (uint256){
+        require (_Id < animals.length);
+        return uint256(animals[_Id].generation);
+    }
+
+    // @returns birth time given animal's Id
+    // @require animal with given _Id exists
+    function getBirthTime(uint256 _Id) public view returns (uint256){
+        require (_Id < animals.length);
+        return uint256(animals[_Id].birthTime);
+    }
+
     // @returns the number of tokens in ``owner``'s account.
     function balanceOf(address _owner) external view override returns (uint256 balance){
         return owner2TokenCount[_owner];
