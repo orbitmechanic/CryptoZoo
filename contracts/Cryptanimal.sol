@@ -36,7 +36,8 @@ contract CryptAnimal is IERC721, Accountable {
     // @returns new animal ID
     // @require gen0Population < CREATION_LIMIT_GEN0
     function createAnimalGen0(uint256 _genes) public onlyOwner returns(uint256) {
-        require (gen0Population < CREATION_LIMIT_GEN0);
+        require (gen0Population < CREATION_LIMIT_GEN0, 
+            "Attempting to exceed generation 0 population limit.");
         gen0Population++;
         uint256 newAnimalId = 
             _createAnimal(uint256(0),uint256(0),uint256(0),_genes,msg.sender);
@@ -65,39 +66,27 @@ contract CryptAnimal is IERC721, Accountable {
         return newAnimalId;
     }
 
-    // @returns genes given Id
+    // @returns all animal data given Id
     // @require animal with given _Id exists
-    function getAnimal(uint256 _Id) public view returns (uint256){
-        require (_Id < animals.length);
-        return animals[_Id].genes;
-    }
+    function getAnimal(uint256 _Id) public view returns (
+        uint256 genes,
+        uint256 birthTime,
+        uint256 momId,
+        uint256 dadId,
+        uint256 generation,
+        address owner
+    ){
+        require (_Id < animals.length, 
+            "That many animals do not exist.");
 
-    // @returns mother's Id given child Id
-    // @require animal with given _Id exists
-    function getMother(uint256 _Id) public view returns (uint256){
-        require (_Id < animals.length);
-        return uint256(animals[_Id].momId);
-    }
+        Animal storage animal = animals[_Id];
 
-    // @returns father's Id given child Id
-    // @require animal with given _Id exists
-    function getFather(uint256 _Id) public view returns (uint256){
-        require (_Id < animals.length);
-        return uint256(animals[_Id].dadId);
-    }
-
-    // @returns generation given animal's Id
-    // @require animal with given _Id exists
-    function getGeneration(uint256 _Id) public view returns (uint256){
-        require (_Id < animals.length);
-        return uint256(animals[_Id].generation);
-    }
-
-    // @returns birth time given animal's Id
-    // @require animal with given _Id exists
-    function getBirthTime(uint256 _Id) public view returns (uint256){
-        require (_Id < animals.length);
-        return uint256(animals[_Id].birthTime);
+        birthTime = uint256(animal.birthTime);
+        momId = uint256(animal.momId);
+        dadId = uint256(animal.dadId);
+        generation = uint256(animal.generation);
+        genes = animal.genes;
+        owner = animalId2Owner[_Id];
     }
 
     // @returns the number of tokens in ``owner``'s account.
@@ -122,9 +111,10 @@ contract CryptAnimal is IERC721, Accountable {
     // @notice Requirement: `tokenId` token must be owned by `msg.sender`.
     // @dev Emits a {Transfer} event. 
     function transfer(address _to, uint256 _tokenId) external override {
-        require(_to != address(0));
-        require(_to != address(this));
-        require(_owns(msg.sender, _tokenId));
+        require(_to != address(0), "Cannot transfer to address(0), or burn animal.");
+        require(_to != address(this), "Cannot transfer to Dap address.");
+        require(_owns(msg.sender, _tokenId), 
+            "Attempted to transfer an animal the requester does not own.");
         _transfer(msg.sender, _to, _tokenId);
     }
     
