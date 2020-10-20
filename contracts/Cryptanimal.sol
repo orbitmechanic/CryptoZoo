@@ -59,7 +59,7 @@ contract CryptAnimal is IERC721, Accountable {
             generation: uint16(_generation)
         });
         animals.push(_animal); // 0.7.0 no longer returns length
-        uint256 newAnimalId = animals.length;
+        uint256 newAnimalId = animals.length - 1;
         _transfer(address(0), _owner, newAnimalId );
         emit Birth(_owner, newAnimalId, _momId, _dadId, _genes);
         return newAnimalId;
