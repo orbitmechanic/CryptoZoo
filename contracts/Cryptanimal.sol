@@ -6,6 +6,7 @@ import "./Accountable.sol";
 
 contract CryptAnimal is IERC721, Accountable {
 
+    uint256 public constant CREATION_LIMIT_GEN0 = 10;
     string public constant override name = "CryptAnimals";
     string public constant override symbol = "CA";
 
@@ -30,8 +31,16 @@ contract CryptAnimal is IERC721, Accountable {
     mapping( uint256 => address) public animalId2Owner;
     mapping (address => uint256) owner2TokenCount;
 
-    function createAnimalGen0(uint256 _genes) public onlyOwner {
-        _createAnimal(uint256(0),uint256(0),uint256(0),_genes,msg.sender);
+    uint256 gen0Population = uint256(0);
+
+    // @returns new animal ID
+    // @require gen0Population < CREATION_LIMIT_GEN0
+    function createAnimalGen0(uint256 _genes) public onlyOwner returns(uint256) {
+        require (gen0Population < CREATION_LIMIT_GEN0);
+        gen0Population++;
+        uint256 newAnimalId = 
+            _createAnimal(uint256(0),uint256(0),uint256(0),_genes,msg.sender);
+        return newAnimalId;
     }
 
     // @returns new animal ID
@@ -53,6 +62,7 @@ contract CryptAnimal is IERC721, Accountable {
         uint256 newAnimalId = animals.length;
         _transfer(address(0), _owner, newAnimalId );
         emit Birth(_owner, newAnimalId, _momId, _dadId, _genes);
+        return newAnimalId;
     }
 
     // @returns the number of tokens in ``owner``'s account.
