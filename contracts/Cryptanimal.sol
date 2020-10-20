@@ -31,7 +31,7 @@ contract CryptAnimal is IERC721, Accountable {
     mapping (address => uint256) owner2TokenCount;
 
     function createAnimalGen0(uint256 _genes) public onlyOwner {
-
+        _createAnimal(uint256(0),uint256(0),uint256(0),_genes,msg.sender);
     }
 
     // @returns new animal ID
