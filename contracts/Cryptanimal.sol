@@ -1,12 +1,21 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.5.1;
+pragma solidity 0.7.0;
 
 import "./IERC721.sol";
+import "./Accountable.sol";
 
-contract CryptAnimal is IERC721 {
+contract CryptAnimal is IERC721, Accountable {
 
     string public constant tokenname = "CryptAnimals";
     string public constant tokensymbol = "CA";
+
+    event Birth(
+        address owner,
+        uint256 animalId,
+        uint256 momId,
+        uint256 dadId,
+        uint256 genes
+    );
 
     struct Animal {
         uint256 genes;
@@ -18,8 +27,32 @@ contract CryptAnimal is IERC721 {
 
     Animal[] animals;
 
-    mapping( uint256 => address) public animal2Owner;
+    mapping( uint256 => address) public animalId2Owner;
     mapping (address => uint256) owner2TokenCount;
+
+    function createAnimalGen0(uint256 _genes) public onlyOwner {
+
+    }
+
+    // @returns new animal ID
+    function _createAnimal(
+        uint256 _momId,
+        uint256 _dadId,
+        uint256 _generation,
+        uint256 _genes,
+        address _owner
+    ) private returns (uint256) {
+        Animal memory _animal = Animal({
+            genes: _genes,
+            birthTime: uint64(now),
+            momId: uint32(_momId),
+            dadId: uint32(_dadId),
+            generation: uint16(_generation)
+        });
+        uint256 newAnimalId = animals.push(_animal) - 1;
+        _transfer(address(0), _owner, newAnimalId);
+        emit Birth(_owner, newAnimalId, _momId, _dadId, _genes);
+    }
 
     // @returns the number of tokens in ``owner``'s account.
     function balanceOf(address _owner) external view returns (uint256 balance){
@@ -44,7 +77,7 @@ contract CryptAnimal is IERC721 {
     // @returns the owner of the `tokenId` token.
     // @notice Requirement: 'tokenId' must exist.
     function ownerOf(uint256 _tokenId) external view returns (address owner){
-        return animal2Owner[_tokenId];
+        return animalId2Owner[_tokenId];
     }
 
     // @dev Transfers `tokenId` token from `msg.sender` to `to`.
@@ -55,16 +88,21 @@ contract CryptAnimal is IERC721 {
     function transfer(address _to, uint256 _tokenId) external {
         require(_to != address(0));
         require(_to != address(this));
-        require(animal2Owner[_tokenId] == msg.sender);
-        move(msg.sender, _to, _tokenId);
-        emit Transfer(msg.sender, _to, _tokenId);
+        require(_owns(msg.sender, _tokenId));
+        _transfer(msg.sender, _to, _tokenId);
     }
-    // @dev Prevent re-entry attack during processing.
-    function move(address _from, address _to, uint256 _tokenId) internal {
-        animal2Owner[_tokenId] = _to;
-        if(_from != address(0)){  
-            owner2TokenCount[_from]--;
-        } // wrt. minting.
+    
+    function _transfer(address _from, address _to, uint256 _tokenId) internal {
         owner2TokenCount[_to]++;
+        animalId2Owner[_tokenId] = _to;
+        if (_from != address(0)) {
+            owner2TokenCount[_from]--;
+        }
+        emit Transfer(_from, _to, _tokenId);
+    }
+
+    // @returns if claimant owns tokenId
+    function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
+        return animalId2Owner[_tokenId] == _claimant;
     }
 }
