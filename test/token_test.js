@@ -1,4 +1,4 @@
-const CryptAnimal = artifacts.require("Cryptanimal");
+const CryptAnimal = artifacts.require("CryptAnimal");
 const { iteratee } = require("lodash");
 const truffleAssert = require("truffle-assertions");
 
