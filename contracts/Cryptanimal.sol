@@ -28,7 +28,7 @@ contract CryptAnimal is IERC721, Accountable {
 
     Animal[] animals;
 
-    mapping( uint256 => address) public animalId2Owner;
+    mapping(uint256 => address) public animalId2Owner;
     mapping (address => uint256) owner2TokenCount;
 
     uint256 gen0Population = uint256(0);
