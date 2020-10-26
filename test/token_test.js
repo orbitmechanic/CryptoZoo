@@ -3,7 +3,8 @@ const AssertionError = require("assertion-error");
 const { iteratee } = require("lodash");
 const truffleAssert = require("truffle-assertions");
 
-contract("CryptAnimal", async function() {
+contract("CryptAnimal", async function(accounts) {
+    const owner = accounts[0];
 
     it("Total supply should run", async function() {
         let instance = await CryptAnimal.deployed();
@@ -20,4 +21,4 @@ contract("CryptAnimal", async function() {
             `totalSupply() began at ${result}`);
     });
 
-})s
+});

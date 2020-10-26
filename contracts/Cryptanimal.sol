@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.7.0;
+pragma solidity 0.6.0;
 
 import "./IERC721.sol";
 import "./Accountable.sol";
@@ -7,8 +7,8 @@ import "./Accountable.sol";
 contract CryptAnimal is IERC721, Accountable {
 
     uint256 public constant CREATION_LIMIT_GEN0 = 10;
-    string public constant override name = "CryptAnimals";
-    string public constant override symbol = "CA";
+    string public constant tokenName = "CryptAnimals";
+    string public constant tokenSymbol = "CA";
 
     event Birth(
         address owner,
@@ -87,6 +87,16 @@ contract CryptAnimal is IERC721, Accountable {
         generation = uint256(animal.generation);
         genes = animal.genes;
         owner = animalId2Owner[_Id];
+    }
+
+    // @returns tokenName
+    function name() external view override returns(string memory Name){
+        return tokenName;
+    }
+
+    // @returns tokenSymbol
+    function symbol() external view override returns(string memory Symbol){
+        return tokenSymbol;
     }
 
     // @returns the number of tokens in ``owner``'s account.

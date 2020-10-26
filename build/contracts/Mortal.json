@@ -61,30 +61,28 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"torchPassed\",\"type\":\"bool\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"msg\",\"type\":\"string\"}],\"name\":\"imploding\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"amIOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":\"Mortal\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":{\"keccak256\":\"0x66477119d12818307402ac07c806a786f30b779febf81f4cde8770a6faaa2d65\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://06ea5ef62286774589f22a1fc1b9b74c574a02b9cd9aa2e3ebc00fe5d6f5afde\",\"dweb:/ipfs/QmWZJX9KJhP3vj8XThYQUrvBfJSm5ZiPVJywfChLHE8XSY\"]},\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol\":{\"keccak256\":\"0x10226bad988e8161b77343917c79924a82a761ce6e0e3cce15f4c2ef202d415a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://0761c1b91ebffb1b28c966482895bba81e5dd563e96c4f966275e13c6a97cca1\",\"dweb:/ipfs/QmeNEHgJPeZmtJdWTvSQ7jNn9ntHgUatwYZtQYQLR7cfVw\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506104fc806100606000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610070575b600080fd5b61004e6100b4565b005b6100586101f9565b60405180821515815260200191505060405180910390f35b6100b26004803603602081101561008657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610261565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610158576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061047d6024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a160008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610259576001905061025e565b600090505b90565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610305576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061047d6024913960400191505060405180910390fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104a16026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461043f57fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad4600160405180821515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea264697066735822122023b3bf5729b81a60de8b9221ec041c49a5f6d07005df060147a6a8aa2a736cc964736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610070575b600080fd5b61004e6100b4565b005b6100586101f9565b60405180821515815260200191505060405180910390f35b6100b26004803603602081101561008657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610261565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610158576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061047d6024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a160008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610259576001905061025e565b600090505b90565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610305576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061047d6024913960400191505060405180910390fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104a16026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461043f57fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad4600160405180821515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea264697066735822122023b3bf5729b81a60de8b9221ec041c49a5f6d07005df060147a6a8aa2a736cc964736f6c63430007000033",
-  "immutableReferences": {},
-  "sourceMap": "91:190:4:-:0;;;;;;;;;;;;;360:10:5;352:5;;:18;;;;;;;;;;;;;;;;;;91:190:4;;;;;;",
-  "deployedSourceMap": "91:190:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:108;;;:::i;:::-;;390:172:5;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;574:322;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;170:108:4;250:5:5;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;222:18:4::1;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;264:5;::::0;::::1;;;;;;;;251:19;;;390:172:5::0;431:4;466:5;;;;;;;;;;;452:19;;:10;:19;;;448:107;;;494:4;487:11;;;;448:107;538:5;531:12;;390:172;;:::o;574:322::-;250:5;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;675:5:::1;::::0;::::1;;;;;;;;663:17;;:8;:17;;;;655:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;742:8;734:5;::::0;:16:::1;;;;;;;;;;;;;;;;;;777:8;768:17;;:5;::::0;::::1;;;;;;;;:17;;;761:25;;;;833:26;854:4;833:26;;;;;;;;;;;;;;;;;;;;574:322:::0;:::o",
-  "source": "pragma solidity 0.7.0;\r\nimport \"./Ownable.sol\";\r\n// SPDX-License-Identifier: UNLICENSED\r\n\r\ncontract Mortal is Ownable{\r\n    \r\n    event imploding(string msg);\r\n    \r\n    function implode() public onlyOwner {\r\n        emit imploding('!MOOB');\r\n        selfdestruct(owner);\r\n    }\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"torchPassed\",\"type\":\"bool\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"msg\",\"type\":\"string\"}],\"name\":\"imploding\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"amIOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":\"Mortal\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":{\"keccak256\":\"0xb380354d4b29dfc990ee09f4f8399f0ad531bed603f46bf229b7527f2ec8904f\",\"urls\":[\"bzz-raw://77d5d0e9f1f1457399b7b2c6de4b1b4ffe17c080779f0c6959a31a5d579c44fe\",\"dweb:/ipfs/QmWa8WykXaYoEE99fFPJH9H1hktLES1ieG985Q4zP8k4Py\"]},\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol\":{\"keccak256\":\"0x3bb85c096a259ec07df06aa82de40a5bd804529ccd0100098161ebbd98b4d98d\",\"urls\":[\"bzz-raw://20cf8d8a05f202a59d76a1acf3708980f1145b5813db6d4126ead621a9e1d265\",\"dweb:/ipfs/QmcMMwZ9YRB2pYtzFCaan4MT45PofZHnzEPbYsfyWo7mJQ\"]}},\"version\":1}",
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610505806100536000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610072575b600080fd5b61004e6100b6565b005b6100586101fd565b604051808215151515815260200191505060405180910390f35b6100b46004803603602081101561008857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610265565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a16000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025d5760019050610262565b600090505b90565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461030a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103b0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104aa6026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461044657fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad46001604051808215151515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea2646970667358221220f7381d220e0e4892ec927430b3d99b3317200d2ad2938b2c194817f73b00c8f964736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610072575b600080fd5b61004e6100b6565b005b6100586101fd565b604051808215151515815260200191505060405180910390f35b6100b46004803603602081101561008857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610265565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a16000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025d5760019050610262565b600090505b90565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461030a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103b0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104aa6026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461044657fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad46001604051808215151515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea2646970667358221220f7381d220e0e4892ec927430b3d99b3317200d2ad2938b2c194817f73b00c8f964736f6c63430006000033",
+  "sourceMap": "91:190:4:-:0;;;367:10:5;359:5;;:18;;;;;;;;;;;;;;;;;;91:190:4;;;;;;",
+  "deployedSourceMap": "91:190:4:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;91:190:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:108;;;:::i;:::-;;397:172:5;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;581:322;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;581:322:5;;;;;;;;;;;;;;;;;;;:::i;:::-;;170:108:4;250:5:5;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;222:18:4::1;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;264:5;::::0;::::1;;;;;;;;;251:19;;;397:172:5::0;438:4;473:5;;;;;;;;;;;459:19;;:10;:19;;;455:107;;;501:4;494:11;;;;455:107;545:5;538:12;;397:172;;:::o;581:322::-;250:5;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;682:5:::1;::::0;::::1;;;;;;;;;670:17;;:8;:17;;;;662:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;749:8;741:5;::::0;:16:::1;;;;;;;;;;;;;;;;;;784:8;775:17;;:5;::::0;::::1;;;;;;;;;:17;;;768:25;;;;840:26;861:4;840:26;;;;;;;;;;;;;;;;;;;;;;581:322:::0;:::o",
+  "source": "pragma solidity 0.6.0;\r\nimport \"./Ownable.sol\";\r\n// SPDX-License-Identifier: UNLICENSED\r\n\r\ncontract Mortal is Ownable{\r\n    \r\n    event imploding(string msg);\r\n    \r\n    function implode() public onlyOwner {\r\n        emit imploding('!MOOB');\r\n        selfdestruct(owner);\r\n    }\r\n}",
   "sourcePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
   "ast": {
     "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
     "exportedSymbols": {
       "Mortal": [
-        503
+        628
       ]
     },
-    "id": 504,
-    "license": "UNLICENSED",
+    "id": 629,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 481,
+        "id": 606,
         "literals": [
           "solidity",
-          "0.7",
+          "0.6",
           ".0"
         ],
         "nodeType": "PragmaDirective",
@@ -93,10 +91,10 @@
       {
         "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 482,
+        "id": 607,
         "nodeType": "ImportDirective",
-        "scope": 504,
-        "sourceUnit": 580,
+        "scope": 629,
+        "sourceUnit": 705,
         "src": "24:23:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -108,31 +106,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 483,
+              "id": 608,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 579,
+              "referencedDeclaration": 704,
               "src": "110:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$579",
+                "typeIdentifier": "t_contract$_Ownable_$704",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 484,
+            "id": 609,
             "nodeType": "InheritanceSpecifier",
             "src": "110:7:4"
           }
         ],
         "contractDependencies": [
-          579
+          704
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 503,
+        "id": 628,
         "linearizedBaseContracts": [
-          503,
-          579
+          628,
+          704
         ],
         "name": "Mortal",
         "nodeType": "ContractDefinition",
@@ -140,22 +138,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 488,
+            "id": 613,
             "name": "imploding",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 487,
+              "id": 612,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 486,
+                  "id": 611,
                   "indexed": false,
-                  "mutability": "mutable",
                   "name": "msg",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 488,
+                  "scope": 613,
                   "src": "146:10:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -164,7 +161,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 485,
+                    "id": 610,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "146:6:4",
@@ -183,7 +180,7 @@
           },
           {
             "body": {
-              "id": 501,
+              "id": 626,
               "nodeType": "Block",
               "src": "206:72:4",
               "statements": [
@@ -194,7 +191,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "214d4f4f42",
-                        "id": 494,
+                        "id": 619,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -217,18 +214,18 @@
                           "typeString": "literal_string \"!MOOB\""
                         }
                       ],
-                      "id": 493,
+                      "id": 618,
                       "name": "imploding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 488,
+                      "referencedDeclaration": 613,
                       "src": "222:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 495,
+                    "id": 620,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -243,7 +240,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 496,
+                  "id": 621,
                   "nodeType": "EmitStatement",
                   "src": "217:23:4"
                 },
@@ -253,11 +250,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 498,
+                        "id": 623,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 507,
+                        "referencedDeclaration": 632,
                         "src": "264:5:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
@@ -272,18 +269,18 @@
                           "typeString": "address payable"
                         }
                       ],
-                      "id": 497,
+                      "id": 622,
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": -21,
+                      "referencedDeclaration": 727,
                       "src": "251:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
                         "typeString": "function (address payable)"
                       }
                     },
-                    "id": 499,
+                    "id": 624,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -298,7 +295,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 500,
+                  "id": 625,
                   "nodeType": "ExpressionStatement",
                   "src": "251:19:4"
                 }
@@ -306,20 +303,20 @@
             },
             "documentation": null,
             "functionSelector": "3d8aa9b8",
-            "id": 502,
+            "id": 627,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 491,
+                "id": 616,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 490,
+                  "id": 615,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 523,
+                  "referencedDeclaration": 648,
                   "src": "196:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -334,25 +331,25 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 489,
+              "id": 614,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "186:2:4"
             },
             "returnParameters": {
-              "id": 492,
+              "id": 617,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "206:0:4"
             },
-            "scope": 503,
+            "scope": 628,
             "src": "170:108:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 504,
+        "scope": 629,
         "src": "91:190:4"
       }
     ],
@@ -362,18 +359,17 @@
     "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
     "exportedSymbols": {
       "Mortal": [
-        503
+        628
       ]
     },
-    "id": 504,
-    "license": "UNLICENSED",
+    "id": 629,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 481,
+        "id": 606,
         "literals": [
           "solidity",
-          "0.7",
+          "0.6",
           ".0"
         ],
         "nodeType": "PragmaDirective",
@@ -382,10 +378,10 @@
       {
         "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 482,
+        "id": 607,
         "nodeType": "ImportDirective",
-        "scope": 504,
-        "sourceUnit": 580,
+        "scope": 629,
+        "sourceUnit": 705,
         "src": "24:23:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -397,31 +393,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 483,
+              "id": 608,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 579,
+              "referencedDeclaration": 704,
               "src": "110:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$579",
+                "typeIdentifier": "t_contract$_Ownable_$704",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 484,
+            "id": 609,
             "nodeType": "InheritanceSpecifier",
             "src": "110:7:4"
           }
         ],
         "contractDependencies": [
-          579
+          704
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 503,
+        "id": 628,
         "linearizedBaseContracts": [
-          503,
-          579
+          628,
+          704
         ],
         "name": "Mortal",
         "nodeType": "ContractDefinition",
@@ -429,22 +425,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 488,
+            "id": 613,
             "name": "imploding",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 487,
+              "id": 612,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 486,
+                  "id": 611,
                   "indexed": false,
-                  "mutability": "mutable",
                   "name": "msg",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 488,
+                  "scope": 613,
                   "src": "146:10:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -453,7 +448,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 485,
+                    "id": 610,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "146:6:4",
@@ -472,7 +467,7 @@
           },
           {
             "body": {
-              "id": 501,
+              "id": 626,
               "nodeType": "Block",
               "src": "206:72:4",
               "statements": [
@@ -483,7 +478,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "214d4f4f42",
-                        "id": 494,
+                        "id": 619,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -506,18 +501,18 @@
                           "typeString": "literal_string \"!MOOB\""
                         }
                       ],
-                      "id": 493,
+                      "id": 618,
                       "name": "imploding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 488,
+                      "referencedDeclaration": 613,
                       "src": "222:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 495,
+                    "id": 620,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -532,7 +527,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 496,
+                  "id": 621,
                   "nodeType": "EmitStatement",
                   "src": "217:23:4"
                 },
@@ -542,11 +537,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 498,
+                        "id": 623,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 507,
+                        "referencedDeclaration": 632,
                         "src": "264:5:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
@@ -561,18 +556,18 @@
                           "typeString": "address payable"
                         }
                       ],
-                      "id": 497,
+                      "id": 622,
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": -21,
+                      "referencedDeclaration": 727,
                       "src": "251:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
                         "typeString": "function (address payable)"
                       }
                     },
-                    "id": 499,
+                    "id": 624,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -587,7 +582,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 500,
+                  "id": 625,
                   "nodeType": "ExpressionStatement",
                   "src": "251:19:4"
                 }
@@ -595,20 +590,20 @@
             },
             "documentation": null,
             "functionSelector": "3d8aa9b8",
-            "id": 502,
+            "id": 627,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 491,
+                "id": 616,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 490,
+                  "id": 615,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 523,
+                  "referencedDeclaration": 648,
                   "src": "196:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -623,25 +618,25 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 489,
+              "id": 614,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "186:2:4"
             },
             "returnParameters": {
-              "id": 492,
+              "id": 617,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "206:0:4"
             },
-            "scope": 503,
+            "scope": 628,
             "src": "170:108:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 504,
+        "scope": 629,
         "src": "91:190:4"
       }
     ],
@@ -649,19 +644,15 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+    "version": "0.6.0+commit.26b70077.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-20T20:16:17.405Z",
+  "updatedAt": "2020-10-24T16:06:17.670Z",
   "devdoc": {
-    "kind": "dev",
-    "methods": {},
-    "version": 1
+    "methods": {}
   },
   "userdoc": {
-    "kind": "user",
-    "methods": {},
-    "version": 1
+    "methods": {}
   }
 }
