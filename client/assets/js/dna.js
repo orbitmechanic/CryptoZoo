@@ -1,4 +1,4 @@
-console.log('Reading dna.js...');
+console.debug('Reading dna.js...');
 
 var colors = Object.values(allColors());
 
@@ -20,7 +20,8 @@ var defaultDNA = {
 // when page load
 $( document ).ready(function() {
   // Push default values to display...
-  console.log('$(document).ready() callback firing...');
+  console.debug('$(document).ready() callback firing...');
+  console.groupCollapsed('dna.js::$(document).ready():');
 
   // Color codes
   $('.dnaFurColor').html(defaultDNA.furColor);
@@ -38,35 +39,52 @@ $( document ).ready(function() {
 
   renderAnimal(defaultDNA);
 
-    // Button actions
-    document.getElementById("dfltButton").onclick = function() {
-      console.log('Default button hit.')
-      renderAnimal(defaultDNA);
+  // Attach Button Actions ----------------------------------------------------
+
+  // Default Button
+  document.getElementById("dfltButton").onclick = function() {
+    console.debug('Default button hit.')
+    console.groupCollapsed('defaultButton.onclick():');
+    renderAnimal(defaultDNA);
+    console.groupEnd();
+  };
+
+  // Random Button
+  document.getElementById("rndButton").onclick= function() {
+    console.debug('Randomize button hit.')
+    console.groupCollapsed('randomButton.onclick():');
+    var randomDNA = {
+      // Colors
+      "furColor" : Math.floor(Math.random()*89) + 10,
+      "underFurColor" : Math.floor(Math.random()*89) + 10,
+      "eyesColor" : Math.floor(Math.random()*89) + 10,
+      "earsColor" : Math.floor(Math.random()*89) + 10,
+      "markingMidColor" : Math.floor(Math.random()*89) + 10,
+      "markingSidesColor" : Math.floor(Math.random()*89) + 10,
+      // Attributes
+      "eyesShape" : Math.floor(Math.random()*8) + 1,
+      "markingShape" : Math.floor(Math.random()*4) + 1,
+      "animation" :  Math.floor(Math.random()*4) + 1,
+      "special" :  Math.floor(Math.random()*4) + 1,
     };
-  
-    document.getElementById("rndButton").onclick= function() {
-      console.log('Randomize button hit.')
-      var randomDNA = {
-        // Colors
-        "furColor" : Math.floor(Math.random()*89) + 10,
-        "underFurColor" : Math.floor(Math.random()*89) + 10,
-        "eyesColor" : Math.floor(Math.random()*89) + 10,
-        "earsColor" : Math.floor(Math.random()*89) + 10,
-        "markingMidColor" : Math.floor(Math.random()*89) + 10,
-        "markingSidesColor" : Math.floor(Math.random()*89) + 10,
-        // Attributes
-        "eyesShape" : Math.floor(Math.random()*8) + 1,
-        "markingShape" : Math.floor(Math.random()*4) + 1,
-        "animation" :  Math.floor(Math.random()*4) + 1,
-        "special" :  Math.floor(Math.random()*4) + 1,
-      };
-      renderAnimal(randomDNA);
-    }
+    renderAnimal(randomDNA);
+    console.groupEnd();
+  };
+
+  // Mint Button
+  document.getElementById('mintButton').onclick = function() {
+    console.debug('Mint button hit.');
+    console.groupCollapsed('mintButton.onclick():');
+    mintAnimal();
+    console.groupEnd();
+  };
+
+  console.groupEnd()
 });
 
-function getDna(){
+function getDNA(){
   // Create printable string from DNA values
-  console.log('calling getDNA()...');
+  console.debug('calling getDNA()...');
 
   var dna = '';
   dna += $('.dnaFurColor').html();
@@ -85,7 +103,8 @@ function getDna(){
 
 function renderAnimal(dna){
   // Render animal from DNA values
-  console.log('calling renderAnimal()...');
+  console.debug('calling renderAnimal()...');
+  console.groupCollapsed('renderAnimal():');
 
   UpdateFurColor(colors[dna.furColor],dna.furColor);
   $('#furColorControl').val(dna.furColor);
@@ -113,6 +132,8 @@ function renderAnimal(dna){
 
   SetAnimation(dna.animation);
   $('#AnimationControl').val(dna.animation);
+
+  console.groupEnd();
 }
 
 // Control listeners ------------------------------------------------------------
@@ -121,49 +142,49 @@ function renderAnimal(dna){
 // All color arrays range [1...99], but sliders fixed at [10...98]
 
 $('#furColorControl').change(()=>{
-    console.log('Changing fur color to ' + $('#furColorControl').val());
+    console.debug('Changing fur color to ' + $('#furColorControl').val());
     var colorVal = $('#furColorControl').val();
     UpdateFurColor(colors[colorVal],colorVal);
 });
 $('#UnderfurColorControl').change(()=>{
-  console.log('Changing under fur color to ' + $('#UnderfurColorControl').val());
+  console.debug('Changing under fur color to ' + $('#UnderfurColorControl').val());
   var colorVal = $('#UnderfurColorControl').val();
   UpdateUnderFurColor(colors[colorVal],colorVal);
 });
 $('#EyeColorControl').change(()=>{
-  console.log('Changing eye color to ' + $('#EyeColorControl').val());
+  console.debug('Changing eye color to ' + $('#EyeColorControl').val());
   var colorVal = $('#EyeColorControl').val();
   UpdateEyeColor(colors[colorVal],colorVal);
 });
 $('#EarColorControl').change(()=>{
-  console.log('Changing inner ear color to ' + $('#EarColorControl').val());
+  console.debug('Changing inner ear color to ' + $('#EarColorControl').val());
   var colorVal = $('#EarColorControl').val();
   UpdateEarColor(colors[colorVal],colorVal);
 });
 $('#MarkingMidColorControl').change(()=>{
-  console.log('Changing mid-marking color to ' + $('#MarkingMidColorControl').val());
+  console.debug('Changing mid-marking color to ' + $('#MarkingMidColorControl').val());
   var colorVal = $('#MarkingMidColorControl').val();
   UpdateMarkingMidColor(colors[colorVal],colorVal);
 });
 $('#MarkingSideColorControl').change(()=>{
-  console.log('Changing outer marking color to ' + $('#MarkingSideColorControl').val());
+  console.debug('Changing outer marking color to ' + $('#MarkingSideColorControl').val());
   var colorVal = $('#MarkingSideColorControl').val();
   UpdateMarkingSidesColor(colors[colorVal],colorVal);
 });
 
 // Changing animal attributes, sliders ranged [1...7]
 $('#EyeShapeControl').change(()=>{
-  console.log('Changing eye shape to ' + $('#EyeShapeControl').val());
+  console.debug('Changing eye shape to ' + $('#EyeShapeControl').val());
   var shapeCode = parseInt($('#EyeShapeControl').val()); 
   SetEyeVariation(shapeCode);
 });
 $('#MarkingShapeControl').change(()=>{
-  console.log('Changing marking shape to ' + $('#MarkingShapeControl').val());
+  console.debug('Changing marking shape to ' + $('#MarkingShapeControl').val());
   var shapeCode = parseInt($('#MarkingShapeControl').val()); 
   SetMarkingVariation(shapeCode);
 });
 $('#AnimationControl').change(()=>{
-  console.log('Changing animation to ' + $('#AnimationControl').val());
+  console.debug('Changing animation to ' + $('#AnimationControl').val());
   var animationCode = parseInt($('#AnimationControl').val()); 
   SetAnimation(animationCode);
 });
