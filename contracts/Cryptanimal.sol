@@ -6,9 +6,11 @@ import "./Accountable.sol";
 
 contract CryptAnimal is IERC721, Accountable {
 
-    uint256 public constant CREATION_LIMIT_GEN0 = 10;
     string public constant tokenName = "CryptAnimals";
     string public constant tokenSymbol = "CA";
+
+    uint256 public constant CREATION_LIMIT_GEN0 = 10;
+    uint256 public gen0Population = uint256(0);
 
     event Birth(
         address owner,
@@ -30,8 +32,6 @@ contract CryptAnimal is IERC721, Accountable {
 
     mapping(uint256 => address) public animalId2Owner;
     mapping (address => uint256) owner2TokenCount;
-
-    uint256 gen0Population = uint256(0);
 
     // @returns new animal ID
     // @require gen0Population < CREATION_LIMIT_GEN0
@@ -107,6 +107,11 @@ contract CryptAnimal is IERC721, Accountable {
     // @returns the total number of tokens in circulation.
     function totalSupply() public view override returns (uint256 total){
         return animals.length;
+    }
+
+    // @returns number of generation zero animals in existence.
+    function genZeroPop() public view returns (uint256 gen0Pop) {
+        return gen0Population;
     }
 
     // @returns the owner of the `tokenId` token.

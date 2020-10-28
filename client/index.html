@@ -25,6 +25,8 @@
     <div class="jumbotron fluid" id='factory-header'>
         <h1 class="c-black">CryptoZoo-Factory</h1>
         <p class="c-black">Create your custom cryptanimal.</p>
+        <div class='alert alert-success' 
+            role='alert' id='animalCreation' style='display:none'></div>
     </div>
 
     <div class="row fluid center-block">
@@ -316,6 +318,7 @@
             <button type="button" class="btn btn-info m-3" id="rndButton"><h3>Randomize</h3></button>
             <button type="button" class="btn btn-secondary m-3" id='dfltButton'><h3>Defaults</h3></button>
             <button type="button" class="btn btn-success m-3" id='mintButton'><h3>Mint</h3></button>
+            <span class="badge badge-pill badge-warning" id='GenZeroPopTally'><h3>Gen 0:</h3></span>
         </div>
         <div class="col-lg-1">
             <!--right gutter-->
