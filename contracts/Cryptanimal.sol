@@ -20,6 +20,11 @@ contract CryptAnimal is IERC721, Accountable {
         uint256 genes
     );
 
+    event gen0Check(
+        uint256 headCount,
+        uint256 popLimit
+    );
+
     struct Animal {
         uint256 genes;
         uint64 birthTime;
@@ -110,8 +115,8 @@ contract CryptAnimal is IERC721, Accountable {
     }
 
     // @returns number of generation zero animals in existence.
-    function genZeroPop() public view returns (uint256 gen0Pop) {
-        return gen0Population;
+    function genZeroPop() public {
+        emit gen0Check(gen0Population, CREATION_LIMIT_GEN0);
     }
 
     // @returns the owner of the `tokenId` token.
