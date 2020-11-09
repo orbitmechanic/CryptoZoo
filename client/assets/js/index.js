@@ -4,6 +4,9 @@ var instance;
 var user;
 var contractAddress = '0x8Dcd51cF8De72E213f89E72F3cfcaa68608a1c68';
 
+var gen0PopMax;
+var gen0Pop;
+
 $(document).ready(function() {
     console.debug('Attaching MetaMask request accounts.');
     console.groupCollapsed('index.js-> document.ready():');
@@ -14,6 +17,14 @@ $(document).ready(function() {
 
         console.info('Connected to MetaMask with instance:');
         console.info(instance);
+
+        console.debug('Querying generation 0 population limit...')
+        gen0PopMax = await instance.methods.genZeroPopMax();
+        console.info('Population 0 limit is:' + gen0PopMax);
+
+        console.debug('Querying generation 0 population...')
+        gen0Pop = await instance.methods.genZeroPop();
+        console.info('Population 0 is:' + gen0Pop);
 
         instance.events.Birth().on('data', function (event) {
             console.groupCollapsed('Birth Event:');
@@ -37,26 +48,7 @@ $(document).ready(function() {
             console.groupEnd();
         }).on('error', console.error);
 
-        instance.events.gen0Check().on('data', function (event) {
-            console.groupCollapsed('gen0Check Event:');
-            console.info(event);
-
-            let popLimit = event.returnValues.popLimit;
-            let headCount = event.returnValues.headCount;
-
-            $('#GenZeroPopTally').text('Gen 0: (' + 
-                headCount + '/' + popLimit + ')');
-
-            if (headCount >= popLimit) {
-                $('#mintButton').addClass('disabled');
-            } else {
-                $('#mintButton').removeClass('disabled');
-            };
-
-            console.groupEnd();
-        }).on('error', console.error);
-
-        var gen0Used = await instance.methods.genZeroPop();
+        await instance.methods.genZeroPop();
 
     });
     console.groupEnd();
