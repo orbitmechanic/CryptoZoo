@@ -1,28 +1,32 @@
-console.debug('Reading Factory.js...');
+console.groupCollapsed('Factory.js');
 
 function getColor() {
     // Return a random color code
-    console.debug('calling getColor()...');
+    console.groupCollapsed('getColor()');
 
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    return randomColor
+
+    console.groupEnd();
+    return randomColor;
 }
 
 function genColors(){
     // Generate random color array.
-    console.debug('Calling genColors()...');
+    console.groupCollapsed('genColors()');
 
     var colors = []
     for(var i = 10; i < 99; i ++){
       var color = getColor()
       colors[i] = color
     }
+
+    console.groupEnd();
     return colors
 }
 
 function UpdateFurColor(color,code) {
     // Push new fur color and code to display.
-    console.debug('Calling UpdateFurColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateFurColor(#' + color + ', ' + code + ')');
 
     //This changes the fur color of the animal
     $('.head, .chest, .ear--left, .ear--right').css('background', '#' + color);  
@@ -30,10 +34,12 @@ function UpdateFurColor(color,code) {
     $('#furColorCode').html('code: ' + code); 
     //This updates the fur color part of the DNA that is displayed below the animal
     $('.dnaFurColor').html(code);
+
+    console.groupEnd();
 }
 function UpdateUnderFurColor(color,code) {
     // Push new under fur color and code to display.
-    console.debug('Calling UpdateUnderFurColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateUnderFurColor(#' + color + ', ' + code + ')');
 
     //This changes the under-fur color of the animal
     $('.mouth-contour, .chest_inner').css('background', '#' + color);  
@@ -41,10 +47,12 @@ function UpdateUnderFurColor(color,code) {
     $('#UnderfurColorCode').html('code: ' + code); 
     //This updates the under-fur color part of the DNA that is displayed below the animal
     $('.dnaUnderFurColor').html(code); 
+
+    console.groupEnd();
 }
 function UpdateEyeColor(color,code) {
     // Push new eye and tail color and code to display.
-    console.debug('Calling UpdateEyeColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateEyeColor(#' + color + ', ' + code + ')');
 
     //This changes the eye color of the animal
     $('.pupil-left, .pupil-right, .tail').css('background', '#' + color);  
@@ -52,10 +60,12 @@ function UpdateEyeColor(color,code) {
     $('#EyeColorCode').html('code: ' + code); 
     //This updates the eye color part of the DNA that is displayed below the animal
     $('.dnaEyeColor').html(code); 
+
+    console.groupEnd();
 }
 function UpdateEarColor(color,code) {
     // Push new ear and paw color and code to display.
-    console.debug('Calling UpdateEarColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateEarColor(#' + color + ', ' + code + ')');
 
     //This changes the inner-ear color of the animal
     $('.ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
@@ -64,10 +74,12 @@ function UpdateEarColor(color,code) {
     $('#EarColorCode').html('code: ' + code);
     //This updates the inner-ear color part of the DNA that is displayed below the animal
     $('.dnaEarColor').html(code); 
+
+    console.groupEnd();
 }
 function UpdateMarkingMidColor(color,code) {
     // Push new center marking color and code to display.
-    console.debug('Calling UpdateMarkingMidColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateMarkingMidColor(#' + color + ', ' + code + ')');
 
     //This changes the middle marking color of the animal
     $('.marking').css('background', '#' + color);  
@@ -75,10 +87,12 @@ function UpdateMarkingMidColor(color,code) {
     $('#MarkingMidColorCode').html('code: ' + code); 
     //This updates the middle marking color part of the DNA that is displayed below the animal
     $('.dnaMarkingMidColor').html(code); 
+
+    console.groupEnd();
 }
 function UpdateMarkingSidesColor(color,code) {
     // Push new outer marking color and code to display.
-    console.debug('Calling UpdateMarkingSidesColor(#' + color + ', ' + code + ') ...');
+    console.groupCollapsed('UpdateMarkingSidesColor(#' + color + ', ' + code + ')');
 
     //This changes the outer markings color of the animal
     $('.marking-left, .marking-right').css('background', '#' + color);  
@@ -86,13 +100,14 @@ function UpdateMarkingSidesColor(color,code) {
     $('#MarkingSideColorCode').html('code: ' + code); 
     //This updates the outer markings color part of the DNA that is displayed below the animal
     $('.dnaMarkingSidesColor').html(code); 
+
+    console.groupEnd();
 }
 
 
 function SetEyeVariation(num) {
     // Push new eye shape code to display
-    console.debug('Calling SetEyeVariation(' + num + ') ...');
-    console.group('SetEyeVariation():');
+    console.groupCollapsed('SetEyeVariation(' + num + ')');
 
     // Set DNA code dispay
     $('.dnaEyeShape').html(num);
@@ -153,19 +168,20 @@ function SetEyeVariation(num) {
     }
     function resetEyes() {;
         // reset all used eye shape CSS parameters
-        console.debug('Calling SetEyeVariation(' + num + ')::resetEyes() ...');
+        console.groupCollapsed('SetEyeVariation(' + num + ')::resetEyes()');
 
         $('.eye').find('span').css('border', 'none');
         $('.pupil-right').css('transform','rotateZ(0deg)');
         $('.pupil-left').css('transform','rotateZ(0deg)');
+
+        console.groupEnd();
     }
     console.groupEnd();
 }
 
 function SetMarkingVariation(num) {
     // Render marking shape CSS from given number
-    console.debug('Calling SetMarkingVariation(' + num + ') ...');
-    console.groupCollapsed('SetMarkingVariation():');
+    console.groupCollapsed('Calling SetMarkingVariation(' + num + ')');
 
     $('.dnaMarkingShape').html(num)
 
@@ -237,7 +253,7 @@ function SetMarkingVariation(num) {
     }
     function resetDecoration() {
         // Reset all used marking CSS parameters 
-        console.debug('Calling SetMarkingVariation(' + num + ')::resetDecoration() ...');
+        console.groupCollapsed('SetMarkingVariation(' + num + ')::resetDecoration()');
 
         $('.marking').css({ 
             "transform": "rotate(0deg)", 
@@ -257,14 +273,17 @@ function SetMarkingVariation(num) {
             "width": "14px", 
             "top": "1px", 
             "border-radius": "0 50% 50% 50%" });
+
+        console.groupEnd();
     }
+
     console.groupEnd();
+
 }
 
 function SetAnimation(num) {
     // set the animal's CSS animation from code 
-    console.debug('Calling SetAnimation(' + num + ') ...');
-    console.groupCollapsed('SetAnimation():');
+    console.groupCollapsed('SetAnimation(' + num + ')');
 
     $('.dnaAnimation').html(num);
 
@@ -311,3 +330,5 @@ function SetAnimation(num) {
     }  
     console.groupEnd();
 }
+
+console.groupEnd();

@@ -1,140 +1,207 @@
-console.debug('Reading dna.js...');
+console.groupCollapsed('dna.js');
 
-var colors = Object.values(allColors());
+const colors = Object.values(allColors());
 
-var defaultDNA = {
-  // Colors
-  "furColor" : 10,
-  "underFurColor" : 13,
-  "eyesColor" : 96,
-  "earsColor" : 10,
-  "markingMidColor" : 13,
-  "markingSidesColor" : 13,
-  // Attributes
-  "eyesShape" : 1,
-  "markingShape" : 1,
-  "animation" :  1,
-  "special" :  1,
-};
+class animalDNA {
+  constructor() {
+    console.groupCollapsed('animalDNA::constructor()');
+
+
+    // Default Colors
+    this.furColor;
+    this.underFurColor;
+    this.eyesColor;
+    this.earsColor;
+    this.markingMidColor;
+    this.markingSidesColor;
+    // Default Attributes
+    this.eyesShap;
+    this.markingShap;
+    this.animation;
+    this.special;
+
+    console.groupEnd();
+  }
+
+  setDefaults() {
+    console.groupCollapsed('animalDNA::setDefaults()');
+
+    // Default Colors
+    this.furColor = 10;
+    this.underFurColor = 13;
+    this.eyesColor = 96;
+    this.earsColor = 10;
+    this.markingMidColor = 13;
+    this.markingSidesColor = 13;
+
+    // Default Attributes
+    this.eyesShape = 1;
+    this.markingShape = 1;
+    this.animation =  1;
+    this.special =  1;
+
+    console.groupEnd();
+  }
+
+  randomize() {
+    console.groupCollapsed('animalDNA::randomize()')
+
+    // Colors
+    this.furColor = Math.floor(Math.random()*89) + 10;
+    this.underFurColor = Math.floor(Math.random()*89) + 10;
+    this.eyesColor = Math.floor(Math.random()*89) + 10;
+    this.earsColor = Math.floor(Math.random()*89) + 10;
+    this.markingMidColor = Math.floor(Math.random()*89) + 10;
+    this.markingSidesColor = Math.floor(Math.random()*89) + 10;
+    // Attributes
+    this.eyesShape = Math.floor(Math.random()*8) + 1;
+    this.markingShape = Math.floor(Math.random()*4) + 1;
+    this.animation =  Math.floor(Math.random()*4) + 1;
+    this.special =  Math.floor(Math.random()*4) + 1;
+
+    console.groupEnd();
+  }
+
+  synchFromFactoryControls() {
+    console.groupCollapsed('animalDNA::synchFromFactoryControls()');
+
+    // Colors
+    this.furColor = parseInt( $('.dnaFurColor').html() );
+    this.underFurColor = parseInt( $('.dnaUnderFurColor').html() );
+    this.eyesColor = parseInt( $('.dnaEyeColor').html() );
+    this.earsColor = parseInt( $('.dnaEarColor').html() );
+    this.markingMidColor = parseInt( $('.dnaMarkingMidColor').html() );
+    this.markingSidesColor = parseInt( $('.dnaMarkingSidesColor').html() );
+    // Attributes
+    this.eyesShape = parseInt( $('.dnaEyeShape').html() );
+    this.markingShape = parseInt( $('.dnaMarkingShape').html() );
+    this.animation = parseInt( $('.dnaAnimation').html() );
+    this.special = parseInt( $('.dnaSpecial').html() );
+
+    console.groupEnd();
+  }
+
+  list2Factory() {
+    console.groupCollapsed('animalDNA::list2Factory()');
+
+    // Color codes
+    $('.dnaFurColor').html(this.furColor);
+    $('.dnaUnderFurColor').html(this.underFurColor);
+    $('.dnaEyeColor').html(this.eyesColor);
+    $('.dnaEarColor').html(this.earsColor);
+    $('.dnaMarkingMidColor').html(this.markingMidColor);
+    $('.dnaMarkingSidesColor').html(this.markingSidesColor);
+    // Attribute codes
+    $('.dnaEyeShape').html(this.eyesShape);
+    $('.dnaMarkingShape').html(this.dnaMarkingShape);
+    $('.dnaAnimation').html(this.animation);
+    $('.dnaSpecial').html(this.special);
+
+    console.groupEnd();
+  }
+
+  render2Factory(){
+    console.groupCollapsed('animalDNA::render2Factory()')
+    // Color codes
+    UpdateFurColor(colors[this.furColor],this.furColor);
+    $('#furColorControl').val(this.furColor);
+  
+    UpdateUnderFurColor(colors[this.underFurColor],this.underFurColor);
+    $('#UnderfurColorControl').val(this.underFurColor);
+  
+    UpdateEyeColor(colors[this.eyesColor],this.eyesColor);
+    $('#EyeColorControl').val(this.eyesColor);
+  
+    UpdateEarColor(colors[this.earsColor],this.earsColor);
+    $('#EarColorControl').val(this.earsColor);
+
+    UpdateMarkingMidColor(colors[this.markingMidColor],this.markingMidColor);
+    $('#MarkingMidColorControl').val(this.markingMidColor);
+  
+    UpdateMarkingSidesColor(colors[this.markingSidesColor],this.markingSidesColor);
+    $('#MarkingSideColorControl').val(this.markingSidesColor);
+  
+    // Attribute Codes
+    SetEyeVariation(this.eyesShape);
+    $('#EyeShapeControl').val(this.eyesShape);
+  
+    SetMarkingVariation(this.markingShape);
+    $('#MarkingShapeControl').val(this.markingShape);
+  
+    SetAnimation(this.animation);
+    $('#AnimationControl').val(this.animation);
+  
+    console.groupEnd();
+  }
+
+  toString() {
+    console.groupCollapsed('animalDNA::toString()');
+
+    var dna = '';
+
+    // colors
+    dna += this.dnaFurColor;
+    dna += this.dnaUnderFurColor;
+    dna += this.dnaEyeColor;
+    dna += this.dnaEarColor;
+    dna += this.dnaMarkingMidColor;
+    dna += this.dnaMarkingSidesColor;
+
+    // attributes
+    dna += this.dnaEyeShape;
+    dna += this.dnaMarkingShape;
+    dna += this.dnaAnimation;
+    dna += this.dnaSpecial;
+
+    console.groupEnd();
+
+    return parseInt(dna);
+  }
+
+  asInt() {
+    console.groupCollapsed('animalDNA::asInt()');
+    console.groupEnd;
+    return this.toString();
+  }
+
+}
+
+var factoryDNA = new animalDNA();
 
 // when page load
 $( document ).ready(function() {
-  // Push default values to display...
-  console.debug('$(document).ready() callback firing...');
   console.groupCollapsed('dna.js::$(document).ready():');
 
-  // Color codes
-  $('.dnaFurColor').html(defaultDNA.furColor);
-  $('.dnaUnderFurColor').html(defaultDNA.underFurColor);
-  $('.dnaEyeColor').html(defaultDNA.eyesColor);
-  $('.dnaEarColor').html(defaultDNA.earsColor);
-  $('.dnaMarkingMidColor').html(defaultDNA.markingMidColor);
-  $('.dnaMarkingSidesColor').html(defaultDNA.markingSidesColor);
-
-  // Attribute codes
-  $('.dnaEyeShape').html(defaultDNA.eyesShape);
-  $('.dnaMarkingShape').html(defaultDNA.dnaMarkingShape);
-  $('.dnaAnimation').html(defaultDNA.animation);
-  $('.dnaSpecial').html(defaultDNA.special);
-
-  renderAnimal(defaultDNA);
+  factoryDNA.setDefaults();
+  factoryDNA.list2Factory();
+  factoryDNA.render2Factory();
 
   // Attach Button Actions ----------------------------------------------------
 
   // Default Button
   document.getElementById("dfltButton").onclick = function() {
-    console.debug('Default button hit.')
     console.groupCollapsed('defaultButton.onclick():');
-    renderAnimal(defaultDNA);
+
+    factoryDNA.setDefaults();
+    factoryDNA.list2Factory();
+    factoryDNA.render2Factory();
+
     console.groupEnd();
   };
 
   // Random Button
   document.getElementById("rndButton").onclick= function() {
-    console.debug('Randomize button hit.')
     console.groupCollapsed('randomButton.onclick():');
-    var randomDNA = {
-      // Colors
-      "furColor" : Math.floor(Math.random()*89) + 10,
-      "underFurColor" : Math.floor(Math.random()*89) + 10,
-      "eyesColor" : Math.floor(Math.random()*89) + 10,
-      "earsColor" : Math.floor(Math.random()*89) + 10,
-      "markingMidColor" : Math.floor(Math.random()*89) + 10,
-      "markingSidesColor" : Math.floor(Math.random()*89) + 10,
-      // Attributes
-      "eyesShape" : Math.floor(Math.random()*8) + 1,
-      "markingShape" : Math.floor(Math.random()*4) + 1,
-      "animation" :  Math.floor(Math.random()*4) + 1,
-      "special" :  Math.floor(Math.random()*4) + 1,
-    };
-    renderAnimal(randomDNA);
-    console.groupEnd();
-  };
 
-  // Mint Button
-  document.getElementById('mintButton').onclick = function() {
-    console.debug('Mint button hit.');
-    console.groupCollapsed('mintButton.onclick():');
-    mintAnimal();
+    factoryDNA.randomize();
+    factoryDNA.list2Factory();
+    factoryDNA.render2Factory();
+
     console.groupEnd();
   };
 
   console.groupEnd()
 });
-
-function getDNA(){
-  // Create printable string from DNA values
-  console.debug('calling getDNA()...');
-
-  var dna = '';
-  dna += $('.dnaFurColor').html();
-  dna += $('.dnaUnderFurColor').html();
-  dna += $('.dnaEyeColor').html();
-  dna += $('.dnaEarColor').html();
-  dna += $('.dnaEyeShape').html();
-  dna += $('.dnaMarkingShape').html();
-  dna += $('.dnaMarkingMidColor').html();
-  dna += $('.dnaMarkingSidesColor').html();
-  dna += $('.dnaAnimation').html();
-  dna += $('.dnaSpecial').html();
-
-  return parseInt(dna);
-}
-
-function renderAnimal(dna){
-  // Render animal from DNA values
-  console.debug('calling renderAnimal()...');
-  console.groupCollapsed('renderAnimal():');
-
-  UpdateFurColor(colors[dna.furColor],dna.furColor);
-  $('#furColorControl').val(dna.furColor);
-
-  UpdateUnderFurColor(colors[dna.underFurColor],dna.underFurColor);
-  $('#UnderfurColorControl').val(dna.underFurColor);
-
-  UpdateEyeColor(colors[dna.eyesColor],dna.eyesColor);
-  $('#EyeColorControl').val(dna.eyesColor);
-
-  UpdateEarColor(colors[dna.earsColor],dna.earsColor);
-  $('#EarColorControl').val(dna.earsColor);
-
-  SetEyeVariation(dna.eyesShape);
-  $('#EyeShapeControl').val(dna.eyesShape);
-
-  SetMarkingVariation(dna.markingShape);
-  $('#MarkingShapeControl').val(dna.markingShape);
-
-  UpdateMarkingMidColor(colors[dna.markingMidColor],dna.markingMidColor);
-  $('#MarkingMidColorControl').val(dna.markingMidColor);
-
-  UpdateMarkingSidesColor(colors[dna.markingSidesColor],dna.markingSidesColor);
-  $('#MarkingSideColorControl').val(dna.markingSidesColor);
-
-  SetAnimation(dna.animation);
-  $('#AnimationControl').val(dna.animation);
-
-  console.groupEnd();
-}
 
 // Control listeners ------------------------------------------------------------
 
@@ -189,3 +256,4 @@ $('#AnimationControl').change(()=>{
   SetAnimation(animationCode);
 });
 
+console.groupEnd()

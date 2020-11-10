@@ -104,25 +104,6 @@ var abi = [
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "headCount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "popLimit",
-        "type": "uint256"
-      }
-    ],
-    "name": "gen0Check",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
         "internalType": "string",
         "name": "msg",
         "type": "string"
@@ -167,7 +148,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -180,7 +162,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -199,7 +182,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -212,7 +196,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -225,7 +210,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -258,7 +244,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -271,7 +258,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -347,7 +335,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -360,7 +349,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -373,7 +363,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -392,7 +383,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -405,14 +397,36 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
     "name": "genZeroPop",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "gen0Pop",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "genZeroPopMax",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "gen0PopLimit",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -431,7 +445,8 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
