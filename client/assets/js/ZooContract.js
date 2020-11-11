@@ -43,16 +43,15 @@ class ZooContract {
     }
 
     // Mint generation zero animal
-    mintGen0Animal(_dna) {
-        console.groupCollapsed('ZooContract::minGen0Animal()');
+    mintGen0Animal() {
+        console.groupCollapsed('ZooContract::mintGen0Animal()');
 
-        const dnaCode = _dna.toString();
-        console.info('Minting animal with DNA: ' + dnaCode);
+        console.info('Minting animal with DNA: ' + factoryDNA);
 
         console.info('Connected to MetaMask with instance: ');
         console.info(this.instance);
 
-        this.instance.methods.createAnimalGen0(dnaCode).send({}, function(_error, _txHash) {
+        this.instance.methods.createAnimalGen0(factoryDNA.toString()).send({}, function(_error, _txHash) {
             if(err)
                 console.error(err);
             else 

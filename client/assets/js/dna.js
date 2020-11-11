@@ -139,18 +139,20 @@ class animalDNA {
     var dna = '';
 
     // colors
-    dna += this.dnaFurColor;
-    dna += this.dnaUnderFurColor;
-    dna += this.dnaEyeColor;
-    dna += this.dnaEarColor;
-    dna += this.dnaMarkingMidColor;
-    dna += this.dnaMarkingSidesColor;
+    dna += this.furColor;
+    dna += this.underFurColor;
+    dna += this.eyesColor;
+    dna += this.earsColor;
+    dna += this.markingMidColor;
+    dna += this.markingSidesColor;
 
     // attributes
-    dna += this.dnaEyeShape;
-    dna += this.dnaMarkingShape;
-    dna += this.dnaAnimation;
-    dna += this.dnaSpecial;
+    dna += this.eyesShape;
+    dna += this.markingShape;
+    dna += this.animation;
+    dna += this.special;
+
+    console.debug('Assembled: ' + dna);
 
     console.groupEnd();
 
