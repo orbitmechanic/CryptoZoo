@@ -1,11 +1,10 @@
 console.groupCollapsed('dna.js');
 
-const colors = Object.values(allColors());
+var colors = Object.values(allColors());
 
 class animalDNA {
   constructor() {
     console.groupCollapsed('animalDNA::constructor()');
-
 
     // Default Colors
     this.furColor;

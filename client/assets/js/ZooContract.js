@@ -9,7 +9,7 @@ class ZooContract {
         console.debug('web3 instantiated.');
         window.ethereum.autoRefreshOnNetworkChange = false;
 
-        this.contractAddress = '0x193552C1220450E37Ae053F15647a4CeB6FF213c';
+        this.contractAddress = '0xEeD2f417e0b23b833057C6188e3373CbBfb5F563';
         console.info('contract Address = ' + this.contractAddress);
 
         this.instance;
@@ -34,9 +34,6 @@ class ZooContract {
                 this.user = _accounts[0];
                 console.info('Using account: ' + this.user);
                 },
-
-
-
             (_error) => {
                 console.error('window.ethreum.enable error:' + _error);
                 }

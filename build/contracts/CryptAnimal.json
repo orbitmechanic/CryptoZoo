@@ -11732,12 +11732,12 @@
         }
       },
       "links": {},
-      "address": "0x193552C1220450E37Ae053F15647a4CeB6FF213c",
-      "transactionHash": "0x28d990d0ddcf028091bb56ddf4023958bd6da0eec04c54c51a323e5caa8768c0"
+      "address": "0xEeD2f417e0b23b833057C6188e3373CbBfb5F563",
+      "transactionHash": "0xa19ce4404cd6ca7a7b00901f8c337fb3d6f705f863ef3826989fd7c05cde5b5b"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-11-10T17:39:49.550Z",
+  "updatedAt": "2020-11-11T15:21:35.238Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
