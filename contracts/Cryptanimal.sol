@@ -1,14 +1,16 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.7.0;
+pragma solidity 0.6.0;
 
 import "./IERC721.sol";
 import "./Accountable.sol";
 
 contract CryptAnimal is IERC721, Accountable {
 
+    string public constant tokenName = "CryptAnimals";
+    string public constant tokenSymbol = "CA";
+
     uint256 public constant CREATION_LIMIT_GEN0 = 10;
-    string public constant override name = "CryptAnimals";
-    string public constant override symbol = "CA";
+    uint256 public gen0Population = uint256(0);
 
     event Birth(
         address owner,
@@ -28,10 +30,8 @@ contract CryptAnimal is IERC721, Accountable {
 
     Animal[] animals;
 
-    mapping( uint256 => address) public animalId2Owner;
+    mapping(uint256 => address) public animalId2Owner;
     mapping (address => uint256) owner2TokenCount;
-
-    uint256 gen0Population = uint256(0);
 
     // @returns new animal ID
     // @require gen0Population < CREATION_LIMIT_GEN0
@@ -89,6 +89,16 @@ contract CryptAnimal is IERC721, Accountable {
         owner = animalId2Owner[_Id];
     }
 
+    // @returns tokenName
+    function name() external view override returns(string memory Name){
+        return tokenName;
+    }
+
+    // @returns tokenSymbol
+    function symbol() external view override returns(string memory Symbol){
+        return tokenSymbol;
+    }
+
     // @returns the number of tokens in ``owner``'s account.
     function balanceOf(address _owner) external view override returns (uint256 balance){
         return owner2TokenCount[_owner];
@@ -97,6 +107,16 @@ contract CryptAnimal is IERC721, Accountable {
     // @returns the total number of tokens in circulation.
     function totalSupply() public view override returns (uint256 total){
         return animals.length;
+    }
+
+    // @returns number of generation zero animals in existence.
+    function genZeroPop() public view returns (uint256 gen0Pop){
+        return gen0Population;
+    }
+
+    // @returns the maximum number of generation zero animals in existence.
+    function genZeroPopMax() public pure returns (uint256 gen0PopLimit){
+        return CREATION_LIMIT_GEN0;
     }
 
     // @returns the owner of the `tokenId` token.

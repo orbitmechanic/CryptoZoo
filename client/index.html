@@ -9,6 +9,7 @@
     <script src="assets/bootstrap/js/popper.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/abi.js"></script>
 
     <link rel="stylesheet" href="assets/css/mystyle.css">
     <link rel="stylesheet" href="assets/css/cats.css">
@@ -24,6 +25,8 @@
     <div class="jumbotron fluid" id='factory-header'>
         <h1 class="c-black">CryptoZoo-Factory</h1>
         <p class="c-black">Create your custom cryptanimal.</p>
+        <div class='alert alert-success' 
+            role='alert' id='animalCreation' style='display:none'></div>
     </div>
 
     <div class="row fluid center-block">
@@ -99,12 +102,12 @@
                                 <span class="dnaUnderFurColor"></span>
                                 <span class="dnaEyeColor"></span>
                                 <span class="dnaEarColor"></span>
+                                <span class="dnaMarkingMidColor"></span>
+                                <span class="dnaMarkingSidesColor"></span>
                             
                                 <!-- Attribute Codes -->
                                 <span class="dnaEyeShape"></span>
                                 <span class="dnaMarkingShape"></span>
-                                <span class="dnaMarkingMidColor"></span>
-                                <span class="dnaMarkingSidesColor"></span>
                                 <span class="dnaAnimation"></span>
                                 <span class="dnaSpecial"></span>
                             </b>
@@ -172,12 +175,12 @@
                                 <span class="dnaUnderFurColor"></span>
                                 <span class="dnaEyeColor"></span>
                                 <span class="dnaEarColor"></span>
+                                <span class="dnaMarkingMidColor"></span>
+                                <span class="dnaMarkingSidesColor"></span>
                             
                                 <!-- Cattributes -->
                                 <span class="dnaEyeShape"></span>
                                 <span class="dnaMarkingShape"></span>
-                                <span class="dnaMarkingMidColor"></span>
-                                <span class="dnaMarkingSidesColor"></span>
                                 <span class="dnaAnimation"></span>
                                 <span class="dnaSpecial"></span>
                             </b>
@@ -315,6 +318,7 @@
             <button type="button" class="btn btn-info m-3" id="rndButton"><h3>Randomize</h3></button>
             <button type="button" class="btn btn-secondary m-3" id='dfltButton'><h3>Defaults</h3></button>
             <button type="button" class="btn btn-success m-3" id='mintButton'><h3>Mint</h3></button>
+            <span class="badge badge-pill badge-warning" id='GenZeroPopTally'><h3>Gen 0:</h3></span>
         </div>
         <div class="col-lg-1">
             <!--right gutter-->
@@ -329,9 +333,10 @@
     <p>Ivan on Tech Academy Bootcamp July 2020, Orbital edition.</p>
 </footer>
 
-<script src="assets/js/colors.js"></script>
-<script src="assets/js/dna.js"></script>
-<script src="assets/js/Factory.js"></script>
-<script src="assets/js/index.js"></script>
+<script src='assets/js/colors.js'></script>
+<script src='assets/js/dna.js'></script>
+<script src='assets/js/ZooContract.js'></script>
+<script src='assets/js/Factory.js'></script>
+<script src='assets/js/index.js'></script>
 
 </html>

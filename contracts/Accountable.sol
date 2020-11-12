@@ -1,4 +1,4 @@
-pragma solidity 0.7.0;
+pragma solidity 0.6.0;
 import './Mortal.sol';
 // SPDX-License-Identifier: UNLICENSED
 
@@ -17,7 +17,7 @@ contract Accountable is Mortal {
         _;
     }
     
-    constructor(){
+    constructor() public {
         balance_ = 0;
     }
     

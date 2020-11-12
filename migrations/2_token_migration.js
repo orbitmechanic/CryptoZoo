@@ -1,5 +1,5 @@
-const Token= artifacts.require("CryptAnimal");
+const CryptAnimal= artifacts.require("CryptAnimal");
 
 module.exports = function(deployer) {
-  deployer.deploy(Token);
+  deployer.deploy(CryptAnimal);
 };
