@@ -33,6 +33,18 @@ class ZooContract {
 
                 this.user = _accounts[0];
                 console.info('Using account: ' + this.user);
+
+                this.instance.events.Birth().on('data', function(_event) {
+                    console.info('Birth Event detected. ');
+                    console.debug(_event);
+                    $('#animalCreation').css('display', 'block');
+                    $('#animalCreation').text( // Mom and Dad are always zero for Gen 0 animals.
+                        'Created New Gen Zero Animal | ' +
+                        'Owner: ' + _event.returnValues.owner + ' | ' +
+                        'Animal Id: ' + _event.returnValues.animalId  + ' | ' +
+                        'gene codes: ' +  _event.returnValues.genes); 
+                }).on('error', console.error);
+
                 },
             (_error) => {
                 console.error('window.ethreum.enable error:' + _error);
@@ -52,8 +64,8 @@ class ZooContract {
         console.info(this.instance);
 
         this.instance.methods.createAnimalGen0(factoryDNA.toString()).send({}, function(_error, _txHash) {
-            if(err)
-                console.error(err);
+            if(_error)
+                console.error(_error);
             else 
                 console.info('Tx Hash: ' + _txHash);
         });

@@ -156,13 +156,7 @@ class animalDNA {
 
     console.groupEnd();
 
-    return parseInt(dna);
-  }
-
-  asInt() {
-    console.groupCollapsed('animalDNA::asInt()');
-    console.groupEnd;
-    return this.toString();
+    return dna;
   }
 
 }
