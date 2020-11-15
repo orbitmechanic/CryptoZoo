@@ -1,342 +1,74 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Zoo </title>
-    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <script src="assets/bootstrap/js/popper.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/web3.min.js"></script>
-    <script src="assets/js/abi.js"></script>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/mystyle.css">
-    <link rel="stylesheet" href="assets/css/cats.css">
-    <link rel='stylesheet' href='assets/css/bunnies.css'>
-    <link rel="stylesheet" href="assets/css/colors.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/factory.css">
-    <link rel="stylesheet" href="assets/css/frontend.css">
+  <link rel="stylesheet" href="assets/css/mystyle.css">
+  <link rel='stylesheet' href='assets/css/admission.css'>
+
 </head>
-
 <body>
-    
-    <div class="jumbotron fluid" id='factory-header'>
-        <h1 class="c-black">CryptoZoo-Factory</h1>
-        <p class="c-black">Create your custom cryptanimal.</p>
-        <div class='alert alert-success' 
-            role='alert' id='animalCreation' style='display:none'></div>
-    </div>
 
-    <div class="row fluid center-block">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/zoologo.jpg" alt="Logo" >
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><h2>Admissions</h2></a>
+      </li>
+      <li>
+          <h1> | </h1>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><h2>Gift Shop</h2></a>
+      </li>
+      <li>
+        <h1> | </h1>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><h2>Sponsored Animals</h2></a>
+      </li>
+      <li>
+        <h1> | </h1>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><h2>Preservaton</h2></a>
+      </li>
+      <li>
+        <h1> | </h1>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="factory.html"><h2>Staff Only</h2></a>
+      </li>
+      <li>
+        <h1> | </h1>
+      </li>
+      <li>
+        <h2>   </h2>
+        <button type="button" class="btn btn-success"><h4>Connect Wallet</h4></button>
+      </li>
+    </ul>
+  </nav>
 
-        <div class="col-lg-1">
-            <!--left gutter-->
-        </div>
-
-        <div id="demo" class="col-lg-3 carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-            </ul>
-            
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- Bunny ------------------------------------------------>
-                    <div class='bunbox m-2 light-b-shadow'>
-                        <div class='bun'>
-                            <div class='bun ear'>
-                                <div class="bun ear--left">
-                                    <div class="bun ear--left-inside"></div>
-                                </div>
-                                <div class="bun ear--right">
-                                    <div class="bun ear--right-inside"></div>
-                                </div>
-                            </div>
-                            <div class='bun head movingHead'>
-                                <div class="bun marking">
-                                    <div class="bun marking-left"></div>
-                                    <div class="bun marking-right"></div>
-                                </div>
-                                <div class="bun eye">
-                                    <div class="bun eye--left">
-                                        <span class="bun pupil-left"></span>
-                                    </div>
-                                    <div class="bun eye--right">
-                                        <span class="bun pupil-right"></span>
-                                    </div>
-                                </div>
-
-                                <div class="bun nose"></div>
-                                <div class="bun mouth-contour"></div>
-                                <div class="bun mouth-left"></div>
-                                <div class="bun mouth-right"></div>
-                                <div class="bun whiskers-left"></div>
-                                <div class="bun whiskers-right"></div>
-                            </div>
-
-                            <div class='bun body'>
-                                
-                                <div class="bun chest"></div>
-                                <div class="bun chest_inner"></div>
-
-                                <div class="bun paw-left"></div>
-                                <div class="bun paw-left_rear"></div>
-
-                                <div class="bun paw-right"></div>
-                                <div class="bun paw-right_rear"></div>
-
-
-                                <div class="bun tail"></div>
-                            </div>
-                        </div>
-
-                        <div class="dnaDiv">
-                            <b>Bunny DNA:
-                                <!-- Colors Codes -->
-                                <span class="dnaFurColor"></span>
-                                <span class="dnaUnderFurColor"></span>
-                                <span class="dnaEyeColor"></span>
-                                <span class="dnaEarColor"></span>
-                                <span class="dnaMarkingMidColor"></span>
-                                <span class="dnaMarkingSidesColor"></span>
-                            
-                                <!-- Attribute Codes -->
-                                <span class="dnaEyeShape"></span>
-                                <span class="dnaMarkingShape"></span>
-                                <span class="dnaAnimation"></span>
-                                <span class="dnaSpecial"></span>
-                            </b>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- Kitty ------------------------------------------------->
-                    <div class="catBox m-2 light-b-shadow">
-                        <div class="cat">
-                            <div class="cat ear">
-                                <div class="cat ear--left">
-                                    <div class="cat ear--left-inside"></div>
-                                </div>
-                                <div class="cat ear--right">
-                                    <div class="cat ear--right-inside"></div>
-                                </div>
-                            </div>
-
-                            <div class="cat head">
-                                <div class="cat marking">
-                                    <div class="cat marking-left"></div>
-                                    <div class="cat marking-right"></div>
-                                </div>
-                                <div class="cat eye">
-                                    <div class="cat eye--left">
-                                        <span class="cat pupil-left"></span>
-                                    </div>
-                                    <div class="cat eye--right">
-                                        <span class="cat pupil-right"></span>
-                                    </div>
-                                </div>
-                                <div class="cat nose"></div>
-
-                                <div class="cat mouth-contour"></div>
-                                <div class="cat mouth-left"></div>
-                                <div class="cat mouth-right"></div>
-
-                                <div class="cat whiskers-left"></div>
-                                <div class="cat whiskers-right"></div>
-                            </div>
-
-                            <div class="cat body">
-
-                                <div class="cat chest"></div>
-                                <div class="cat chest_inner"></div>
-
-
-                                <div class="cat paw-left"></div>
-                                <div class="cat paw-left_rear"></div>
-
-
-                                <div class="cat paw-right"></div>
-                                <div class="cat paw-right_rear"></div>
-
-
-                                <div class="cat tail"></div>
-                            </div>
-                        </div>
-
-                        <div class="dnaDiv" id="bunDNA">
-                            <b>Kitty DNA:
-                                <!-- Colors -->
-                                <span class="dnaFurColor"></span>
-                                <span class="dnaUnderFurColor"></span>
-                                <span class="dnaEyeColor"></span>
-                                <span class="dnaEarColor"></span>
-                                <span class="dnaMarkingMidColor"></span>
-                                <span class="dnaMarkingSidesColor"></span>
-                            
-                                <!-- Cattributes -->
-                                <span class="dnaEyeShape"></span>
-                                <span class="dnaMarkingShape"></span>
-                                <span class="dnaAnimation"></span>
-                                <span class="dnaSpecial"></span>
-                            </b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-            
-        </div>
-
-
-        <div class="col-lg-7 cattributes m-2 light-b-shadow">
-
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#attributeControls"><h3>Attribute Controls</h3></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#colorControls"><h3>Color Controls</h3></a>
-                </li>
-            </ul>
-                
-            <div class="tab-content">
-                <div id="attributeControls" class="container tab-pane active">
-                    <br>
-                    <div class="row fluid">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Eye Shape</b>
-                                    <span class="badge badge-dark ml-2" id="EyeShapeName"></span>
-                                </label>
-                                <input class="form-control-range" id="EyeShapeControl" 
-                                    type="range" min="1" max="9" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Marking Shape</b>
-                                    <span class="badge badge-dark ml-2" id="MarkingShapeName"></span>
-                                </label>
-                                <input class="form-control-range" id="MarkingShapeControl" 
-                                    type="range" min="1" max="5" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Animation</b>
-                                    <span class="badge badge-dark ml-2" id="AnimationCode"></span>
-                                </label>
-                                <input class="form-control-range" id="AnimationControl" 
-                                    type="range" min="1" max="5" >
-                            </div>    
-                        </div>
-                    </div>    
-                </div>
-                <div id="colorControls" class="container tab-pane fade">
-                    <br>
-                    <div class="row fluid">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Fur Color</b>
-                                    <span class="badge badge-dark ml-2" id="furColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="furColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Under Fur Color</b>
-                                    <span class="badge badge-dark ml-2" id="UnderfurColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="UnderfurColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Eye and Tail Color</b>
-                                    <span class="badge badge-dark ml-2" id="EyeColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="EyeColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Ear and Paw Color</b>
-                                    <span class="badge badge-dark ml-2" id="EarColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="EarColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Center Marking Color</b>
-                                    <span class="badge badge-dark ml-2" id="MarkingMidColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="MarkingMidColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                            <div class="form-group">
-                                <label for="formControlRange">
-                                    <b>Outer Marking Color</b>
-                                    <span class="badge badge-dark ml-2" id="MarkingSideColorCode"></span>
-                                </label>
-                                <input class="form-control-range" id="MarkingSideColorControl" 
-                                    type="range" min="10" max="98" >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-1">
-            <!--right gutter-->
-        </div>
-
-    </div>
-
-    <div class="row fluid center-block">
-        <div class="col-lg-4">
-            <!--left gutter-->
-        </div>
-        <div class="col-lg-7 justify-content-end">
-            <!--Under Controls-->
-            <button type="button" class="btn btn-info m-3" id="rndButton"><h3>Randomize</h3></button>
-            <button type="button" class="btn btn-secondary m-3" id='dfltButton'><h3>Defaults</h3></button>
-            <button type="button" class="btn btn-success m-3" id='mintButton'><h3>Mint</h3></button>
-            <span class="badge badge-pill badge-warning" id='GenZeroPopTally'><h3>Gen 0:</h3></span>
-        </div>
-        <div class="col-lg-1">
-            <!--right gutter-->
-        </div>
-    </div>
-
-    <br>
+<!-- Admissions -->
+  <div class="jumbotron jumbotron-fluid justify-content-center" id='acrage'
+    style="background: #4e4e4e url('/assets/images/entry.jpg') no-repeat fixed center center; min-height: 642px;"> 
+    <!-- Because JUMBOTRONS!-->
+    <h1>This shouldn't be here.</h1>
+  </div>
 
 </body>
 
 <footer align="center">
     <p>Ivan on Tech Academy Bootcamp July 2020, Orbital edition.</p>
 </footer>
-
-<script src='assets/js/colors.js'></script>
-<script src='assets/js/dna.js'></script>
-<script src='assets/js/ZooContract.js'></script>
-<script src='assets/js/Factory.js'></script>
-<script src='assets/js/index.js'></script>
 
 </html>
