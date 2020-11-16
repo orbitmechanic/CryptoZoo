@@ -10,6 +10,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   <link rel="stylesheet" href="assets/css/mystyle.css">
+  <link rel="stylesheet" href="assets/css/cats.css">
+  <link rel='stylesheet' href='assets/css/bunnies.css'>
+  <link rel="stylesheet" href="assets/css/colors.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/sponsoredList.css">
+  <link rel="stylesheet" href="assets/css/frontend.css">
 
 </head>
 <body>
@@ -19,43 +25,79 @@
     <a class="navbar-brand" href="#">
         <img src="./assets/images/zoologo.jpg" alt="Logo" >
     </a>
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html"><h2>Will Call</h2></a>
-      </li>
-      <li>
-          <h1> | </h1>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="giftShop.html"><h2>Gift Shop</h2></a>
-      </li>
-      <li>
-        <h1> | </h1>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sponsoredList.html"><h2>Sponsored Animals</h2></a>
-      </li>
-      <li>
-        <h1> | </h1>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="preservation.html"><h2>Preservaton</h2></a>
-      </li>
-      <li>
-        <h1> | </h1>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="factory.html"><h2>Staff Only</h2></a>
-      </li>
-      <li>
-        <h1> | </h1>
-      </li>
-      <li>
-        <h2>   </h2>
-        <button type="button" class="btn btn-success"><h4>Connect Wallet</h4></button>
-      </li>
+
+    <ul class="pagination pagination-lg bg-dark">
+      <li class="page-item"><a class="page-link" href="index.html">Will Call</a></li>
+      <li class="page-item"><a class="page-link" href="tradingDepot.html">Trading Depot</a></li>
+      <li class="page-item active"><a class="page-link" href="sponsoredList.html">Sponsored Animals</a></li>
+      <li class="page-item"><a class="page-link" href="preservation.html">Preservaton</a></li>
+      <li class="page-item"><a class="page-link" href="factory.html">Staff Only</a></li>
+      <li><button type="button" class="btn btn-success"><h4>Connect Wallet</h4></button></li>
     </ul>
+    
   </nav>
+
+  <!--Because JUMBOTRONS-->
+  <div class="jumbotron fluid" id='sponsored-list-header'>
+      <h1 class="c-black">Sponsorships</h1>
+      <p class="c-black">See all your sponsored CryptoAnimals Here!</p>
+  </div>
+
+    <!--Banner-->
+    <div class="jumbotron" id='billboard'>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card" style="width:400px">
+              <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width:400px">
+              <div class="card-body">
+                <h4 class="card-title">Jane Doe</h4>
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+              </div>
+              <img class="card-img-bottom" src="img_avatar6.png" alt="Card image" style="width:100%">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width:400px">
+              <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      
+      </div>
+    </div>
 
 </body>
 
