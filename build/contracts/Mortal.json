@@ -64,38 +64,38 @@
   "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"torchPassed\",\"type\":\"bool\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"msg\",\"type\":\"string\"}],\"name\":\"imploding\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"amIOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":\"Mortal\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol\":{\"keccak256\":\"0xb380354d4b29dfc990ee09f4f8399f0ad531bed603f46bf229b7527f2ec8904f\",\"urls\":[\"bzz-raw://77d5d0e9f1f1457399b7b2c6de4b1b4ffe17c080779f0c6959a31a5d579c44fe\",\"dweb:/ipfs/QmWa8WykXaYoEE99fFPJH9H1hktLES1ieG985Q4zP8k4Py\"]},\"/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol\":{\"keccak256\":\"0x3bb85c096a259ec07df06aa82de40a5bd804529ccd0100098161ebbd98b4d98d\",\"urls\":[\"bzz-raw://20cf8d8a05f202a59d76a1acf3708980f1145b5813db6d4126ead621a9e1d265\",\"dweb:/ipfs/QmcMMwZ9YRB2pYtzFCaan4MT45PofZHnzEPbYsfyWo7mJQ\"]}},\"version\":1}",
   "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610505806100536000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610072575b600080fd5b61004e6100b6565b005b6100586101fd565b604051808215151515815260200191505060405180910390f35b6100b46004803603602081101561008857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610265565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a16000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025d5760019050610262565b600090505b90565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461030a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103b0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104aa6026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461044657fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad46001604051808215151515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea2646970667358221220f7381d220e0e4892ec927430b3d99b3317200d2ad2938b2c194817f73b00c8f964736f6c63430006000033",
   "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633d8aa9b8146100465780634e4ab83014610050578063f2fde38b14610072575b600080fd5b61004e6100b6565b005b6100586101fd565b604051808215151515815260200191505060405180910390f35b6100b46004803603602081101561008857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610265565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b7f59856d07e781c7d783b2740fdea65325a51339ea46afc8d69ddc427701b021506040518080602001828103825260058152602001807f214d4f4f4200000000000000000000000000000000000000000000000000000081525060200191505060405180910390a16000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025d5760019050610262565b600090505b90565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461030a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806104866024913960400191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103b0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806104aa6026913960400191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461044657fe5b7fb899c305786c4dcf61109e2307e0c618a96ab74289a0d265de5bf8839fd81ad46001604051808215151515815260200191505060405180910390a15056fe4f6e6c792074686520636f6e7472616374206f776e65722063616e20646f20746861742e43616e6e6f74207472616e73666572206f776e65727368697020746f20796f757273656c662ea2646970667358221220f7381d220e0e4892ec927430b3d99b3317200d2ad2938b2c194817f73b00c8f964736f6c63430006000033",
-  "sourceMap": "91:190:4:-:0;;;367:10:5;359:5;;:18;;;;;;;;;;;;;;;;;;91:190:4;;;;;;",
-  "deployedSourceMap": "91:190:4:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;91:190:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:108;;;:::i;:::-;;397:172:5;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;581:322;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;581:322:5;;;;;;;;;;;;;;;;;;;:::i;:::-;;170:108:4;250:5:5;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;222:18:4::1;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;264:5;::::0;::::1;;;;;;;;;251:19;;;397:172:5::0;438:4;473:5;;;;;;;;;;;459:19;;:10;:19;;;455:107;;;501:4;494:11;;;;455:107;545:5;538:12;;397:172;;:::o;581:322::-;250:5;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;682:5:::1;::::0;::::1;;;;;;;;;670:17;;:8;:17;;;;662:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;749:8;741:5;::::0;:16:::1;;;;;;;;;;;;;;;;;;784:8;775:17;;:5;::::0;::::1;;;;;;;;;:17;;;768:25;;;;840:26;861:4;840:26;;;;;;;;;;;;;;;;;;;;;;581:322:::0;:::o",
+  "sourceMap": "91:190:5:-:0;;;367:10:6;359:5;;:18;;;;;;;;;;;;;;;;;;91:190:5;;;;;;",
+  "deployedSourceMap": "91:190:5:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;91:190:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:108;;;:::i;:::-;;397:172:6;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;581:322;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;581:322:6;;;;;;;;;;;;;;;;;;;:::i;:::-;;170:108:5;250:5:6;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;222:18:5::1;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;264:5;::::0;::::1;;;;;;;;;251:19;;;397:172:6::0;438:4;473:5;;;;;;;;;;;459:19;;:10;:19;;;455:107;;;501:4;494:11;;;;455:107;545:5;538:12;;397:172;;:::o;581:322::-;250:5;;;;;;;;;;;236:19;;:10;:19;;;228:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;682:5:::1;::::0;::::1;;;;;;;;;670:17;;:8;:17;;;;662:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;749:8;741:5;::::0;:16:::1;;;;;;;;;;;;;;;;;;784:8;775:17;;:5;::::0;::::1;;;;;;;;;:17;;;768:25;;;;840:26;861:4;840:26;;;;;;;;;;;;;;;;;;;;;;581:322:::0;:::o",
   "source": "pragma solidity 0.6.0;\r\nimport \"./Ownable.sol\";\r\n// SPDX-License-Identifier: UNLICENSED\r\n\r\ncontract Mortal is Ownable{\r\n    \r\n    event imploding(string msg);\r\n    \r\n    function implode() public onlyOwner {\r\n        emit imploding('!MOOB');\r\n        selfdestruct(owner);\r\n    }\r\n}",
   "sourcePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
   "ast": {
     "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
     "exportedSymbols": {
       "Mortal": [
-        628
+        1061
       ]
     },
-    "id": 629,
+    "id": 1062,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 606,
+        "id": 1039,
         "literals": [
           "solidity",
           "0.6",
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:4"
+        "src": "0:22:5"
       },
       {
         "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 607,
+        "id": 1040,
         "nodeType": "ImportDirective",
-        "scope": 629,
-        "sourceUnit": 705,
-        "src": "24:23:4",
+        "scope": 1062,
+        "sourceUnit": 1138,
+        "src": "24:23:5",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -106,31 +106,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 608,
+              "id": 1041,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 704,
-              "src": "110:7:4",
+              "referencedDeclaration": 1137,
+              "src": "110:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$704",
+                "typeIdentifier": "t_contract$_Ownable_$1137",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 609,
+            "id": 1042,
             "nodeType": "InheritanceSpecifier",
-            "src": "110:7:4"
+            "src": "110:7:5"
           }
         ],
         "contractDependencies": [
-          704
+          1137
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 628,
+        "id": 1061,
         "linearizedBaseContracts": [
-          628,
-          704
+          1061,
+          1137
         ],
         "name": "Mortal",
         "nodeType": "ContractDefinition",
@@ -138,22 +138,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 613,
+            "id": 1046,
             "name": "imploding",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 612,
+              "id": 1045,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 611,
+                  "id": 1044,
                   "indexed": false,
                   "name": "msg",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 613,
-                  "src": "146:10:4",
+                  "scope": 1046,
+                  "src": "146:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -161,10 +161,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 610,
+                    "id": 1043,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "146:6:4",
+                    "src": "146:6:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -174,15 +174,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "145:12:4"
+              "src": "145:12:5"
             },
-            "src": "130:28:4"
+            "src": "130:28:5"
           },
           {
             "body": {
-              "id": 626,
+              "id": 1059,
               "nodeType": "Block",
-              "src": "206:72:4",
+              "src": "206:72:5",
               "statements": [
                 {
                   "eventCall": {
@@ -191,14 +191,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "214d4f4f42",
-                        "id": 619,
+                        "id": 1052,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "232:7:4",
+                        "src": "232:7:5",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_bf9b8f69309c6a3bf8d7de674714f75146d7c6c4e23a5a4b63b0b01408057ea4",
@@ -214,18 +214,18 @@
                           "typeString": "literal_string \"!MOOB\""
                         }
                       ],
-                      "id": 618,
+                      "id": 1051,
                       "name": "imploding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 613,
-                      "src": "222:9:4",
+                      "referencedDeclaration": 1046,
+                      "src": "222:9:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 620,
+                    "id": 1053,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -233,16 +233,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "222:18:4",
+                    "src": "222:18:5",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 621,
+                  "id": 1054,
                   "nodeType": "EmitStatement",
-                  "src": "217:23:4"
+                  "src": "217:23:5"
                 },
                 {
                   "expression": {
@@ -250,12 +250,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 623,
+                        "id": 1056,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 632,
-                        "src": "264:5:4",
+                        "referencedDeclaration": 1065,
+                        "src": "264:5:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -269,18 +269,18 @@
                           "typeString": "address payable"
                         }
                       ],
-                      "id": 622,
+                      "id": 1055,
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 727,
-                      "src": "251:12:4",
+                      "referencedDeclaration": 1160,
+                      "src": "251:12:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
                         "typeString": "function (address payable)"
                       }
                     },
-                    "id": 624,
+                    "id": 1057,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -288,101 +288,101 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "251:19:4",
+                    "src": "251:19:5",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 625,
+                  "id": 1058,
                   "nodeType": "ExpressionStatement",
-                  "src": "251:19:4"
+                  "src": "251:19:5"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "3d8aa9b8",
-            "id": 627,
+            "id": 1060,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 616,
+                "id": 1049,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 615,
+                  "id": 1048,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 648,
-                  "src": "196:9:4",
+                  "referencedDeclaration": 1081,
+                  "src": "196:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "196:9:4"
+                "src": "196:9:5"
               }
             ],
             "name": "implode",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 614,
+              "id": 1047,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:2:4"
+              "src": "186:2:5"
             },
             "returnParameters": {
-              "id": 617,
+              "id": 1050,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "206:0:4"
+              "src": "206:0:5"
             },
-            "scope": 628,
-            "src": "170:108:4",
+            "scope": 1061,
+            "src": "170:108:5",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 629,
-        "src": "91:190:4"
+        "scope": 1062,
+        "src": "91:190:5"
       }
     ],
-    "src": "0:281:4"
+    "src": "0:281:5"
   },
   "legacyAST": {
     "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Mortal.sol",
     "exportedSymbols": {
       "Mortal": [
-        628
+        1061
       ]
     },
-    "id": 629,
+    "id": 1062,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 606,
+        "id": 1039,
         "literals": [
           "solidity",
           "0.6",
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:4"
+        "src": "0:22:5"
       },
       {
         "absolutePath": "/mnt/c/Users/orbit/Documents/code/CryptoZoo/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 607,
+        "id": 1040,
         "nodeType": "ImportDirective",
-        "scope": 629,
-        "sourceUnit": 705,
-        "src": "24:23:4",
+        "scope": 1062,
+        "sourceUnit": 1138,
+        "src": "24:23:5",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -393,31 +393,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 608,
+              "id": 1041,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 704,
-              "src": "110:7:4",
+              "referencedDeclaration": 1137,
+              "src": "110:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$704",
+                "typeIdentifier": "t_contract$_Ownable_$1137",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 609,
+            "id": 1042,
             "nodeType": "InheritanceSpecifier",
-            "src": "110:7:4"
+            "src": "110:7:5"
           }
         ],
         "contractDependencies": [
-          704
+          1137
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 628,
+        "id": 1061,
         "linearizedBaseContracts": [
-          628,
-          704
+          1061,
+          1137
         ],
         "name": "Mortal",
         "nodeType": "ContractDefinition",
@@ -425,22 +425,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 613,
+            "id": 1046,
             "name": "imploding",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 612,
+              "id": 1045,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 611,
+                  "id": 1044,
                   "indexed": false,
                   "name": "msg",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 613,
-                  "src": "146:10:4",
+                  "scope": 1046,
+                  "src": "146:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -448,10 +448,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 610,
+                    "id": 1043,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "146:6:4",
+                    "src": "146:6:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -461,15 +461,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "145:12:4"
+              "src": "145:12:5"
             },
-            "src": "130:28:4"
+            "src": "130:28:5"
           },
           {
             "body": {
-              "id": 626,
+              "id": 1059,
               "nodeType": "Block",
-              "src": "206:72:4",
+              "src": "206:72:5",
               "statements": [
                 {
                   "eventCall": {
@@ -478,14 +478,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "214d4f4f42",
-                        "id": 619,
+                        "id": 1052,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "232:7:4",
+                        "src": "232:7:5",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_bf9b8f69309c6a3bf8d7de674714f75146d7c6c4e23a5a4b63b0b01408057ea4",
@@ -501,18 +501,18 @@
                           "typeString": "literal_string \"!MOOB\""
                         }
                       ],
-                      "id": 618,
+                      "id": 1051,
                       "name": "imploding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 613,
-                      "src": "222:9:4",
+                      "referencedDeclaration": 1046,
+                      "src": "222:9:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 620,
+                    "id": 1053,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -520,16 +520,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "222:18:4",
+                    "src": "222:18:5",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 621,
+                  "id": 1054,
                   "nodeType": "EmitStatement",
-                  "src": "217:23:4"
+                  "src": "217:23:5"
                 },
                 {
                   "expression": {
@@ -537,12 +537,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 623,
+                        "id": 1056,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 632,
-                        "src": "264:5:4",
+                        "referencedDeclaration": 1065,
+                        "src": "264:5:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -556,18 +556,18 @@
                           "typeString": "address payable"
                         }
                       ],
-                      "id": 622,
+                      "id": 1055,
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 727,
-                      "src": "251:12:4",
+                      "referencedDeclaration": 1160,
+                      "src": "251:12:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
                         "typeString": "function (address payable)"
                       }
                     },
-                    "id": 624,
+                    "id": 1057,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -575,72 +575,72 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "251:19:4",
+                    "src": "251:19:5",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 625,
+                  "id": 1058,
                   "nodeType": "ExpressionStatement",
-                  "src": "251:19:4"
+                  "src": "251:19:5"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "3d8aa9b8",
-            "id": 627,
+            "id": 1060,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 616,
+                "id": 1049,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 615,
+                  "id": 1048,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 648,
-                  "src": "196:9:4",
+                  "referencedDeclaration": 1081,
+                  "src": "196:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "196:9:4"
+                "src": "196:9:5"
               }
             ],
             "name": "implode",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 614,
+              "id": 1047,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:2:4"
+              "src": "186:2:5"
             },
             "returnParameters": {
-              "id": 617,
+              "id": 1050,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "206:0:4"
+              "src": "206:0:5"
             },
-            "scope": 628,
-            "src": "170:108:4",
+            "scope": 1061,
+            "src": "170:108:5",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 629,
-        "src": "91:190:4"
+        "scope": 1062,
+        "src": "91:190:5"
       }
     ],
-    "src": "0:281:4"
+    "src": "0:281:5"
   },
   "compiler": {
     "name": "solc",
@@ -648,7 +648,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-24T16:06:17.670Z",
+  "updatedAt": "2020-12-02T03:39:45.772Z",
   "devdoc": {
     "methods": {}
   },

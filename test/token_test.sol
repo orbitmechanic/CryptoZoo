@@ -6,21 +6,18 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/CryptAnimal.sol";
 
 contract TestAnimal {
-    const owner = accounts[0];
 
     function testFirstMintIDZero() public {
-        uint256 test_dna = 1234;
-        CryptAnimal lab = CryptAnimal();
-        uint256 firstId = 
-            lab.createAnimalGen0(test_dna {from: DeployedAddresses.CryptAnimal()});
-        Assert.equal(firstId, uint256(0), "First mint should return Id zero.");
+        CryptAnimal lab = CryptAnimal(DeployedAddresses.CryptAnimal());
+        uint256 residual = lab.totalSupply();
+        Assert.equal(residual, uint256(0), "Pre-mint should return zero.");
     }
 
     function testTotalSupplyMinting() public {
         CryptAnimal lab = CryptAnimal(DeployedAddresses.CryptAnimal());
         lab.createAnimalGen0(12345);
         uint256 headcount = lab.totalSupply();
-        Assert.equal(headcount, uint256(1), "First mint shoudl increase supply.");
+        Assert.equal(headcount, uint256(1), "First mint should increase supply to 1.");
     }
 }
 
