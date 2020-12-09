@@ -1,60 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
   <title>CryptoZoo Will Call</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
 
-  <link rel="stylesheet" href="assets/css/mystyle.css">
-  <link rel="stylesheet" href="assets/css/cats.css">
+  <link rel='stylesheet' href='assets/css/mystyle.css'>
+  <link rel='stylesheet' href='assets/css/cats.css'>
   <link rel='stylesheet' href='assets/css/bunnies.css'>
-  <link rel="stylesheet" href="assets/css/colors.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
-  <link rel="stylesheet" href="assets/css/willCall.css">
-  <link rel="stylesheet" href="assets/css/frontend.css">
+  <link rel='stylesheet' href='assets/css/colors.css'>
+  <link rel='stylesheet' href='assets/css/animations.css'>
+  <link rel='stylesheet' href='assets/css/frontend.css'>
+  <link rel='stylesheet' href='assets/css/willCall.css'>
 
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <a class="navbar-brand" href="#">
-        <img src="./assets/images/zoologo.jpg" alt="Logo" >
+  <nav class='navbar navbar-expand-sm bg-dark navbar-dark justify-content-center'>
+    <a class='navbar-brand' href='#'>
+        <img src='./assets/images/zoologo.jpg' alt='Logo' >
     </a>
 
-    <ul class="pagination pagination-lg bg-dark">
-      <li class="page-item active"><a class="page-link" href="index.html">Will Call</a></li>
-      <li class="page-item"><a class="page-link" href="tradingDepot.html">Trading Depot</a></li>
-      <li class="page-item"><a class="page-link" href="sponsoredList.html">Sponsored Animals</a></li>
-      <li class="page-item"><a class="page-link" href="preservation.html">Preservaton</a></li>
-      <li class="page-item"><a class="page-link" href="factory.html">Staff Only</a></li>
-      <li><button type="button" class="btn btn-success"><h4>Connect Wallet</h4></button></li>
+    <ul class='pagination pagination-lg bg-dark'>
+      <li class='page-item active'><a class='page-link' href='index.html'>Will Call</a></li>
+      <li class='page-item'><a class='page-link' href='tradingDepot.html'>Trading Depot</a></li>
+      <li class='page-item'><a class='page-link' href='sponsoredList.html'>Sponsored Animals</a></li>
+      <li class='page-item'><a class='page-link' href='preservation.html'>Preservaton</a></li>
+      <li class='page-item'><a class='page-link' href='factory.html'>Staff Only</a></li>
+      <li><button type='button' class='btn btn-success'><h4>Connect Wallet</h4></button></li>
     </ul>
 
   </nav>
 
   <!--Because JUMBOTRONS-->
-  <div class="jumbotron fluid" id='will-call-header'>
-      <h1 class="c-black">Will Call</h1>
-      <h2 class="c-black">Your tickets to the CryptoZoo await!</h2>
+  <div class='jumbotron fluid' id='will-call-header'>
+      <h1 class='c-black'>Will Call</h1>
+      <h2 class='c-black'>Your tickets to the CryptoZoo await!</h2>
   </div>
 
-  <!--Banner-->
-  <div class="jumbotron fluid justify-content-center" id='billboard'>
-    <h1 class="c-black">--Insert awesomeness here--</h1>
-    <div class="inserthere"></div>
+  <!--lineup-->
+  <div class='container-fluid' id='lineup'>
+    <div class='row'>
+      <div class='col-sm-1' id='leftLineupGutter'></div>
+      <div class='col-sm-10' id='centerLineupTray'>
+        <div class='row' id='centerLineupRow' style='min-height: 30vh;'>
+          <div class='col lineup slot' style='transform:translate(140px) rotate(-10deg) scale(0.8);'></div>
+          <div class='col lineup slot' style='transform:translate(60px) rotate(-5deg) scale(0.9);'></div>
+          <div class='col lineup slot'></div>
+          <div class='col lineup slot' style='transform:translate(-60px) rotate(5deg) scale(0.9);'></div>
+          <div class='col lineup slot' style='transform:translate(-140px) rotate(10deg) scale(0.8);'></div>
+        </div>
+        <div class='container fluid' id='bragBar' >
+          <div class='row' id='linkTable'>
+            <div class='col' style='background-color: white; border-radius: 25% 0% 0% 25%;'></div>
+            <div class='col' style='background-color: white;'>
+              <ul>
+                <li><a class='page-link' href='tradingDepot.html'><h3>Sponsor Animals</h3></a></li>
+                <li><a class='page-link' href='sponsoredList.html'><h3>Collect Sponsorships</h3></a></li>
+              </ul>
+            </div>
+            <div class='col' style='background-color: white;'>
+              <ul>
+                <li><a class='page-link' href='preservation.html'><h3>Breed Animals</h3></a></li>
+                <li><a class='page-link' href='tradingDepot.html'><h3>Trade Sponsorships</h3></a></li>
+              </ul>
+            </div>
+            <div class='col' style='background-color: white; border-radius: 0% 25% 25% 0%'></div>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class='col-sm-1' id='rightLineupGutter'></div>
+    </div>
   </div>
 
 </body>
 
-<footer align="center">
+<footer align='center'>
     <p>Ivan on Tech Academy Bootcamp July 2020, Orbital edition.</p>
 </footer>
 
+<script src='assets/js/colors.js'></script>
+<script src='assets/js/dna.js'></script>
 <script src='assets/js/sketchAnimal.js'></script>
 <script src='assets/js/index.js'></script>
 
