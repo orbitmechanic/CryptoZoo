@@ -24,144 +24,144 @@ function genColors(){
     return colors
 }
 
-function UpdateFurColor(color,code) {
+function UpdateFurColor(tag, color,code) {
     // Push new fur color and code to display.
     console.groupCollapsed('UpdateFurColor(#' + color + ', ' + code + ')');
 
     //This changes the fur color of the animal
-    $('.head, .chest, .ear--left, .ear--right').css('background', '#' + color);  
+    $('.' + tag +', .head, .chest, .ear--left, .ear--right').css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#furColorCode').html('code: ' + code); 
+    $('.' + tag +', #furColorCode').html('code: ' + code); 
     //This updates the fur color part of the DNA that is displayed below the animal
-    $('.dnaFurColor').html(code);
+    $('.' + tag +', .dnaFurColor').html(code);
 
     console.groupEnd();
 }
-function UpdateUnderFurColor(color,code) {
+function UpdateUnderFurColor(tag, color,code) {
     // Push new under fur color and code to display.
     console.groupCollapsed('UpdateUnderFurColor(#' + color + ', ' + code + ')');
 
     //This changes the under-fur color of the animal
-    $('.mouth-contour, .chest_inner').css('background', '#' + color);  
+    $('.' + tag + ', .mouth-contour, .chest_inner').css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#UnderfurColorCode').html('code: ' + code); 
+    $('.' + tag + ', #UnderfurColorCode').html('code: ' + code); 
     //This updates the under-fur color part of the DNA that is displayed below the animal
-    $('.dnaUnderFurColor').html(code); 
+    $('.' + tag + ', .dnaUnderFurColor').html(code); 
 
     console.groupEnd();
 }
-function UpdateEyeColor(color,code) {
+function UpdateEyeColor(tag, color,code) {
     // Push new eye and tail color and code to display.
     console.groupCollapsed('UpdateEyeColor(#' + color + ', ' + code + ')');
 
     //This changes the eye color of the animal
-    $('.pupil-left, .pupil-right, .tail').css('background', '#' + color);  
+    $('.' + tag + ', .pupil-left, .pupil-right, .tail').css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#EyeColorCode').html('code: ' + code); 
+    $('.' + tag + ', #EyeColorCode').html('code: ' + code); 
     //This updates the eye color part of the DNA that is displayed below the animal
-    $('.dnaEyeColor').html(code); 
+    $('.' + tag + ', .dnaEyeColor').html(code); 
 
     console.groupEnd();
 }
-function UpdateEarColor(color,code) {
+function UpdateEarColor(tag, color,code) {
     // Push new ear and paw color and code to display.
     console.groupCollapsed('UpdateEarColor(#' + color + ', ' + code + ')');
 
     //This changes the inner-ear color of the animal
-    $('.ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
+    $('.' + tag + ', .ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
         .css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#EarColorCode').html('code: ' + code);
+    $('.' + tag + ', #EarColorCode').html('code: ' + code);
     //This updates the inner-ear color part of the DNA that is displayed below the animal
-    $('.dnaEarColor').html(code); 
+    $('.' + tag + ', .dnaEarColor').html(code); 
 
     console.groupEnd();
 }
-function UpdateMarkingMidColor(color,code) {
+function UpdateMarkingMidColor(tag, color,code) {
     // Push new center marking color and code to display.
     console.groupCollapsed('UpdateMarkingMidColor(#' + color + ', ' + code + ')');
 
     //This changes the middle marking color of the animal
-    $('.marking').css('background', '#' + color);  
+    $('.' + tag + ', .marking').css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#MarkingMidColorCode').html('code: ' + code); 
+    $('.' + tag + ', #MarkingMidColorCode').html('code: ' + code); 
     //This updates the middle marking color part of the DNA that is displayed below the animal
-    $('.dnaMarkingMidColor').html(code); 
+    $('.' + tag + ', .dnaMarkingMidColor').html(code); 
 
     console.groupEnd();
 }
-function UpdateMarkingSidesColor(color,code) {
+function UpdateMarkingSidesColor(tag, color,code) {
     // Push new outer marking color and code to display.
     console.groupCollapsed('UpdateMarkingSidesColor(#' + color + ', ' + code + ')');
 
     //This changes the outer markings color of the animal
-    $('.marking-left, .marking-right').css('background', '#' + color);  
+    $('.' + tag + ', .marking-left, .marking-right').css('background', '#' + color);  
     //This updates text of the badge next to the slider
-    $('#MarkingSideColorCode').html('code: ' + code); 
+    $('.' + tag + ', #MarkingSideColorCode').html('code: ' + code); 
     //This updates the outer markings color part of the DNA that is displayed below the animal
-    $('.dnaMarkingSidesColor').html(code); 
+    $('.' + tag + ', .dnaMarkingSidesColor').html(code); 
 
     console.groupEnd();
 }
 
 
-function SetEyeVariation(num) {
+function SetEyeVariation(tag, num) {
     // Push new eye shape code to display
     console.groupCollapsed('SetEyeVariation(' + num + ')');
 
     // Set DNA code dispay
-    $('.dnaEyeShape').html(num);
+    $('.' + tag + ', .dnaEyeShape').html(num);
 
     switch (num) {
         case 1:
             resetEyes();
-            $('#EyeShapeName').html('Basic'); 
+            $('.' + tag + ', #EyeShapeName').html('Basic'); 
             break
         case 2:
             resetEyes();
-            $('.eye').find('span').css('border-top','15px solid');
-            $('#EyeShapeName').html('Chill'); 
+            $('.' + tag + ', .eye').find('span').css('border-top','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Chill'); 
             break
         case 3:
             resetEyes();
-            $('.eye').find('span').css('border-bottom','15px solid');
-            $('#EyeShapeName').html('Sleepy'); 
+            $('.' + tag + ', .eye').find('span').css('border-bottom','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Sleepy'); 
             break
         case 4:
             resetEyes();
-            $('.eye').find('span').css('border-left','15px solid');
-            $('#EyeShapeName').html('Right'); 
+            $('.' + tag + ', .eye').find('span').css('border-left','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Right'); 
             break
         case 5:
             resetEyes();
-            $('.eye').find('span').css('border-right','15px solid');
-            $('#EyeShapeName').html('Left'); 
+            $('.' + tag + ', .eye').find('span').css('border-right','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Left'); 
             break
         case 6:
             resetEyes();
-            $('.eye').find('span').css('border-top','15px solid');
-            $('.pupil-right').css('transform','rotateZ(-15deg)');
-            $('.pupil-left').css('transform','rotateZ(15deg)');
-            $('#EyeShapeName').html('Evil'); 
+            $('.' + tag + ', .eye').find('span').css('border-top','15px solid');
+            $('.' + tag + ', .pupil-right').css('transform','rotateZ(-15deg)');
+            $('.' + tag + ', .pupil-left').css('transform','rotateZ(15deg)');
+            $('.' + tag + ', #EyeShapeName').html('Evil'); 
             break
         case 7:
             resetEyes();
-            $('.eye').find('span').css('border-top','15px solid');
-            $('.pupil-right').css('transform','rotateZ(15deg)');
-            $('.pupil-left').css('transform','rotateZ(-15deg)');
-            $('#EyeShapeName').html('Happy'); 
+            $('.' + tag + ', .eye').find('span').css('border-top','15px solid');
+            $('.' + tag + ', .pupil-right').css('transform','rotateZ(15deg)');
+            $('.' + tag + ', .pupil-left').css('transform','rotateZ(-15deg)');
+            $('.' + tag + ', #EyeShapeName').html('Happy'); 
             break
         case 8:
             resetEyes();
-            $('.eye').find('span').css('border-top','15px solid');
-            $('.eye').find('span').css('border-bottom','15px solid');
-            $('#EyeShapeName').html('Squint'); 
+            $('.' + tag + ', .eye').find('span').css('border-top','15px solid');
+            $('.' + tag + ', .eye').find('span').css('border-bottom','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Squint'); 
             break
         case 9:
             resetEyes();
-            $('.eye').find('span').css('border-left','15px solid');
-            $('.eye').find('span').css('border-right','15px solid');
-            $('#EyeShapeName').html('Cat'); 
+            $('.' + tag + ', .eye').find('span').css('border-left','15px solid');
+            $('.' + tag + ', .eye').find('span').css('border-right','15px solid');
+            $('.' + tag + ', #EyeShapeName').html('Cat'); 
             break
         default:
             console.error('Recieved unhandled eye variation code:' + num);
@@ -170,79 +170,79 @@ function SetEyeVariation(num) {
         // reset all used eye shape CSS parameters
         console.groupCollapsed('SetEyeVariation(' + num + ')::resetEyes()');
 
-        $('.eye').find('span').css('border', 'none');
-        $('.pupil-right').css('transform','rotateZ(0deg)');
-        $('.pupil-left').css('transform','rotateZ(0deg)');
+        $('.' + tag + ', .eye').find('span').css('border', 'none');
+        $('.' + tag + ', .pupil-right').css('transform','rotateZ(0deg)');
+        $('.' + tag + ', .pupil-left').css('transform','rotateZ(0deg)');
 
         console.groupEnd();
     }
     console.groupEnd();
 }
 
-function SetMarkingVariation(num) {
+function SetMarkingVariation(tag, num) {
     // Render marking shape CSS from given number
     console.groupCollapsed('Calling SetMarkingVariation(' + num + ')');
 
-    $('.dnaMarkingShape').html(num)
+    $('.' + tag + ', .dnaMarkingShape').html(num)
 
     switch (num) {
         case 1:
-            $('#MarkingShapeName').html('Stripe');
+            $('.' + tag + ', #MarkingShapeName').html('Stripe');
             resetDecoration();
             break
         case 2:
-            $('#MarkingShapeName').html('Chevron');
+            $('.' + tag + ', #MarkingShapeName').html('Chevron');
             resetDecoration();
-            $('.marking-left').css({
+            $('.' + tag + ', .marking-left').css({
                 "transform": "rotate(-25deg)"
             });
-            $('.marking-right').css({
+            $('.' + tag + ', .marking-right').css({
                 "transform":"rotate(25deg)"
             });
             break
         case 3:
-            $('#MarkingShapeName').html('Spread');
+            $('.' + tag + ', #MarkingShapeName').html('Spread');
             resetDecoration();
-            $('.marking-left').css({
+            $('.' + tag + ', .marking-left').css({
                 "transform": "rotate(25deg)"
             });
-            $('.marking-right').css({
+            $('.' + tag + ', .marking-right').css({
                 "transform":"rotate(-25deg)"
             });
             break
         case 4:
-            $('#MarkingShapeName').html('Dots');
+            $('.' + tag + ', #MarkingShapeName').html('Dots');
             resetDecoration();
-            $('.marking').css({
+            $('.' + tag + ', .marking').css({
                 "height": "20px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 50%",
             });
-            $('.marking-left').css({
+            $('.' + tag + ', .marking-left').css({
                 "height": "20px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 50%",
             });
-            $('.marking-right').css({
+            $('.' + tag + ', .marking-right').css({
                 "height": "20px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 50%",
             });
             break
         case 5:
-            $('#MarkingShapeName').html('Bow');
+            $('.' + tag + ', #MarkingShapeName').html('Bow');
             resetDecoration();
-            $('.marking').css({
+            $('.' + tag + ', .marking').css({
                 "height": "20px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 50%",
             });
-            $('.marking-left').css({
+            $('.' + tag + ', .marking-left').css({
                 "height": "30px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 70%",
             });
-            $('.marking-right').css({
+            $('.' + tag + ', .marking-right').css({
                 "height": "30px",
                 "width": "20px",
                 "border-radius": "50% 50% 50% 70%",
@@ -251,23 +251,23 @@ function SetMarkingVariation(num) {
         default:
             console.error('Recieved unhandled eye variation code:' + num);
     }
-    function resetDecoration() {
+    function resetDecoration(tag) {
         // Reset all used marking CSS parameters 
         console.groupCollapsed('SetMarkingVariation(' + num + ')::resetDecoration()');
 
-        $('.marking').css({ 
+        $('.' + tag + ', .marking').css({ 
             "transform": "rotate(0deg)", 
             "height": "48px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "0 0 50% 50%" });
-        $('.marking-left').css({ 
+        $('.' + tag + ', .marking-left').css({ 
             "transform": "rotate(0deg)", 
             "height": "35px", 
             "width": "14px", 
             "top": "1px", 
             "border-radius": "50% 0 50% 50%" });
-        $('.marking-right').css({ 
+        $('.' + tag + ', .marking-right').css({ 
             "transform": "rotate(0deg)",
             "height": "35px", 
             "width": "14px", 
@@ -281,52 +281,52 @@ function SetMarkingVariation(num) {
 
 }
 
-function SetAnimation(num) {
+function SetAnimation(tag, num) {
     // set the animal's CSS animation from code 
     console.groupCollapsed('SetAnimation(' + num + ')');
 
-    $('.dnaAnimation').html(num);
+    $('.' + tag + ', .dnaAnimation').html(num);
 
     switch (num) {
         case 1:
             clearAnimation();
-            $('#AnimationCode').html('None');
+            $('.' + tag + ', #AnimationCode').html('None');
             break
         case 2:
             clearAnimation();
-            $('#AnimationCode').html('Rocking Head');
-            $('.head').addClass('rocking');
+            $('.' + tag + ', #AnimationCode').html('Rocking Head');
+            $('.' + tag + ', .head').addClass('rocking');
             break
         case 3:
             clearAnimation();
-            $('#AnimationCode').html('Lazy Ears');
-            $('.ear--left').addClass('rockingLeftEar');
-            $('.ear--right').addClass('rockingRightEar');
+            $('.' + tag + ', #AnimationCode').html('Lazy Ears');
+            $('.' + tag + ', .ear--left').addClass('rockingLeftEar');
+            $('.' + tag + ', .ear--right').addClass('rockingRightEar');
             break
         case 4:
             clearAnimation();
-            $('#AnimationCode').html('Winking');
-            $('.eye').addClass('winkingEye');
+            $('.' + tag + ', #AnimationCode').html('Winking');
+            $('.' + tag + ', .eye').addClass('winkingEye');
             break
         case 5:
             clearAnimation();
-            $('#AnimationCode').html('Sniffle');
-            $('.whiskers-left').addClass('wiggleLeftWisker');
-            $('.whiskers-right').addClass('wiggleRightWisker');
+            $('.' + tag + ', #AnimationCode').html('Sniffle');
+            $('.' + tag + ', .whiskers-left').addClass('wiggleLeftWisker');
+            $('.' + tag + ', .whiskers-right').addClass('wiggleRightWisker');
             break
         default:
             console.error('Recieved unhandled animation code:' + num);
     };
-    function clearAnimation(){
+    function clearAnimation(tag){
         // clear animation setting from display
         console.debug('Calling SetAnimation(' + num + ')::clearAnimation()');
 
-        $('.head').removeClass('rocking');                  // type 2
-        $('.ear--left').removeClass('rockingLeftEar');      // type 3
-        $('.ear--right').removeClass('rockingRightEar');    // type 3
-        $('.eye').removeClass('winkingEye');                // type 4
-        $('.whiskers-left').removeClass('wiggleLeftWisker');   // type 5
-        $('.whiskers-right').removeClass('wiggleRightWisker'); // type 5
+        $('.' + tag + ', .head').removeClass('rocking');                  // type 2
+        $('.' + tag + ', .ear--left').removeClass('rockingLeftEar');      // type 3
+        $('.' + tag + ', .ear--right').removeClass('rockingRightEar');    // type 3
+        $('.' + tag + ', .eye').removeClass('winkingEye');                // type 4
+        $('.' + tag + ', .whiskers-left').removeClass('wiggleLeftWisker');   // type 5
+        $('.' + tag + ', .whiskers-right').removeClass('wiggleRightWisker'); // type 5
     }  
     console.groupEnd();
 }
