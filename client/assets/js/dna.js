@@ -1,7 +1,5 @@
 console.groupCollapsed('dna.js');
 
-var colors = Object.values(allColors());
-
 class animalDNA {
   constructor() {
     console.groupCollapsed('animalDNA::constructor()');
@@ -14,8 +12,8 @@ class animalDNA {
     this.markingMidColor;
     this.markingSidesColor;
     // Default Attributes
-    this.eyesShap;
-    this.markingShap;
+    this.eyesShape;
+    this.markingShape;
     this.animation;
     this.special;
 
@@ -80,55 +78,55 @@ class animalDNA {
     console.groupEnd();
   }
 
-  list2Factory() {
-    console.groupCollapsed('animalDNA::list2Factory()');
+  list2Tag(tag) {
+    console.groupCollapsed('animalDNA::list2Tag(' + tag + ')');
 
     // Color codes
-    $('.dnaFurColor').html(this.furColor);
-    $('.dnaUnderFurColor').html(this.underFurColor);
-    $('.dnaEyeColor').html(this.eyesColor);
-    $('.dnaEarColor').html(this.earsColor);
-    $('.dnaMarkingMidColor').html(this.markingMidColor);
-    $('.dnaMarkingSidesColor').html(this.markingSidesColor);
+    $('.' + tag + ', .dnaFurColor').html(this.furColor);
+    $('.' + tag + ', .dnaUnderFurColor').html(this.underFurColor);
+    $('.' + tag + ', .dnaEyeColor').html(this.eyesColor);
+    $('.' + tag + ', .dnaEarColor').html(this.earsColor);
+    $('.' + tag + ', .dnaMarkingMidColor').html(this.markingMidColor);
+    $('.' + tag + ', .dnaMarkingSidesColor').html(this.markingSidesColor);
     // Attribute codes
-    $('.dnaEyeShape').html(this.eyesShape);
-    $('.dnaMarkingShape').html(this.dnaMarkingShape);
-    $('.dnaAnimation').html(this.animation);
-    $('.dnaSpecial').html(this.special);
+    $('.' + tag + ', .dnaEyeShape').html(this.eyesShape);
+    $('.' + tag + ', .dnaMarkingShape').html(this.dnaMarkingShape);
+    $('.' + tag + ', .dnaAnimation').html(this.animation);
+    $('.' + tag + ', .dnaSpecial').html(this.special);
 
     console.groupEnd();
   }
 
-  render2Factory(){
-    console.groupCollapsed('animalDNA::render2Factory()')
+  updateDisplay(tag){
+    console.groupCollapsed('animalDNA::render2Tag(' + tag + ')');
     // Color codes
-    UpdateFurColor(colors[this.furColor],this.furColor);
-    $('#furColorControl').val(this.furColor);
+    UpdateFurColor(tag, colors[this.furColor],this.furColor);
+    $('.' + tag + ', .furColorControl').val(this.furColor);
   
-    UpdateUnderFurColor(colors[this.underFurColor],this.underFurColor);
-    $('#UnderfurColorControl').val(this.underFurColor);
+    UpdateUnderFurColor(tag, colors[this.underFurColor],this.underFurColor);
+    $('.' + tag + ', .UnderfurColorControl').val(this.underFurColor);
   
-    UpdateEyeColor(colors[this.eyesColor],this.eyesColor);
-    $('#EyeColorControl').val(this.eyesColor);
+    UpdateEyeColor(tag, colors[this.eyesColor],this.eyesColor);
+    $('.' + tag + ', .EyeColorControl').val(this.eyesColor);
   
-    UpdateEarColor(colors[this.earsColor],this.earsColor);
-    $('#EarColorControl').val(this.earsColor);
+    UpdateEarColor(tag, colors[this.earsColor],this.earsColor);
+    $('.' + tag + ', .EarColorControl').val(this.earsColor);
 
-    UpdateMarkingMidColor(colors[this.markingMidColor],this.markingMidColor);
-    $('#MarkingMidColorControl').val(this.markingMidColor);
+    UpdateMarkingMidColor(tag, colors[this.markingMidColor],this.markingMidColor);
+    $('.' + tag + ', .MarkingMidColorControl').val(this.markingMidColor);
   
-    UpdateMarkingSidesColor(colors[this.markingSidesColor],this.markingSidesColor);
-    $('#MarkingSideColorControl').val(this.markingSidesColor);
+    UpdateMarkingSidesColor(tag, colors[this.markingSidesColor],this.markingSidesColor);
+    $('.' + tag + ', .MarkingSideColorControl').val(this.markingSidesColor);
   
     // Attribute Codes
-    SetEyeVariation(this.eyesShape);
-    $('#EyeShapeControl').val(this.eyesShape);
+    SetEyeVariation(tag, this.eyesShape);
+    $('.' + tag + ', .EyeShapeControl').val(this.eyesShape);
   
-    SetMarkingVariation(this.markingShape);
-    $('#MarkingShapeControl').val(this.markingShape);
+    SetMarkingVariation(tag, this.markingShape);
+    $('.' + tag + ', .MarkingShapeControl').val(this.markingShape);
   
-    SetAnimation(this.animation);
-    $('#AnimationControl').val(this.animation);
+    SetAnimation(tag, this.animation);
+    $('.' + tag + ', .AnimationControl').val(this.animation);
   
     console.groupEnd();
   }
@@ -160,95 +158,5 @@ class animalDNA {
   }
 
 }
-
-var factoryDNA = new animalDNA();
-
-// when page load
-$( document ).ready(function() {
-  console.groupCollapsed('dna.js::$(document).ready():');
-
-  factoryDNA.setDefaults();
-  factoryDNA.list2Factory();
-  factoryDNA.render2Factory();
-
-  // Attach Button Actions ----------------------------------------------------
-
-  // Default Button
-  document.getElementById("dfltButton").onclick = function() {
-    console.groupCollapsed('defaultButton.onclick():');
-
-    factoryDNA.setDefaults();
-    factoryDNA.list2Factory();
-    factoryDNA.render2Factory();
-
-    console.groupEnd();
-  };
-
-  // Random Button
-  document.getElementById("rndButton").onclick= function() {
-    console.groupCollapsed('randomButton.onclick():');
-
-    factoryDNA.randomize();
-    factoryDNA.list2Factory();
-    factoryDNA.render2Factory();
-
-    console.groupEnd();
-  };
-
-  console.groupEnd()
-});
-
-// Control listeners ------------------------------------------------------------
-
-// Changing animal colors.  
-// All color arrays range [1...99], but sliders fixed at [10...98]
-
-$('#furColorControl').change(()=>{
-    console.debug('Changing fur color to ' + $('#furColorControl').val());
-    var colorVal = $('#furColorControl').val();
-    UpdateFurColor(colors[colorVal],colorVal);
-});
-$('#UnderfurColorControl').change(()=>{
-  console.debug('Changing under fur color to ' + $('#UnderfurColorControl').val());
-  var colorVal = $('#UnderfurColorControl').val();
-  UpdateUnderFurColor(colors[colorVal],colorVal);
-});
-$('#EyeColorControl').change(()=>{
-  console.debug('Changing eye color to ' + $('#EyeColorControl').val());
-  var colorVal = $('#EyeColorControl').val();
-  UpdateEyeColor(colors[colorVal],colorVal);
-});
-$('#EarColorControl').change(()=>{
-  console.debug('Changing inner ear color to ' + $('#EarColorControl').val());
-  var colorVal = $('#EarColorControl').val();
-  UpdateEarColor(colors[colorVal],colorVal);
-});
-$('#MarkingMidColorControl').change(()=>{
-  console.debug('Changing mid-marking color to ' + $('#MarkingMidColorControl').val());
-  var colorVal = $('#MarkingMidColorControl').val();
-  UpdateMarkingMidColor(colors[colorVal],colorVal);
-});
-$('#MarkingSideColorControl').change(()=>{
-  console.debug('Changing outer marking color to ' + $('#MarkingSideColorControl').val());
-  var colorVal = $('#MarkingSideColorControl').val();
-  UpdateMarkingSidesColor(colors[colorVal],colorVal);
-});
-
-// Changing animal attributes, sliders ranged [1...7]
-$('#EyeShapeControl').change(()=>{
-  console.debug('Changing eye shape to ' + $('#EyeShapeControl').val());
-  var shapeCode = parseInt($('#EyeShapeControl').val()); 
-  SetEyeVariation(shapeCode);
-});
-$('#MarkingShapeControl').change(()=>{
-  console.debug('Changing marking shape to ' + $('#MarkingShapeControl').val());
-  var shapeCode = parseInt($('#MarkingShapeControl').val()); 
-  SetMarkingVariation(shapeCode);
-});
-$('#AnimationControl').change(()=>{
-  console.debug('Changing animation to ' + $('#AnimationControl').val());
-  var animationCode = parseInt($('#AnimationControl').val()); 
-  SetAnimation(animationCode);
-});
 
 console.groupEnd()

@@ -104,3 +104,27 @@ function allColors(){
 return colors;
 
 }
+
+function getColor() {
+    // Return a random color code
+    console.groupCollapsed('getColor()');
+
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+    console.groupEnd();
+    return randomColor;
+}
+
+function genColors(){
+    // Generate random color array.
+    console.groupCollapsed('genColors()');
+
+    var colors = []
+    for(var i = 10; i < 99; i ++){
+      var color = getColor()
+      colors[i] = color
+    }
+
+    console.groupEnd();
+    return colors
+}
