@@ -3,16 +3,21 @@ $(document).ready(function() {
     console.groupCollapsed('animal::constructor()');
      
     var willCallAnimals = [];
-    for (var i= 0; i<5; i++) {
-        willCallAnimals.push(new animalDNA());
-        willCallAnimals[i].setTag('lineup' + i);
+
+    // Instantiate
+    for (var i= 1; i<=5; i++) {
+        willCallAnimals.push(new animal('lineup' + i));
         $('.col.lineup.slot' + i).prepend(
-            sketchAnimal('bun',
-                willCallAnimals[i].tag));
-        willCallAnimals[i].randomize();
-        willCallAnimals[i].updateDisplay();
-        willCallAnimals[i].list2Tag();
-    }
+            sketchAnimal('bun', 'lineup' + i));
+    };
+
+    // Initialize
+    willCallAnimals.forEach(function (animal){
+        animal.randomize();
+        animal.updateDisplay();
+        animal.list2Tag();
+    });
+
     console.info('index.js doc.ready fired!');
 
     console.groupEnd();

@@ -97,40 +97,6 @@ class animalDNA {
     console.groupEnd();
   }
 
-  updateDisplay(tag){
-    console.groupCollapsed('animalDNA::render2Tag(' + tag + ')');
-    // Color codes
-    UpdateFurColor(tag, colors[this.furColor],this.furColor);
-    $('.' + tag + ', .furColorControl').val(this.furColor);
-  
-    UpdateUnderFurColor(tag, colors[this.underFurColor],this.underFurColor);
-    $('.' + tag + ', .UnderfurColorControl').val(this.underFurColor);
-  
-    UpdateEyeColor(tag, colors[this.eyesColor],this.eyesColor);
-    $('.' + tag + ', .EyeColorControl').val(this.eyesColor);
-  
-    UpdateEarColor(tag, colors[this.earsColor],this.earsColor);
-    $('.' + tag + ', .EarColorControl').val(this.earsColor);
-
-    UpdateMarkingMidColor(tag, colors[this.markingMidColor],this.markingMidColor);
-    $('.' + tag + ', .MarkingMidColorControl').val(this.markingMidColor);
-  
-    UpdateMarkingSidesColor(tag, colors[this.markingSidesColor],this.markingSidesColor);
-    $('.' + tag + ', .MarkingSideColorControl').val(this.markingSidesColor);
-  
-    // Attribute Codes
-    SetEyeVariation(tag, this.eyesShape);
-    $('.' + tag + ', .EyeShapeControl').val(this.eyesShape);
-  
-    SetMarkingVariation(tag, this.markingShape);
-    $('.' + tag + ', .MarkingShapeControl').val(this.markingShape);
-  
-    SetAnimation(tag, this.animation);
-    $('.' + tag + ', .AnimationControl').val(this.animation);
-  
-    console.groupEnd();
-  }
-
   toString() {
     console.groupCollapsed('animalDNA::toString()');
 

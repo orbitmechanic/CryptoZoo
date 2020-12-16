@@ -3,8 +3,8 @@ console.groupCollapsed('dna.js');
 // automate animal management
 class animal{
 
-    constructor(){
-        this.tag = 'null';
+    constructor(tag){
+        this.tag = tag;
         this.DNA = new animalDNA();
     }
 
@@ -29,16 +29,21 @@ class animal{
     updateDisplay(){
         this.DNA.updateDisplay(this.tag);
     }
-    
-    // set a new fur color to record
+
+    // Set new fur color and code to display.
     SetFurColor(color){
-        console.groupCollapsed('animal::SetFurColor(#' + color + ', ' + code + ')');
+        console.groupCollapsed('animal::SetFurColor(#' + color + ')');
+        this.DNA.furColor = color; // Update object state
+        console.groupEnd();
+    }
+    
+    // Push new  fur color and code to display.
+    DisplayFurColor(){ 
 
-        // Update object state
-        this.DNA.furColor = color;
+        console.groupCollapsed('animal::SetFurColor()');
 
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.furColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the fur color of the animal
         $('.' + this.tag +', .head, .chest, .ear--left, .ear--right').css('background', '#' + color);  
@@ -50,15 +55,19 @@ class animal{
         console.groupEnd();
     }
 
+    // Set new under fur color and code to display.
+    SetUnderFurColor(color){
+        console.groupCollapsed('animal::SetUnderFurColor(#' + color + ')');
+        this.DNA.underFurColor = color; // Update object state
+        console.groupEnd();
+    }
+
     // Push new under fur color and code to display.
-    SetUnderFurColor(color) {
-        console.groupCollapsed('animal::SetUnderFurColor(#' + color + ', ' + code + ')');
+    DisplayUnderFurColor() { 
+        console.groupCollapsed('animal::DisplayUnderFurColor()');
 
-        // Update object state
-        this.DNA.underFurColor = color;
-
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.underFurColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the under-fur color of the animal
         $('.' + this.tag + ', .mouth-contour, .chest_inner').css('background', '#' + color);  
@@ -70,15 +79,19 @@ class animal{
         console.groupEnd();
     }
 
-    // Push new eye and tail color and code to display.
-    SetEyesColor(color) {
-        console.groupCollapsed('animal::SetEyesColor(#' + color + ', ' + code + ')');
+    // Set new eye color and code to display.
+    SetEyesColor(color){
+        console.groupCollapsed('animal::SetEyesColor(#' + color + ')');
+        this.DNA.eyesColor = color; // Update object state
+        console.groupEnd();
+    }
 
-        // Update object state
-        this.DNA.eyesColor = color;
+    // Display eye and tail color and code to display.
+    DisplayEyesColor() {
+        console.groupCollapsed('animal::DisplayEyesColor()');
 
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.eyesColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the eye color of the animal
         $('.' + this.tag + ', .pupil-left, .pupil-right, .tail').css('background', '#' + color);  
@@ -90,15 +103,19 @@ class animal{
         console.groupEnd();
     }
 
+    // Set new Ears color 
+    SetEarsColor(color){
+        console.groupCollapsed('animal::SetEarsColor(#' + color + ')');
+        this.DNA.earsColor = color; // Update object state
+        console.groupEnd();
+    }
+
     // Push new ear and paw color and code to display.
-    SeteEarColor(color) {
-        console.groupCollapsed('animal::SeteEarColor(#' + color + ', ' + code + ')');
+    DisplayEarsColor() {
+        console.groupCollapsed('animal::SeteEarColor()');
 
-        // Update object state
-        this.DNA.earsColor = color;
-
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.earsColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the inner-ear color of the animal
         $('.' + this.tag + ', .ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
@@ -111,15 +128,19 @@ class animal{
         console.groupEnd();
     }
 
-    // Push new center marking color and code to display.
-    SetMarkingMidColor(color) {
-        console.groupCollapsed('animal::SetMarkingMidColor(#' + color + ', ' + code + ')');
+    // Set new Markings Mid color 
+    SetMarkingMidColor(color){
+        console.groupCollapsed('animal::SetMarkingMidColor(#' + color + ')');
+        this.DNA.markingMidColor = color; // Update object state
+        console.groupEnd();
+    }
 
-        // Update object state
-        this.DNA.markingMidColor = color;
+    // Dsiplay center marking color and code to display.
+    DisplayMarkingMidColor() {
+        console.groupCollapsed('animal::DisplayMarkingMidColor()');
 
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.markingMidColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the middle marking color of the animal
         $('.' + this.tag + ', .marking').css('background', '#' + color);  
@@ -131,15 +152,19 @@ class animal{
         console.groupEnd();
     }
 
-    // Push new outer marking color and code to display.
-    SetMarkingSidesColor(color) {
-        console.groupCollapsed('animal::SetMarkingSidesColor(#' + color + ', ' + code + ')');
+    // Set new Markings Side color 
+    SetMarkingSidesColor(color){
+        console.groupCollapsed('animal::SetMarkingSidesColor(#' + color + ')');
+        this.DNA.markingSidesColor = color; // Update object state
+        console.groupEnd();
+    }
 
-        // Update object state
-        this.DNA.markingSidesColor = color;
+    // Display outer marking color.
+    DisplayMarkingSidesColor() {
+        console.groupCollapsed('animal::DisplayMarkingSidesColor(#' + color + ', ' + code + ')');
 
-        // retrieve code from color pallet
-        var code = colors(color);
+        var color = this.DNA.markingSidesColor; // Retrieve object state
+        var code = colors(color); // retrieve code from color pallet
 
         //This changes the outer markings color of the animal
         $('.' + this.tag + ', .marking-left, .marking-right').css('background', '#' + color);  
@@ -304,7 +329,7 @@ class animal{
                 console.error('Recieved unhandled eye variation code:' + num);
         }
         // Reset all used marking CSS parameters 
-        resetDecoration() {
+        function resetDecoration(){
             console.groupCollapsed('animal::SetMarkingVariation(' + this.tag + ')::resetDecoration()');
 
             $('.' + this.tag + ', .marking').css({ 
@@ -382,6 +407,40 @@ class animal{
         }  
         console.groupEnd();
     }
+
+    updateDisplay(tag){
+        console.groupCollapsed('animal::render2Tag(' + this.tag + ')');
+        // Color codes
+        SetFurColor();
+        $('.' + this.tag + ', .furColorControl').val(this.DNA.furColor); // factory only.
+      
+        SetUnderFurColor();
+        $('.' + this.tag + ', .UnderfurColorControl').val(this.DNA.underFurColor); // factory only.
+      
+        SetEyeColor(this.tag, colors[this.DNA.eyesColor],this.DNA.eyesColor);
+        $('.' + this.tag + ', .EyeColorControl').val(this.DNA.eyesColor); // factory only.
+      
+        SetEarColor(this.tag, colors[this.DNA.earsColor],this.DNA.earsColor);
+        $('.' + this.tag + ', .EarColorControl').val(this.DNA.earsColor); // factory only.
+    
+        SetMarkingMidColor(this.tag, colors[this.DNA.markingMidColor],this.DNA.markingMidColor);
+        $('.' + this.tag + ', .MarkingMidColorControl').val(this.DNA.markingMidColor); // factory only.
+      
+        SetMarkingSidesColor(this.tag, colors[this.DNA.markingSidesColor],this.DNA.markingSidesColor);
+        $('.' + this.tag + ', .MarkingSideColorControl').val(this.DNA.markingSidesColor); // factory only.
+      
+        // Attribute Codes
+        SetEyeVariation(this.tag, this.DNA.eyesShape);
+        $('.' + this.tag + ', .EyeShapeControl').val(this.DNA.eyesShape); // factory only.
+      
+        SetMarkingVariation(this.tag, this.DNA.markingShape);
+        $('.' + this.tag + ', .MarkingShapeControl').val(this.DNA.markingShape); // factory only.
+      
+        SetAnimation(this.tag, this.DNA.animation);
+        $('.' + this.tag + ', .AnimationControl').val(this.DNA.animation); // factory only.
+      
+        console.groupEnd();
+      }
 
 }
 
