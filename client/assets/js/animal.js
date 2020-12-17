@@ -26,13 +26,10 @@ class animal{
     list2Labels(){
         this.DNA.list2Tag(this.tag);
     }
-    updateDisplay(){
-        this.DNA.updateDisplay(this.tag);
-    }
 
     // Set new fur color and code to display.
     SetFurColor(color){
-        console.groupCollapsed('animal::SetFurColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetFurColor(#' + color + ')');
         this.DNA.furColor = color; // Update object state
         console.groupEnd();
     }
@@ -40,7 +37,7 @@ class animal{
     // Push new  fur color and code to display.
     DisplayFurColor(){ 
 
-        console.groupCollapsed('animal::SetFurColor()');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayFurColor()');
 
         var color = this.DNA.furColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -57,14 +54,14 @@ class animal{
 
     // Set new under fur color and code to display.
     SetUnderFurColor(color){
-        console.groupCollapsed('animal::SetUnderFurColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetUnderFurColor(#' + color + ')');
         this.DNA.underFurColor = color; // Update object state
         console.groupEnd();
     }
 
     // Push new under fur color and code to display.
     DisplayUnderFurColor() { 
-        console.groupCollapsed('animal::DisplayUnderFurColor()');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayUnderFurColor()');
 
         var color = this.DNA.underFurColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -81,14 +78,14 @@ class animal{
 
     // Set new eye color and code to display.
     SetEyesColor(color){
-        console.groupCollapsed('animal::SetEyesColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetEyesColor(#' + color + ')');
         this.DNA.eyesColor = color; // Update object state
         console.groupEnd();
     }
 
     // Display eye and tail color and code to display.
     DisplayEyesColor() {
-        console.groupCollapsed('animal::DisplayEyesColor()');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayEyesColor()');
 
         var color = this.DNA.eyesColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -105,14 +102,14 @@ class animal{
 
     // Set new Ears color 
     SetEarsColor(color){
-        console.groupCollapsed('animal::SetEarsColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetEarsColor(#' + color + ')');
         this.DNA.earsColor = color; // Update object state
         console.groupEnd();
     }
 
     // Push new ear and paw color and code to display.
     DisplayEarsColor() {
-        console.groupCollapsed('animal::SeteEarColor()');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayEarColor()');
 
         var color = this.DNA.earsColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -130,14 +127,14 @@ class animal{
 
     // Set new Markings Mid color 
     SetMarkingMidColor(color){
-        console.groupCollapsed('animal::SetMarkingMidColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetMarkingMidColor(#' + color + ')');
         this.DNA.markingMidColor = color; // Update object state
         console.groupEnd();
     }
 
     // Dsiplay center marking color and code to display.
     DisplayMarkingMidColor() {
-        console.groupCollapsed('animal::DisplayMarkingMidColor()');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayMarkingMidColor()');
 
         var color = this.DNA.markingMidColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -154,14 +151,14 @@ class animal{
 
     // Set new Markings Side color 
     SetMarkingSidesColor(color){
-        console.groupCollapsed('animal::SetMarkingSidesColor(#' + color + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::SetMarkingSidesColor(#' + color + ')');
         this.DNA.markingSidesColor = color; // Update object state
         console.groupEnd();
     }
 
     // Display outer marking color.
     DisplayMarkingSidesColor() {
-        console.groupCollapsed('animal::DisplayMarkingSidesColor(#' + color + ', ' + code + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayMarkingSidesColor()');
 
         var color = this.DNA.markingSidesColor; // Retrieve object state
         var code = colors(color); // retrieve code from color pallet
@@ -176,15 +173,22 @@ class animal{
         console.groupEnd();
     }
 
+    // Set new eye shape 
+    SetEyeShape(num){
+        console.groupCollapsed('animal(' + this.tag + ')::SetEyeShape(#' + num + ')');
+        this.DNA.eyesShape = num; // Update object state
+        console.groupEnd();
+    }
+
     // Push new eye shape code to display
-    SetEyeVariation(num) {
-        console.groupCollapsed('animal::SetEyeVariation(' + num + ')');
+    DisplayEyeShape() {
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayEyeShape()');
 
         // Update object state
-        this.DNA.eyesShape = num;
+        var num = this.DNA.eyesShape;
 
         // Set DNA code dispay
-        $('.' + this.tag + ', .dnaEyeShape').html(num);
+        $('.' + this.tag + ', .dnaEyeShape').html(num); 
 
         switch (num) {
             case 1:
@@ -242,7 +246,7 @@ class animal{
         }
         function resetEyes() {;
             // reset all used eye shape CSS parameters
-            console.groupCollapsed('animal::SetEyeVariation(' + num + ')::resetEyes()');
+            console.groupCollapsed('animal(' + this.tag + ')::SetEyeShape(' + num + ')::resetEyes()');
 
             $('.' + this.tag + ', .eye').find('span').css('border', 'none');
             $('.' + this.tag + ', .pupil-right').css('transform','rotateZ(0deg)');
@@ -253,12 +257,19 @@ class animal{
         console.groupEnd();
     }
 
-    SetMarkingVariation(num) {
+    // Set new marking shape 
+    SetMarkingShape(num){
+        console.groupCollapsed('animal(' + this.tag + ')::SetMarkingShape(#' + num + ')');
+        this.DNA.markingShape = num; // Update object state
+        console.groupEnd();
+    }
+
+    DisplayMarkingShape() {
         // Render marking shape CSS from given number
-        console.groupCollapsed('animal::SetMarkingVariation(' + num + ')');
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayMarkingShape()');
 
         // Update object state
-        this.DNA.markingShape = num;
+        var num = this.DNA.markingShape;
 
         $('.' + this.tag + ', .dnaMarkingShape').html(num)
 
@@ -326,11 +337,11 @@ class animal{
                 });
                 break
             default:
-                console.error('Recieved unhandled eye variation code:' + num);
+                console.error('animal(' + this.tag + ') >> Recieved unhandled eye variation code:' + num);
         }
         // Reset all used marking CSS parameters 
         function resetDecoration(){
-            console.groupCollapsed('animal::SetMarkingVariation(' + this.tag + ')::resetDecoration()');
+            console.groupCollapsed('animal(' + this.tag + ')::SetMarkingShape(' + num + ')::resetDecoration()');
 
             $('.' + this.tag + ', .marking').css({ 
                 "transform": "rotate(0deg)", 
@@ -355,12 +366,19 @@ class animal{
         }
     }
 
-    // set the animal's CSS animation from code 
-    SetAnimation(num) {
-        console.groupCollapsed('animal::SetAnimation(' + num + ')');
+    // Set the animal's CSS animation from code  
+    SetAnimaton(num){
+        console.groupCollapsed('animal(' + this.tag + ')::SetAnimaton(#' + num + ')');
+        this.DNA.animation = num; // Update object state
+        console.groupEnd();
+    }
+
+    // Display the animal's CSS animation from code 
+    DisplayAnimation() {
+        console.groupCollapsed('animal(' + this.tag + ')::DisplayAnimation()');
 
         // Update object state
-        this.DNA.animation = num;
+        var num = this.DNA.animation;
 
         $('.' + this.tag + ', .dnaAnimation').html(num);
 
@@ -396,48 +414,46 @@ class animal{
         };
         function clearAnimation(){
             // clear animation setting from display
-            console.debug('animal::SetAnimation(' + num + ')::clearAnimation()');
+            console.debug('animal(' + this.tag + ')::DisplayAnimation(#' + num + ')::clearAnimation()');
 
-            $('.' + this.tag + ', .head').removeClass('rocking');                  // type 2
-            $('.' + this.tag + ', .ear--left').removeClass('rockingLeftEar');      // type 3
-            $('.' + this.tag + ', .ear--right').removeClass('rockingRightEar');    // type 3
-            $('.' + this.tag + ', .eye').removeClass('winkingEye');                // type 4
+            $('.' + this.tag + ', .head').removeClass('rocking');                     // type 2
+            $('.' + this.tag + ', .ear--left').removeClass('rockingLeftEar');         // type 3
+            $('.' + this.tag + ', .ear--right').removeClass('rockingRightEar');       // type 3
+            $('.' + this.tag + ', .eye').removeClass('winkingEye');                   // type 4
             $('.' + this.tag + ', .whiskers-left').removeClass('wiggleLeftWisker');   // type 5
             $('.' + this.tag + ', .whiskers-right').removeClass('wiggleRightWisker'); // type 5
         }  
         console.groupEnd();
     }
 
-    updateDisplay(tag){
-        console.groupCollapsed('animal::render2Tag(' + this.tag + ')');
-        // Color codes
-        SetFurColor();
-        $('.' + this.tag + ', .furColorControl').val(this.DNA.furColor); // factory only.
-      
-        SetUnderFurColor();
-        $('.' + this.tag + ', .UnderfurColorControl').val(this.DNA.underFurColor); // factory only.
-      
-        SetEyeColor(this.tag, colors[this.DNA.eyesColor],this.DNA.eyesColor);
-        $('.' + this.tag + ', .EyeColorControl').val(this.DNA.eyesColor); // factory only.
-      
-        SetEarColor(this.tag, colors[this.DNA.earsColor],this.DNA.earsColor);
-        $('.' + this.tag + ', .EarColorControl').val(this.DNA.earsColor); // factory only.
-    
-        SetMarkingMidColor(this.tag, colors[this.DNA.markingMidColor],this.DNA.markingMidColor);
-        $('.' + this.tag + ', .MarkingMidColorControl').val(this.DNA.markingMidColor); // factory only.
-      
-        SetMarkingSidesColor(this.tag, colors[this.DNA.markingSidesColor],this.DNA.markingSidesColor);
-        $('.' + this.tag + ', .MarkingSideColorControl').val(this.DNA.markingSidesColor); // factory only.
-      
-        // Attribute Codes
-        SetEyeVariation(this.tag, this.DNA.eyesShape);
-        $('.' + this.tag + ', .EyeShapeControl').val(this.DNA.eyesShape); // factory only.
-      
-        SetMarkingVariation(this.tag, this.DNA.markingShape);
-        $('.' + this.tag + ', .MarkingShapeControl').val(this.DNA.markingShape); // factory only.
-      
-        SetAnimation(this.tag, this.DNA.animation);
-        $('.' + this.tag + ', .AnimationControl').val(this.DNA.animation); // factory only.
+    updateDisplay(){
+        console.groupCollapsed('animal(' + this.tag + ')::updateDisplay()');
+
+        // Display all color codes
+        DisplayFurColor();
+        DisplayUnderFurColor();
+        DisplayEyeColor();
+        DisplayEarColor();
+        DisplayMarkingMidColor();
+        DisplayMarkingSidesColor();
+        
+        // Display all attribute codes
+        DisplayEyeVariation();
+        DisplayMarkingVariation();
+        DisplayAnimation();
+
+        // Color codes to factory control labels
+        $('.' + this.tag + ', .furColorControl').val(this.DNA.furColor); 
+        $('.' + this.tag + ', .UnderfurColorControl').val(this.DNA.underFurColor); 
+        $('.' + this.tag + ', .EyeColorControl').val(this.DNA.eyesColor); 
+        $('.' + this.tag + ', .EarColorControl').val(this.DNA.earsColor); 
+        $('.' + this.tag + ', .MarkingMidColorControl').val(this.DNA.markingMidColor); 
+        $('.' + this.tag + ', .MarkingSideColorControl').val(this.DNA.markingSidesColor); 
+
+        // Attributes to factory control labels
+        $('.' + this.tag + ', .EyeShapeControl').val(this.DNA.eyesShape); 
+        $('.' + this.tag + ', .MarkingShapeControl').val(this.DNA.markingShape); 
+        $('.' + this.tag + ', .AnimationControl').val(this.DNA.animation); 
       
         console.groupEnd();
       }
