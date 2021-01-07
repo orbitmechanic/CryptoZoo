@@ -78,25 +78,6 @@ class animalDNA {
     console.groupEnd();
   }
 
-  list2Tag(tag) {
-    console.groupCollapsed('animalDNA::list2Tag(' + tag + ')');
-
-    // Color codes
-    $('.' + tag + ', .dnaFurColor').html(this.furColor);
-    $('.' + tag + ', .dnaUnderFurColor').html(this.underFurColor);
-    $('.' + tag + ', .dnaEyeColor').html(this.eyesColor);
-    $('.' + tag + ', .dnaEarColor').html(this.earsColor);
-    $('.' + tag + ', .dnaMarkingMidColor').html(this.markingMidColor);
-    $('.' + tag + ', .dnaMarkingSidesColor').html(this.markingSidesColor);
-    // Attribute codes
-    $('.' + tag + ', .dnaEyeShape').html(this.eyesShape);
-    $('.' + tag + ', .dnaMarkingShape').html(this.dnaMarkingShape);
-    $('.' + tag + ', .dnaAnimation').html(this.animation);
-    $('.' + tag + ', .dnaSpecial').html(this.special);
-
-    console.groupEnd();
-  }
-
   toString() {
     console.groupCollapsed('animalDNA::toString()');
 

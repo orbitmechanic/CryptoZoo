@@ -40,7 +40,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayFurColor()');
 
         var color = this.DNA.furColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the fur color of the animal
         $('.' + this.tag +', .head, .chest, .ear--left, .ear--right').css('background', '#' + color);  
@@ -64,7 +64,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayUnderFurColor()');
 
         var color = this.DNA.underFurColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the under-fur color of the animal
         $('.' + this.tag + ', .mouth-contour, .chest_inner').css('background', '#' + color);  
@@ -88,7 +88,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayEyesColor()');
 
         var color = this.DNA.eyesColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the eye color of the animal
         $('.' + this.tag + ', .pupil-left, .pupil-right, .tail').css('background', '#' + color);  
@@ -112,7 +112,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayEarColor()');
 
         var color = this.DNA.earsColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the inner-ear color of the animal
         $('.' + this.tag + ', .ear--left-inside, .ear--right-inside, .paw-left, .paw-right, .paw-left_rear, .paw-right_rear')
@@ -137,7 +137,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayMarkingMidColor()');
 
         var color = this.DNA.markingMidColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the middle marking color of the animal
         $('.' + this.tag + ', .marking').css('background', '#' + color);  
@@ -161,7 +161,7 @@ class animal{
         console.groupCollapsed('animal(' + this.tag + ')::DisplayMarkingSidesColor()');
 
         var color = this.DNA.markingSidesColor; // Retrieve object state
-        var code = colors(color); // retrieve code from color pallet
+        var code = colors[color]; // retrieve code from color pallet
 
         //This changes the outer markings color of the animal
         $('.' + this.tag + ', .marking-left, .marking-right').css('background', '#' + color);  
@@ -189,6 +189,17 @@ class animal{
 
         // Set DNA code dispay
         $('.' + this.tag + ', .dnaEyeShape').html(num); 
+
+        const resetEyes = () => {
+            // reset all used eye shape CSS parameters
+            console.groupCollapsed('animal(' + this.tag + ')::SetEyeShape(' + num + ')::resetEyes()');
+
+            $('.' + this.tag + ', .eye').find('span').css('border', 'none');
+            $('.' + this.tag + ', .pupil-right').css('transform','rotateZ(0deg)');
+            $('.' + this.tag + ', .pupil-left').css('transform','rotateZ(0deg)');
+
+            console.groupEnd();
+        }
 
         switch (num) {
             case 1:
@@ -244,16 +255,7 @@ class animal{
             default:
                 console.error('Recieved unhandled eye variation code:' + num);
         }
-        function resetEyes() {;
-            // reset all used eye shape CSS parameters
-            console.groupCollapsed('animal(' + this.tag + ')::SetEyeShape(' + num + ')::resetEyes()');
 
-            $('.' + this.tag + ', .eye').find('span').css('border', 'none');
-            $('.' + this.tag + ', .pupil-right').css('transform','rotateZ(0deg)');
-            $('.' + this.tag + ', .pupil-left').css('transform','rotateZ(0deg)');
-
-            console.groupEnd();
-        }
         console.groupEnd();
     }
 
@@ -271,7 +273,33 @@ class animal{
         // Update object state
         var num = this.DNA.markingShape;
 
-        $('.' + this.tag + ', .dnaMarkingShape').html(num)
+        $('.' + this.tag + ', .dnaMarkingShape').html(num);
+
+        // Reset all used marking CSS parameters 
+        const resetDecoration = ()=>{
+            console.groupCollapsed('animal(' + this.tag + ')::SetMarkingShape(' + num + ')::resetDecoration()');
+
+            $('.' + this.tag + ', .marking').css({ 
+                "transform": "rotate(0deg)", 
+                "height": "48px", 
+                "width": "14px", 
+                "top": "1px", 
+                "border-radius": "0 0 50% 50%" });
+            $('.' + this.tag + ', .marking-left').css({ 
+                "transform": "rotate(0deg)", 
+                "height": "35px", 
+                "width": "14px", 
+                "top": "1px", 
+                "border-radius": "50% 0 50% 50%" });
+            $('.' + this.tag + ', .marking-right').css({ 
+                "transform": "rotate(0deg)",
+                "height": "35px", 
+                "width": "14px", 
+                "top": "1px", 
+                "border-radius": "0 50% 50% 50%" });
+
+            console.groupEnd();
+        }
 
         switch (num) {
             case 1:
@@ -339,31 +367,7 @@ class animal{
             default:
                 console.error('animal(' + this.tag + ') >> Recieved unhandled eye variation code:' + num);
         }
-        // Reset all used marking CSS parameters 
-        function resetDecoration(){
-            console.groupCollapsed('animal(' + this.tag + ')::SetMarkingShape(' + num + ')::resetDecoration()');
-
-            $('.' + this.tag + ', .marking').css({ 
-                "transform": "rotate(0deg)", 
-                "height": "48px", 
-                "width": "14px", 
-                "top": "1px", 
-                "border-radius": "0 0 50% 50%" });
-            $('.' + this.tag + ', .marking-left').css({ 
-                "transform": "rotate(0deg)", 
-                "height": "35px", 
-                "width": "14px", 
-                "top": "1px", 
-                "border-radius": "50% 0 50% 50%" });
-            $('.' + this.tag + ', .marking-right').css({ 
-                "transform": "rotate(0deg)",
-                "height": "35px", 
-                "width": "14px", 
-                "top": "1px", 
-                "border-radius": "0 50% 50% 50%" });
-
-            console.groupEnd();
-        }
+        
     }
 
     // Set the animal's CSS animation from code  
@@ -381,6 +385,19 @@ class animal{
         var num = this.DNA.animation;
 
         $('.' + this.tag + ', .dnaAnimation').html(num);
+
+        const clearAnimation = () =>{
+            // clear animation setting from display
+            console.debug('animal(' + this.tag + ')::DisplayAnimation(#' + num + ')::clearAnimation()');
+
+            $('.' + this.tag + ', .head').removeClass('rocking');                     // type 2
+            $('.' + this.tag + ', .ear--left').removeClass('rockingLeftEar');         // type 3
+            $('.' + this.tag + ', .ear--right').removeClass('rockingRightEar');       // type 3
+            $('.' + this.tag + ', .eye').removeClass('winkingEye');                   // type 4
+            $('.' + this.tag + ', .whiskers-left').removeClass('wiggleLeftWisker');   // type 5
+            $('.' + this.tag + ', .whiskers-right').removeClass('wiggleRightWisker'); // type 5
+        }  
+        console.groupEnd();
 
         switch (num) {
             case 1:
@@ -412,35 +429,24 @@ class animal{
             default:
                 console.error('Recieved unhandled animation code:' + num);
         };
-        function clearAnimation(){
-            // clear animation setting from display
-            console.debug('animal(' + this.tag + ')::DisplayAnimation(#' + num + ')::clearAnimation()');
 
-            $('.' + this.tag + ', .head').removeClass('rocking');                     // type 2
-            $('.' + this.tag + ', .ear--left').removeClass('rockingLeftEar');         // type 3
-            $('.' + this.tag + ', .ear--right').removeClass('rockingRightEar');       // type 3
-            $('.' + this.tag + ', .eye').removeClass('winkingEye');                   // type 4
-            $('.' + this.tag + ', .whiskers-left').removeClass('wiggleLeftWisker');   // type 5
-            $('.' + this.tag + ', .whiskers-right').removeClass('wiggleRightWisker'); // type 5
-        }  
-        console.groupEnd();
     }
 
     updateDisplay(){
         console.groupCollapsed('animal(' + this.tag + ')::updateDisplay()');
 
         // Display all color codes
-        DisplayFurColor();
-        DisplayUnderFurColor();
-        DisplayEyeColor();
-        DisplayEarColor();
-        DisplayMarkingMidColor();
-        DisplayMarkingSidesColor();
+        this.DisplayFurColor();
+        this.DisplayUnderFurColor();
+        this.DisplayEyesColor();
+        this.DisplayEarsColor();
+        this.DisplayMarkingMidColor();
+        this.DisplayMarkingSidesColor();
         
         // Display all attribute codes
-        DisplayEyeVariation();
-        DisplayMarkingVariation();
-        DisplayAnimation();
+        this.DisplayEyeShape();
+        this.SetMarkingShape();
+        this.DisplayAnimation();
 
         // Color codes to factory control labels
         $('.' + this.tag + ', .furColorControl').val(this.DNA.furColor); 
@@ -455,6 +461,25 @@ class animal{
         $('.' + this.tag + ', .MarkingShapeControl').val(this.DNA.markingShape); 
         $('.' + this.tag + ', .AnimationControl').val(this.DNA.animation); 
       
+        console.groupEnd();
+    }
+
+    list2Tag() {
+        console.groupCollapsed('animalDNA::list2Tag(' + this.tag + ')');
+    
+        // Color codes
+        $('.' + this.tag + ', .dnaFurColor').html(this.DNA.furColor);
+        $('.' + this.tag + ', .dnaUnderFurColor').html(this.DNA.underFurColor);
+        $('.' + this.tag + ', .dnaEyeColor').html(this.DNA.eyesColor);
+        $('.' + this.tag + ', .dnaEarColor').html(this.DNA.earsColor);
+        $('.' + this.tag + ', .dnaMarkingMidColor').html(this.DNA.markingMidColor);
+        $('.' + this.tag + ', .dnaMarkingSidesColor').html(this.DNA.markingSidesColor);
+        // Attribute codes
+        $('.' + this.tag + ', .dnaEyeShape').html(this.DNA.eyesShape);
+        $('.' + this.tag + ', .dnaMarkingShape').html(this.DNA.dnaMarkingShape);
+        $('.' + this.tag + ', .dnaAnimation').html(this.DNA.animation);
+        $('.' + this.tag + ', .dnaSpecial').html(this.DNA.special);
+    
         console.groupEnd();
       }
 

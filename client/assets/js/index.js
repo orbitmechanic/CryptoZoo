@@ -15,7 +15,7 @@ $(document).ready(function() {
     willCallAnimals.forEach(function (animal){
         animal.randomize();
         animal.updateDisplay();
-        animal.list2Tag();
+        animal.list2Tag(); //does nothing on this page.
     });
 
     console.info('index.js doc.ready fired!');
