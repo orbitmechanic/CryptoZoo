@@ -3,6 +3,7 @@ pragma solidity 0.6.0;
 
 import "./IERC721.sol";
 import "./Accountable.sol";
+import './SafeMath.sol';
 
 contract CryptAnimal is IERC721, Accountable {
 
@@ -38,7 +39,7 @@ contract CryptAnimal is IERC721, Accountable {
     function createAnimalGen0(uint256 _genes) public onlyOwner returns(uint256) {
         require (gen0Population < CREATION_LIMIT_GEN0, 
             "Attempting to exceed generation 0 population limit.");
-        gen0Population++;
+        gen0Population = SafeMath.add(gen0Population, 1);
         uint256 newAnimalId = 
             _createAnimal(uint256(0),uint256(0),uint256(0),_genes,msg.sender);
         return newAnimalId;
@@ -60,7 +61,7 @@ contract CryptAnimal is IERC721, Accountable {
             generation: uint16(_generation)
         });
         animals.push(_animal); // 0.7.0 no longer returns length
-        uint256 newAnimalId = animals.length - 1;
+        uint256 newAnimalId = SafeMath.sub(animals.length, 1);
         _transfer(address(0), _owner, newAnimalId );
         emit Birth(_owner, newAnimalId, _momId, _dadId, _genes);
         return newAnimalId;
@@ -139,10 +140,10 @@ contract CryptAnimal is IERC721, Accountable {
     }
     
     function _transfer(address _from, address _to, uint256 _tokenId) internal {
-        owner2TokenCount[_to]++;
+        owner2TokenCount[_to] = SafeMath.add(owner2TokenCount[_to], 1);
         animalId2Owner[_tokenId] = _to;
         if (_from != address(0)) {
-            owner2TokenCount[_from]--;
+            owner2TokenCount[_from] = SafeMath.sub(owner2TokenCount[_from], 1);
         }
         emit Transfer(_from, _to, _tokenId);
     }

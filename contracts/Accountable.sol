@@ -1,5 +1,7 @@
 pragma solidity 0.6.0;
 import './Mortal.sol';
+import './SafeMath.sol';
+
 // SPDX-License-Identifier: UNLICENSED
 
 
@@ -26,13 +28,13 @@ contract Accountable is Mortal {
     }
     
     function credit(address from, uint256 ammount) internal {
-        balance_ += ammount;
+        balance_ = SafeMath.add(balance_, ammount);
         emit receipt(from, address(this), ammount);
     }
     
     function debt(address payable to, uint256 amount) internal {
         require(amount <= balance_, 'Insufficient funds available.');
-        balance_ -= amount;
+        balance_ -= SafeMath.sub(balance_, amount);
         to.transfer(amount);  // revert on fail.
         emit receipt(address(this), to, amount);
     }
